@@ -22,7 +22,7 @@
 |------|----|-------|
 |station_id|integer|null: false, unique: true, default: false, primary_key: false, foreign_key: true, index: false|
 |railway_id|integer|null: false, unique: true, default: false, primary_key: false, foreign_key: true, index: false|
-|order|integer|null: false, unique: true, default: false, primary_key: false, foreign_key: false, index: false|
+|order|integer|null: false, unique: false, default: false, primary_key: false, foreign_key: false, index: false|
 ### アソシエーション
 - belongs_to :stations
 - belongs_to :railways
@@ -31,7 +31,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |body|string|null: false, unique: false, default: false, primary_key: false, foreign_key: false, index: false|
-|date|int|null: false, unique: false, default: false, primary_key: false, foreign_key: false, index: false|
+|created_at|int|null: false, unique: false, default: false, primary_key: false, foreign_key: false, index: false|
 |user_id|int|null: false, unique: false, default: false, primary_key: false, foreign_key: true, index: false|
 |station_id|int|null: false, unique: false, default: false, primary_key: false, foreign_key: true, index: false|
 ### アソシエーション
