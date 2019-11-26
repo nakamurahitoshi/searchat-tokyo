@@ -60,3 +60,27 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# 20191126 使うであろうGemの追加 chat-spaceを参考にした 
+# binding.pryの導入
+gem 'pry-rails'
+# deviseの導入
+gem 'devise'
+# haml-railsの導入
+gem 'haml-rails'
+# jqueryの導入
+gem 'jquery-rails'
+# アイコンのGemを導入
+gem "font-awesome-rails"
+# Capistranoの導入
+gem 'capistrano'
+gem 'capistrano-bundler'
+gem 'capistrano-rails'
+gem 'capistrano-rbenv'
+gem 'capistrano3-unicorn'
+#AWS用アップロード補助のgemの導入
+gem 'fog-aws'
+# AWSのAppサーバとしてUnicornの導入
+group :production do
+  gem "unicorn", "5.4.1"
+end
