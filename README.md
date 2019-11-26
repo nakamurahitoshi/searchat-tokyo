@@ -1,24 +1,12 @@
-# README
+# searchat-tokyo DB設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## stationsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false, unique: true, default: false, primary_key: true, foreign_key: false, index: true|
+|lat|double|null: false, unique: true, default: false, primary_key: true, foreign_key: false, index: false|
+|lng|double|null: false, unique: true, default: false, primary_key: true, foreign_key: false, index: false|
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### アソシエーション
+- has_many :users
+- has_many :railways, through: :stations_railways
