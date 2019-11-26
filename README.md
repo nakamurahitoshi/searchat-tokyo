@@ -1,24 +1,20 @@
-# README
+## comment table
+|Column|Type|Options|
+|------|----|-------|
+|body|string|null :false, unique :false, defort :false; primary_key :false, foreign_key :false, index:false|
+|date|int|null :false, unique :false, defort :false; primary_key :false, foreign_key :false, index:false|
+|user_id|int|null :false, unique :false, defort :false; primary_key :false, foreign_key :true, index:false|
+|station_id|int|null :false, unique :false, defort :false; primary_key :false, foreign_key :true, index:false|
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Association
+- belongs_to :user
+- belongs_to :station
 
-Things you may want to cover:
 
-* Ruby version
+## comment table
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null :false, unique :true, defort :false; primary_key :false, foreign_key :true, index:false|
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Association
+- has_many :stations, through: :stations_railways
