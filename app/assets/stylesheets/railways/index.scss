@@ -1,0 +1,106 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  background-color: #BCB3DA;
+  height: 100px;
+  position: fixed;
+  width: 100%;
+}
+
+.header-name {
+  color:#ffffff;
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 100px;
+  letter-spacing: 2px;
+  float: left;
+  padding:  30px 100px;
+}
+
+.contents {
+  background-color: gray;
+  height: calc(100% - 100px);
+  padding-top: 100px;
+  width: 100%;
+  position: fixed;
+}
+
+  .left-content {
+    background-color: white;
+    height: 100%;
+    width: 50%;
+    float: left;
+  }
+  h5 {
+    padding: 0.5em;/*文字周りの余白*/
+    color: #494949;/*文字色*/
+    border-left: solid 10px #9146CA;/*左線（実線 太さ 色）*/
+    font-size: 30px;
+    margin-top: 0px;
+  }
+
+  .form__search {
+    box-sizing: border-box;
+    height: 150px;
+    margin-top: 100px;
+    padding: 20px 50px 20px 40px;
+  }
+  .form__search__message{
+    float: left;
+    height: 100px;
+    width: 450px;
+    font-size: 30px;
+  }
+  .form__search__message--go{
+    background-color: lightblue;
+    border: none;
+    color: white;
+    float: right;
+    font-size: 40px;
+    height: 100px;
+    margin-left: 15px;
+    padding: 0 30px;
+  }
+
+  .right-content {
+    height: 100%;
+    width: 50%;
+    float: right;
+    position: relative;
+    background-color: #F7F5AD;
+  }
+
+  h6 {
+    padding: 0.5em;/*文字周りの余白*/
+    color: #494949;/*文字色*/
+    border-left: solid 10px #9146CA;/*左線（実線 太さ 色）*/
+    font-size: 30px;
+    margin-top: 0px;
+  }
+
+  .form__chat {
+    box-sizing: border-box;
+    height: 150px;
+    margin-top: 100px;
+    padding: 20px 50px 20px 40px;
+  }
+  .form__search__chat{
+    float: left;
+    height: 100px;
+    width: 450px;
+    font-size: 30px;
+  }
+  .form__search__chat--go{
+    background-color: lightblue;
+    border: none;
+    color: white;
+    float: right;
+    font-size: 40px;
+    height: 100px;
+    margin-left: 15px;
+    padding: 0 30px;
+  }

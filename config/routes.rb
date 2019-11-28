@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: "stations#index"
+  root to: "railways#index"
   resources :stations, only: [:index, :show] do
     resources :messages, only: [:index, :create, :show]
   end

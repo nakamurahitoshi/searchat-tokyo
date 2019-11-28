@@ -1,0 +1,26 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{:charset => "utf-8"}/
+    %title トップページ
+    %link{:href => "style.css", :rel => "stylesheet"}/
+  %body
+    %header.header
+      .header-name
+    .contents
+      .left-content
+        %h5 行きたいところ
+        .form__search
+          %form#new_message.set-form__search{"accept-charset" => "UTF-8", :enctype => "multipart/form-data", :method => "post"}
+            %input#message_content.form__search__message{:name => "message[content]", :placeholder => "Where do you go ?", :type => "text"}/
+            %input.form__search__message--go{"data-disable-with" => "GO!", :name => "commit", :type => "submit", :value => "GO!"}/
+      .right-content
+        %h6 チャット
+        .form__chat
+          %form#new_message.set-form__chat{"accept-charset" => "UTF-8", :action => "###", :enctype => "multipart/form-data", :method => "post"}
+            %input#message_content.form__search__chat{:name => "message[content]", :placeholder => "Choose a station", :type => "text"}/
+            %input.form__search__chat--go{"data-disable-with" => "GO!", :name => "commit", :type => "submit", :value => "GO!"}/
+            
+        =link_to link_to '編集画面をみる', " /users/:0/edit", method: :GET
+        =link_to link_to '地図検索画面をみる', "/stations/:0", method: :GET
