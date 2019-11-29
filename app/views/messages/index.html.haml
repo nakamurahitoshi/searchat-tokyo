@@ -8,16 +8,17 @@
   %body
     %header.header
       .username
-        にっくねーむ
+        仮面らいだー
       .userpoint
-        人気 Pt
+        きっく pt
       %ul.mystation
         My駅
         %li.mystation__body
-          なんちゃら
+          らいだー星
       .btn
         %a.btn__edit-btn{:href => "/edit"} Edit
         %a.btn__top-btn{:href => "/top"} TOP
+        %a.btn__update-btn{:href => "/top"} UPDATE
     .contents
       .left-content
         .railway
@@ -87,3 +88,43 @@
             .railway__list__box
               %a.railway__list__box__station5{:href => ""} 　　
       .right-content
+        .chat-header
+          .chat-header__name
+            %a.chat-header__station-name{:href => ""} らいだー星
+            .chat-header__commmon-name
+              　えきのチャット
+          .chat-header__btn
+            =link_to "", class: "chat-header__favorite-btn" do
+              =fa_icon 'star'
+        .messages
+          .message
+            .message__info
+              .message__username
+                仮面らいだーゼロワン
+              .message__date
+                2019.11.29 15:55
+            .message__body
+              -# - if message.body.present?
+                -# %p.message__text
+              .message__text
+                令和ライダーショップのらいだーキックがオススメだよ
+              .message__hash
+                ＃ライダーショップ
+          .message
+            .message__info
+              .message__username
+                仮面らいだージオウ
+              .message__date
+                2019.11.29 15:56
+            .message__body
+              -# - if message.body.present?
+                -# %p.message__text
+              .message__text
+                平成ライダーショップのらいだーキックがオススメだ
+              .message__hash
+                ＃平成ライダーショップ
+        .form
+          -# = form_for [@station, @message], class: 'form__box' do |f|
+          %form.form__box
+            %input{type: "text", placeholder: "type a message", class: "form__message"}
+            %input{type: "submit", value: "Send", class: "form__button"}
