@@ -1,10 +1,11 @@
 !!!
 %html
   %head
+    = stylesheet_link_tag "railways/index", :media => "all"
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %meta{:charset => "utf-8"}/
     %title トップページ
-   
+    
   %body
     %header.header
       .header-name
@@ -24,9 +25,6 @@
           = form_for :current_user, :url => station_messages_path(0) do |f|#()の中は相談@stationsになる予定
             = f.text_field :station,class: 'form__search__chat', placeholder: 'Choose a station'
             = f.submit 'GO!', class: 'form__search__chat--go'
-            
-            
         =link_to link_to '編集画面をみる', " /users/:0/edit", method: :GET
         =link_to link_to '地図検索画面をみる', "/stations/:0", method: :GET
-
 
