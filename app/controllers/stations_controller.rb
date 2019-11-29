@@ -3,11 +3,12 @@ class StationsController < ApplicationController
   def index
     # ユーザが駅名を入力したら、その駅名を含む駅データをstationsテーブルから抽出する
     # 何も入力していない場合はnilを返す
-    if params[:stname] == ""
+    if params[:station_name] == ""
       return nil
     else
       # 部分一致した駅を表示
-      @stations = Station.where(["name LIKE ?", "%#{params[:stname]}%"] ).limit(10)
+      @stations = Station.where(["name LIKE ?", "%#{params[:station_name]}%"] ).limit(10)
+      
       # html,jsonのリクエストに応じてレスポンスを返す
       respond_to do |format|
         format.html
