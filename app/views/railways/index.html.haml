@@ -1,30 +1,23 @@
-!!!
-%html
-  %head
-    = stylesheet_link_tag "railways/index", :media => "all"
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %meta{:charset => "utf-8"}/
-    %title トップページ
-    
-  %body
-    %header.header
-      .header-name
-    .contents
-      .left-content
-        %h5 行きたいところ
-        .form__search
-          = form_tag do 
-            = text_field_tag 'station', '', class: 'form__search__message', placeholder: "Where do you go?"#stationではない　空白をつくることでボックス内に文字記載
-            = submit_tag 'GO!', class: 'form__search__message--go'
-            
+= content_for :css do
+  = stylesheet_link_tag "railways/index", :media => "all"
+
+.notifications
+  - flash.each do |key, value|
+    = content_tag(:div, value, class: key)
+.contents
+  .left-content
+    %h5 行きたいところ
+    .form__search
+      = form_tag(station_path(0), method: 'get') do
+        = text_field_tag 'destination', '', class: 'form__search__message', placeholder: "Where do you go?"#stationではない 空白をつくることでボックス内に文字記載 -> コントローラでparams[:destination]で受け取れるようにしたよ by nakamura
+        = submit_tag 'GO!', class: 'form__search__message--go'
         
-        
-      .right-content
-        %h6 チャット
-        .form__chat
-          = form_for :current_user, :url => station_messages_path(0) do |f|#()の中は相談@stationsになる予定
-            = f.text_field :station,class: 'form__search__chat', placeholder: 'Choose a station'
-            = f.submit 'GO!', class: 'form__search__chat--go'
-        =link_to link_to '編集画面をみる', " /users/:0/edit", method: :GET
-        =link_to link_to '地図検索画面をみる', "/stations/:0", method: :GET
-        =link_to link_to 'Chat画面をみる', "/stations/0/messages", method: :GET
+  .right-content
+    %h6 チャット
+    .form__chat
+      = form_for :current_user, url: station_messages_path(0),html: {method: 'GET'} do |f| # ()の中は相談@stationsになる予定 -> フォームの中の文字を渡すだけで駅のidは不要だから(0)のままでいいよ by nakamura
+        = f.text_field :name,class: 'form__search__chat', placeholder: 'Choose a station'
+        = f.submit 'GO!', class: 'form__search__chat--go'
+    =link_to '編集画面をみる', " /users/:0/edit", method: :GET
+    =link_to '地図検索画面をみる', "/stations/:0", method: :GET
+    =link_to 'Chat画面をみる', "/stations/0/messages", method: :GET

@@ -4,9 +4,8 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false, unique: true, default: false, primary_key: false, foreign_key: false, index: true|
-|lat|double|null: false, unique: true, default: false, primary_key: false, foreign_key: false, index: false|
-|lng|double|null: false, unique: true, default: false, primary_key: false, foreign_key: false, index: false|
-|ucode|string|null: false, unique: true, default: false, primary_key: false, foreign_key: false, index: false|
+|lat|double|null: false, unique: false, default: false, primary_key: false, foreign_key: false, index: false|
+|lng|double|null: false, unique: false, default: false, primary_key: false, foreign_key: false, index: false|
 ### アソシエーション
 - has_many :users
 - has_many :railways, through: :stations_railways
@@ -14,12 +13,12 @@
 ## railwaysテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null :false, unique :true, default :false; primary_key :false, foreign_key :false, index:false|
-|ucode|string|null: false, unique: true, default: false, primary_key: false, foreign_key: false, index: false|
+|name|string|null :false, unique :false, default :false; primary_key :false, foreign_key :false, index:false|
+|odptrailway|string|null: false, unique: true, default: false, primary_key: false, foreign_key: false, index: true|
 ### アソシエーション
 - has_many :stations, through: :stations_railways
 
-## stations_railwaysテーブル
+## station_railwaysテーブル
 |Column|Type|Options|
 |------|----|-------|
 |station_id|integer|null: false, unique: true, default: false, primary_key: false, foreign_key: true, index: false|

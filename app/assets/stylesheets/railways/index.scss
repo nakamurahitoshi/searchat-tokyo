@@ -4,12 +4,12 @@ html, body {
   padding: 0;
 }
 
-.header {
-  background-color: #BCB3DA;
-  height: 100px;
-  position: fixed;
-  width: 100%;
-}
+// .header {
+//   background-color: #BCB3DA;
+//   height: 100px;
+//   position: fixed;
+//   width: 100%;
+// }
 
 .header-name {
   color:#ffffff;
@@ -24,9 +24,7 @@ html, body {
 .contents {
   background-color: gray;
   height: calc(100% - 100px);
-  padding-top: 100px;
   width: 100%;
-  position: fixed;
 }
 
   .left-content {
@@ -104,3 +102,12 @@ html, body {
     margin-left: 15px;
     padding: 0 30px;
   }
+
+  .notifications {
+    color: black;
+    text-align: center;  
+    .notice {
+      background-color: cyan;
+    }
+  }
+  

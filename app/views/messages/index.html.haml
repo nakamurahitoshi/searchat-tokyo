@@ -1,130 +1,111 @@
-!!!
-%html
-  %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %meta{:charset => "utf-8"}/
-    %title searchat
-    %link{:href => "style.css", :rel => "stylesheet"}/
-  %body
-    %header.header
-      .username
-        仮面らいだー
-      .userpoint
-        きっく pt
-      %ul.mystation
-        My駅
-        %li.mystation__body
-          らいだー星
-      .btn
-        %a.btn__edit-btn{:href => "/edit"} Edit
-        %a.btn__top-btn{:href => "/top"} TOP
-        %a.btn__update-btn{:href => "/top"} UPDATE
-    .contents
-      .left-content
-        .railway
-          .railway__name
-            山手線
-          .railway__list
-            .railway__list__box
-              %a.railway__list__box__station1{:href => ""} 日暮里
-            .railway__list__line
-              ||
-            .railway__list__box
-              %a.railway__list__box__station2{:href => ""} 鶯谷
-            .railway__list__line
-              ||
-            .railway__list__box
-              %a.railway__list__box__station3.railsway__list__box__station3--emphasis{:href => ""} 上野
-            .railway__list__line
-              ||
-            .railway__list__box
-              %a.railway__list__box__station4{:href => ""} 御徒町
-            .railway__list__line
-              ||
-            .railway__list__box
-              %a.railway__list__box__station5{:href => ""} 秋葉原
-        .railway
-          .railway__name
-            京浜東北・根岸線
-          .railway__list
-            .railway__list__box
-              %a.railway__list__box__station1{:href => ""} 日暮里
-            .railway__list__line
-              ||
-            .railway__list__box
-              %a.railway__list__box__station2{:href => ""} 鶯谷
-            .railway__list__line
-              ||
-            .railway__list__box
-              %a.railway__list__box__station3.railsway__list__box__station3--emphasis{:href => ""} 上野
-            .railway__list__line
-              ||
-            .railway__list__box
-              %a.railway__list__box__station4{:href => ""} 御徒町
-            .railway__list__line
-              ||
-            .railway__list__box
-              %a.railway__list__box__station5{:href => ""} 秋葉原
-        .railway
-          .railway__name
-            常磐快速線
-          .railway__list
-            .railway__list__box
-              %a.railway__list__box__station1{:href => ""} 三河島
-            .railway__list__line
-              ||
-            .railway__list__box
-              %a.railway__list__box__station2{:href => ""} 日暮里
-            .railway__list__line
-              ||
-            .railway__list__box
-              %a.railway__list__box__station3.railsway__list__box__station3--emphasis{:href => ""} 上野
-            .railway__list__line
-              ||
-            .railway__list__box
-              %a.railway__list__box__station4{:href => ""} 　　
-            .railway__list__line
-              ||
-            .railway__list__box
-              %a.railway__list__box__station5{:href => ""} 　　
-      .right-content
-        .chat-header
-          .chat-header__name
-            %a.chat-header__station-name{:href => ""} らいだー星
-            .chat-header__commmon-name
-              　えきのチャット
-          .chat-header__btn
-            =link_to "", class: "chat-header__favorite-btn" do
-              =fa_icon 'star'
-        .messages
-          .message
-            .message__info
-              .message__username
-                仮面らいだーゼロワン
-              .message__date
-                2019.11.29 15:55
-            .message__body
-              -# - if message.body.present?
-                -# %p.message__text
-              .message__text
-                令和ライダーショップのらいだーキックがオススメだよ
-              .message__hash
-                ＃ライダーショップ
-          .message
-            .message__info
-              .message__username
-                仮面らいだージオウ
-              .message__date
-                2019.11.29 15:56
-            .message__body
-              -# - if message.body.present?
-                -# %p.message__text
-              .message__text
-                平成ライダーショップのらいだーキックがオススメだ
-              .message__hash
-                ＃平成ライダーショップ
-        .form
-          -# = form_for [@station, @message], class: 'form__box' do |f|
-          %form.form__box
-            %input{type: "text", placeholder: "type a message", class: "form__message"}
-            %input{type: "submit", value: "Send", class: "form__button"}
+= content_for :css do
+  = stylesheet_link_tag "messages/index", :media => "all"
+.contents
+  .left-content
+    .railway
+      .railway__name
+        山手線
+      .railway__list
+        .railway__list__box
+          %a.railway__list__box__station1{:href => ""} 日暮里
+        .railway__list__line
+          ||
+        .railway__list__box
+          %a.railway__list__box__station2{:href => ""} 鶯谷
+        .railway__list__line
+          ||
+        .railway__list__box
+          %a.railway__list__box__station3.railsway__list__box__station3--emphasis{:href => ""} 上野
+        .railway__list__line
+          ||
+        .railway__list__box
+          %a.railway__list__box__station4{:href => ""} 御徒町
+        .railway__list__line
+          ||
+        .railway__list__box
+          %a.railway__list__box__station5{:href => ""} 秋葉原
+    .railway
+      .railway__name
+        京浜東北・根岸線
+      .railway__list
+        .railway__list__box
+          %a.railway__list__box__station1{:href => ""} 日暮里
+        .railway__list__line
+          ||
+        .railway__list__box
+          %a.railway__list__box__station2{:href => ""} 鶯谷
+        .railway__list__line
+          ||
+        .railway__list__box
+          %a.railway__list__box__station3.railsway__list__box__station3--emphasis{:href => ""} 上野
+        .railway__list__line
+          ||
+        .railway__list__box
+          %a.railway__list__box__station4{:href => ""} 御徒町
+        .railway__list__line
+          ||
+        .railway__list__box
+          %a.railway__list__box__station5{:href => ""} 秋葉原
+    .railway
+      .railway__name
+        常磐快速線
+      .railway__list
+        .railway__list__box
+          %a.railway__list__box__station1{:href => ""} 三河島
+        .railway__list__line
+          ||
+        .railway__list__box
+          %a.railway__list__box__station2{:href => ""} 日暮里
+        .railway__list__line
+          ||
+        .railway__list__box
+          %a.railway__list__box__station3.railsway__list__box__station3--emphasis{:href => ""} 上野
+        .railway__list__line
+          ||
+        .railway__list__box
+          %a.railway__list__box__station4{:href => ""} 　　
+        .railway__list__line
+          ||
+        .railway__list__box
+          %a.railway__list__box__station5{:href => ""} 　　
+  .right-content
+    .chat-header
+      .chat-header__name
+        %a.chat-header__station-name{:href => ""} らいだー星
+        .chat-header__commmon-name
+          　えきのチャット
+      .chat-header__btn
+        =link_to "", class: "chat-header__favorite-btn" do
+          =fa_icon 'star'
+    .messages
+      .message
+        .message__info
+          .message__username
+            仮面らいだーゼロワン
+          .message__date
+            2019.11.29 15:55
+        .message__body
+          -# - if message.body.present?
+            -# %p.message__text
+          .message__text
+            令和ライダーショップのらいだーキックがオススメだよ
+          .message__hash
+            ＃ライダーショップ
+      .message
+        .message__info
+          .message__username
+            仮面らいだージオウ
+          .message__date
+            2019.11.29 15:56
+        .message__body
+          -# - if message.body.present?
+            -# %p.message__text
+          .message__text
+            平成ライダーショップのらいだーキックがオススメだ
+          .message__hash
+            ＃平成ライダーショップ
+    .form
+      -# = form_for [@station, @message], class: 'form__box' do |f|
+      %form.form__box
+        %input{type: "text", placeholder: "type a message", class: "form__message"}
+        %input{type: "submit", value: "Send", class: "form__button"}

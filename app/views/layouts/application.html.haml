@@ -5,7 +5,22 @@
     %title SearchatTokyo
     = csrf_meta_tags
     = csp_meta_tag
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = yield :css
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
+    - if user_signed_in?
+    = stylesheet_link_tag  "shared/header", media: 'all'
+      .header
+        .username
+          仮面らいだー
+        .userpoint
+          きっく pt
+        %ul.mystation
+          My駅
+          %li.mystation__body
+            らいだー星
+        .btn
+          %a.btn__edit-btn{:href => "/users/#{current_user.id}/edit"} Edit
+          %a.btn__top-btn{:href => "/"} TOP
+          =link_to "UPDATE", "/railways/0", class: "btn__update-btn", method: 'PATCH' # ここだけHTTPメソッドをPATCHに指定する必要があったので、aタグからlink_toに変更しました by nakamura
     = yield
