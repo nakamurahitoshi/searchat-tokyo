@@ -1,5 +1,6 @@
-#account-page.account-page
+= content_for :css do
   = stylesheet_link_tag "users/edit", :media => "all"
+#account-page.account-page
   .account-page__inner.clearfix
     .account-page__inner--left.account-page__header
       %h2 SEARCHAT-TOKYO
@@ -17,5 +18,5 @@
               %i (数字6文字)
             .field-input
               = f.password_field :password, autocomplete: "off"
-          .actions
-            = f.submit "ログイン", class: 'btn'
+            .actions
+              = f.submit "ログイン", class: 'btn'
