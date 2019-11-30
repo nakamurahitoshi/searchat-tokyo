@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   resources :stations, only: [:index, :show] do
     resources :messages, only: [:index, :create, :show]
   end
-  resources :railways, only: :index
-  resources :users, only: [:edit, :update] 
+  resources :railways, only: [:index, :update]
+  resources :users, only: [:edit, :update, :create] 
 end
