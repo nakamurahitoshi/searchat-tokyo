@@ -1,7 +1,8 @@
 class MessagesController < ApplicationController
-  before_action :set_station
   # 路線図と駅チャット画面を表示するindexアクション
-  def index  
+  def index
+    # 駅情報を取得
+    @station = set_station
     # その駅の属する路線の情報を全て取得
     @railways = @station.railways
 
@@ -10,13 +11,15 @@ class MessagesController < ApplicationController
     @stations = Array.new(@railways.length)
     for i in 0..@stations.length-1
       # その路線における、ユーザが選択した駅の順番
-      stations_railways_id = @station.stations_railways.where("railway_id = ?", @railways[i].id).select(:order)
-      @stations[i] = @railways[i].join(:stations).where("stations_railways.order BETWEEN ? AND ? " , stations_railways_id-2, stations_railways_id+2)
+      stations_railways_id = @station.station_railways.where("railway_id = ?", @railways[i].id).pluck(:order)[0]
+      @stations[i] = Station.joins(:station_railways).where("station_railways.railway_id = ? AND station_railways.order BETWEEN ? AND ? " , @railways[i].id, stations_railways_id-2, stations_railways_id+2)
     end
   end
 
   # 駅チャットの投稿を保存するcreateアクション
   def create
+    # 駅情報を取得
+    @station = set_station
     # メッセージオブジェクトを作成
     @message = @station.messages.new(message_params)
     
@@ -54,10 +57,8 @@ class MessagesController < ApplicationController
   private
   def set_station
     # ユーザが検索した駅の情報を取得
-    @station = Station.find_by(station_params)
-  end
-  def station_params
-    params.require(:station).permit(:name)
+    stname = params.permit(:name)
+    station = Station.find_by(stname)
   end
   def message_params
     params.require(:message).permit(:body).merge(user_id: current_user.id)
