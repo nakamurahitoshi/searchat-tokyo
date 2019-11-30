@@ -2,7 +2,7 @@ require 'faraday'
 require 'json'
 class TrainAPI
   BASE_URL = 'https://api-tokyochallenge.odpt.org/api/v4/odpt:'
-  CONSUMER_KEY = consumer_key
+  CONSUMER_KEY = Rails.application.credentials.consumer_key
   
   # リクエスト文を作成する
   def self.make_get_request(path, params)
