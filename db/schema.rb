@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_29_011042) do
+ActiveRecord::Schema.define(version: 2019_11_27_031512) do
 
   create_table "messages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "body", default: "0", null: false
@@ -24,9 +24,20 @@ ActiveRecord::Schema.define(version: 2019_11_29_011042) do
 
   create_table "railways", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
+    t.string "odptrailway", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "ucode"
+    t.index ["odptrailway"], name: "index_railways_on_odptrailway"
+  end
+
+  create_table "station_railways", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "station_id"
+    t.bigint "railway_id"
+    t.integer "order", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["railway_id"], name: "index_station_railways_on_railway_id"
+    t.index ["station_id"], name: "index_station_railways_on_station_id"
   end
 
   create_table "stations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -35,18 +46,7 @@ ActiveRecord::Schema.define(version: 2019_11_29_011042) do
     t.float "lng", limit: 53, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "ucode"
     t.index ["name"], name: "index_stations_on_name"
-  end
-
-  create_table "stations_railways", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "station_id"
-    t.bigint "railway_id"
-    t.integer "order", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["railway_id"], name: "index_stations_railways_on_railway_id"
-    t.index ["station_id"], name: "index_stations_railways_on_station_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -67,7 +67,7 @@ ActiveRecord::Schema.define(version: 2019_11_29_011042) do
 
   add_foreign_key "messages", "stations"
   add_foreign_key "messages", "users"
-  add_foreign_key "stations_railways", "railways"
-  add_foreign_key "stations_railways", "stations"
+  add_foreign_key "station_railways", "railways"
+  add_foreign_key "station_railways", "stations"
   add_foreign_key "users", "stations"
 end
