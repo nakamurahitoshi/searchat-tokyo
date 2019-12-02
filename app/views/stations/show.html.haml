@@ -1,5 +1,9 @@
 = content_for :css do
-  = stylesheet_link_tag "stations/show", :media => "all"
+  = stylesheet_link_tag "stations/show"
+= content_for :js do
+  = javascript_include_tag 'stations/show'
+= content_for :gmap do
+  = google_maps_api_script_tag
 .contents
   .left-content
     %h1 地図

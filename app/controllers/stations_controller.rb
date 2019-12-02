@@ -19,7 +19,8 @@ class StationsController < ApplicationController
 
   # 行き先地と地図を表示させるshowアクション
   def show
-    # 行き先を変数に格納。この変数をJavascriptで扱うようにする
+    # 行き先を変数に格納。@destination[:destination]で取り出せる
+    # この変数をJavascriptで扱うようにする
     @destination = params.permit(:destination)
   end
 end
