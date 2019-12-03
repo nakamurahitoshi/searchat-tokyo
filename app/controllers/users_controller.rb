@@ -7,7 +7,6 @@ class UsersController < ApplicationController
   def update
      # current_userに対して更新nが成功したらルートに戻り、
     # そうでなければ編集画面に戻る
-    user_params = params.require(:user).permit(:name, :email)
     if current_user.update(user_params)
       redirect_to root_path
     else
@@ -26,5 +25,10 @@ class UsersController < ApplicationController
       format.html
       format.json 
     end
+  end
+
+  private
+  def user_params
+   params.require(:user).permit(:name, :email)
   end
 end
