@@ -20,9 +20,10 @@
         .userpoint
           
         %ul.mystation
-          %a.btn__station-btn{:href => "/stations/#{current_user.station_id}/messages"}my station
+          my station
           %li.mystation__body
-            = current_user.station.name
+            %a.btn__station-btn{:href => "/stations/#{current_user.station_id}/messages"}
+              = current_user.station.name
           
         .btn
           %a.btn__edit-btn{:href => "/users/#{current_user.id}/edit"} Edit
