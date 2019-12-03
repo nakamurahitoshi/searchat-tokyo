@@ -2,6 +2,7 @@ class MessagesController < ApplicationController
   # 路線図と駅チャット画面を表示するindexアクション
   def index
     @message = Message.new
+    # @messages = @station.messages.includes(:user)
     # 駅情報を取得
     @station = set_station
     # その駅の属する路線の情報を全て取得
