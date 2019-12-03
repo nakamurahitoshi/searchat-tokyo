@@ -1,6 +1,7 @@
 class MessagesController < ApplicationController
   # 路線図と駅チャット画面を表示するindexアクション
   def index
+    @message = Message.new
     # 駅情報を取得
     @station = set_station
     # その駅の属する路線の情報を全て取得
@@ -29,7 +30,7 @@ class MessagesController < ApplicationController
         format.html{
           redirect_to station_messages_path(@station), notice: "メッセージが送信されました"
         }
-        format.json 
+        format.json
       end
     else
       respond_to do |format|
@@ -61,6 +62,6 @@ class MessagesController < ApplicationController
     station = Station.find_by(stname)
   end
   def message_params
-    params.require(:message).permit(:body).merge(user_id: current_user.id)
+    params.require(:message).permit(:body).merge(params.permit(:station_id)).merge(user_id: current_user.id)
   end
 end

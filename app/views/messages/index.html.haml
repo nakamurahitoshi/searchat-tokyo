@@ -1,5 +1,7 @@
 = content_for :css do
-  = stylesheet_link_tag "messages/index"
+  = stylesheet_link_tag "messages/index", :media => "all"
+= content_for :js do
+  = javascript_include_tag "messages/index"
 .contents
   .left-content
     .railway
@@ -79,34 +81,11 @@
         =link_to users_path, method: :post, class: "chat-header__favorite-btn" do
           =fa_icon 'star'
     .messages
-      .message
-        .message__info
-          .message__username
-            仮面らいだーゼロワン
-          .message__date
-            2019.11.29 15:55
-        .message__body
-          -# - if message.body.present?
-            -# %p.message__text
-          .message__text
-            令和ライダーショップのらいだーキックがオススメだよ
-          .message__hash
-            ＃ライダーショップ
-      .message
-        .message__info
-          .message__username
-            仮面らいだージオウ
-          .message__date
-            2019.11.29 15:56
-        .message__body
-          -# - if message.body.present?
-            -# %p.message__text
-          .message__text
-            平成ライダーショップのらいだーキックがオススメだ
-          .message__hash
-            = link_to "＃平成ライダーショップ", "/stations/0/messages/0",method: :GET
+      = render partial: 'message', collection: @messages
     .form
-      -# = form_for [@station, @message], class: 'form__box' do |f|
-      %form.form__box
-        %input{type: "text", placeholder: "type a message", class: "form__message"}
-        %input{type: "submit", value: "Send", class: "form__button"}
+      -# %form.form__box
+      -#   %input{type: "text", placeholder: "type a message", class: "form__message"}
+      -#   %input{type: "submit", value: "Send", class: "form__button"}
+      = form_for [@station, @message], html: {class: 'form__box'} do |f|
+        = f.text_field :body, class: 'form__message', placeholder: 'type a message'
+        = f.submit 'Send', class: 'form__button'
