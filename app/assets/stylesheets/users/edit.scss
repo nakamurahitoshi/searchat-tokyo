@@ -50,6 +50,12 @@
       background-color: #ccc;
       font-size: 14px;
     }
+    .btn1 {
+      margin: 20px;
+      color: #fff;
+      background-color:#ccc;
+      font-size: 14px;
+    }
   }
 
   .field {
@@ -76,6 +82,17 @@
   }
 
   .btn {
+    display: inline-block;
+    height: 50px;
+    padding: 0 30px;
+    line-height: 50px;
+    letter-spacing: 1px;
+    text-align: center;
+    border: none;
+    border-radius: 2px;
+  }
+
+  .btn2 {
     display: inline-block;
     height: 50px;
     padding: 0 30px;

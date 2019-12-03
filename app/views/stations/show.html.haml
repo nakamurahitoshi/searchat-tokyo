@@ -14,7 +14,7 @@
       しるべい
     %h3 最寄駅
     .result__station
-      = form_for :current_user, :url => station_messages_path(0) do |f|#()の中は相談@stationsになる予定
+      = form_for :current_user, :url => station_messages_path(station_id) do |f|#()の中は相談@stationsになる予定
         = f.label :stationname
         = f.submit 'GO!', class: 'result__station__name--go'
         
