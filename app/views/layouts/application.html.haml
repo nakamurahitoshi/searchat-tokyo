@@ -16,13 +16,14 @@
     = stylesheet_link_tag  "shared/header"
       .header
         .username
-          仮面らいだー
+          = current_user.name
         .userpoint
-          きっく pt
+          
         %ul.mystation
-          My駅
+          %a.btn__station-btn{:href => "/stations/#{current_user.station_id}/messages"}my station
           %li.mystation__body
-            らいだー星
+            = current_user.station.name
+          
         .btn
           %a.btn__edit-btn{:href => "/users/#{current_user.id}/edit"} Edit
           %a.btn__top-btn{:href => "/"} TOP

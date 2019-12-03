@@ -73,40 +73,15 @@
   .right-content
     .chat-header
       .chat-header__name
-        %a.chat-header__station-name{:href => ""} らいだー星
+        %a.chat-header__station-name
+          = current_user.station.name#ちがう、とりだしたいえき
         .chat-header__commmon-name
           　えきのチャット
       .chat-header__btn
-        =link_to "", class: "chat-header__favorite-btn" do
+        =link_to users_path, method: :post, class: "chat-header__favorite-btn" do
           =fa_icon 'star'
     .messages
       = render partial: 'message', collection: @messages
-      -# .message
-      -#   .message__info
-      -#     .message__username
-      -#       仮面らいだーゼロワン
-      -#     .message__date
-      -#       2019.11.29 15:55
-      -#   .message__body
-      -#     -# - if message.body.present?
-      -#       -# %p.message__text
-      -#     .message__text
-      -#       令和ライダーショップのらいだーキックがオススメだよ
-      -#     .message__hash
-      -#       ＃ライダーショップ
-      -# .message
-      -#   .message__info
-      -#     .message__username
-      -#       仮面らいだージオウ
-      -#     .message__date
-      -#       2019.11.29 15:56
-      -#   .message__body
-      -#     -# - if message.body.present?
-      -#       -# %p.message__text
-      -#     .message__text
-      -#       平成ライダーショップのらいだーキックがオススメだ
-      -#     .message__hash
-      -#       ＃平成ライダーショップ
     .form
       -# %form.form__box
       -#   %input{type: "text", placeholder: "type a message", class: "form__message"}
