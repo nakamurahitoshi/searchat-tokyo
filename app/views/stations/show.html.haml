@@ -1,20 +1,16 @@
 = content_for :css do
   = stylesheet_link_tag "stations/show"
-= content_for :js do
-  = javascript_include_tag 'stations/show'
 = content_for :gmap do
   = google_maps_api_script_tag
+= content_for :js do
+  = javascript_include_tag 'stations/show'
 .contents
   .left-content
     %h1 地図
     .map
   .right-content
-    %h2 行先
+    %h2 あなたの行き先
+    = hidden_field_tag :destination, @destination[:destination], class: "destination"
     .result__where
-      しるべい
-    %h3 最寄駅
+    %h3 行き先の最寄駅
     .result__station
-      = form_for :current_user, :url => station_messages_path(station_id) do |f|#()の中は相談@stationsになる予定
-        = f.label :stationname
-        = f.submit 'GO!', class: 'result__station__name--go'
-        

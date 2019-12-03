@@ -1,6 +1,9 @@
 = content_for :css do
   = stylesheet_link_tag "railways/index"
-
+= content_for :gmap do
+  = google_maps_api_script_tag
+= content_for :js do
+  = javascript_include_tag 'railways/index'
 .notifications
   - flash.each do |key, value|
     = content_tag(:div, value, class: key)
