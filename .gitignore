@@ -34,3 +34,6 @@ doc/
 .DS_Store
 .idea
 .secret
+
+# 各自の鍵を持たせつため公開鍵のアップを終了
+/config/credentials.yml.enc
