@@ -5,11 +5,15 @@
     %title SearchatTokyo
     = csrf_meta_tags
     = csp_meta_tag
+    = stylesheet_link_tag 'application', media: 'all'
+    = yield :gmap
+    = javascript_include_tag 'application', media: 'all'
     = yield :css
-    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    = yield :js
+
   %body
     - if user_signed_in?
-    = stylesheet_link_tag  "shared/header", media: 'all'
+    = stylesheet_link_tag  "shared/header"
       .header
         .username
           仮面らいだー
