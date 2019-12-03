@@ -58,6 +58,26 @@ module StationsHelper
     end
   end
 
+  # 現在地の緯度経度をもとに、最も近くにある駅を検索する
+  def search_nearest_station(now_lat, now_lng, stations)
+    # 最短距離とその時のインデクスを格納しておく変数
+    nearest_dist = 10000.0
+    nearest_idx = 0
+    stations.each_with_index do |station, i|
+      st_lat = station.lat.to_f
+      st_lng = station.lng.to_f
+      dist = Math.sqrt((st_lat - now_lat)*(st_lat - now_lat) + (st_lng - now_lng) * (st_lng - now_lng))
+      # 最短距離の更新
+      if dist < nearest_dist
+        nearest_dist = dist
+        nearest_idx = i
+      end
+    end
+    # 現在地から最も近い距離の駅を返戻
+    
+    return stations[nearest_idx]
+  end
+
   private
   def fetch_station_column(station_obj, station)
     # DBの各カラムを記述or更新する
