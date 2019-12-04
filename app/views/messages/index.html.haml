@@ -6,10 +6,9 @@
   .left-content
     .railway
       .railway__name
-        山手線
       .railway__list
         .railway__list__box
-          %a.railway__list__box__station1{:href => ""} 日暮里
+          %a.railway__list__box__station1
         .railway__list__line
           ||
         .railway__list__box
@@ -74,7 +73,7 @@
     .chat-header
       .chat-header__name
         %a.chat-header__station-name
-          = current_user.station.name#ちがう、とりだしたいえき
+          = @station.name
         .chat-header__commmon-name
           　えきのチャット
       .chat-header__btn
