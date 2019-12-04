@@ -5,70 +5,16 @@
 .contents
   .left-content
     .railway
+    - @railways.each_with_index do |railway, n|
       .railway__name
-      .railway__list
-        .railway__list__box
-          %a.railway__list__box__station1
-        .railway__list__line
-          ||
-        .railway__list__box
-          %a.railway__list__box__station2{:href => ""} 鶯谷
-        .railway__list__line
-          ||
-        .railway__list__box
-          %a.railway__list__box__station3.railsway__list__box__station3--emphasis{:href => ""} 上野
-        .railway__list__line
-          ||
-        .railway__list__box
-          %a.railway__list__box__station4{:href => ""} 御徒町
-        .railway__list__line
-          ||
-        .railway__list__box
-          %a.railway__list__box__station5{:href => ""} 秋葉原
-    .railway
-      .railway__name
-        京浜東北・根岸線
-      .railway__list
-        .railway__list__box
-          %a.railway__list__box__station1{:href => ""} 日暮里
-        .railway__list__line
-          ||
-        .railway__list__box
-          %a.railway__list__box__station2{:href => ""} 鶯谷
-        .railway__list__line
-          ||
-        .railway__list__box
-          %a.railway__list__box__station3.railsway__list__box__station3--emphasis{:href => ""} 上野
-        .railway__list__line
-          ||
-        .railway__list__box
-          %a.railway__list__box__station4{:href => ""} 御徒町
-        .railway__list__line
-          ||
-        .railway__list__box
-          %a.railway__list__box__station5{:href => ""} 秋葉原
-    .railway
-      .railway__name
-        常磐快速線
-      .railway__list
-        .railway__list__box
-          %a.railway__list__box__station1{:href => ""} 三河島
-        .railway__list__line
-          ||
-        .railway__list__box
-          %a.railway__list__box__station2{:href => ""} 日暮里
-        .railway__list__line
-          ||
-        .railway__list__box
-          %a.railway__list__box__station3.railsway__list__box__station3--emphasis{:href => ""} 上野
-        .railway__list__line
-          ||
-        .railway__list__box
-          %a.railway__list__box__station4{:href => ""} 　　
-        .railway__list__line
-          ||
-        .railway__list__box
-          %a.railway__list__box__station5{:href => ""} 　　
+        =railway.name
+        .railway__list
+          -for i in 0..@stations[n].length-1
+            .railway__list__box
+              =@stations[n][i].name
+            .railway__list__line
+              ||
+
   .right-content
     .chat-header
       .chat-header__name
