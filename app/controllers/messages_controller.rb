@@ -7,14 +7,13 @@ class MessagesController < ApplicationController
     @station = set_station
     # その駅の属する路線の情報を全て取得
     @railways = @station.railways
-
     # 路線ごとに、その駅の前後2駅を取得。多次元で実装する。
     # 例: [東海道線[東京,新橋,品川...], 山手線[秋葉原,神田,東京,有楽町,新橋],...]
     @stations = Array.new(@railways.length)
     for i in 0..@stations.length-1
       # その路線における、ユーザが選択した駅の順番
-      stations_railways_id = @station.station_railways.where("railway_id = ?", @railways[i].id).pluck(:order)[0]
-      @stations[i] = Station.joins(:station_railways).where("station_railways.railway_id = ? AND station_railways.order BETWEEN ? AND ? " , @railways[i].id, stations_railways_id-2, stations_railways_id+2)
+      station_railways_id = @station.station_railways.where("railway_id = ?", @railways[i].id).pluck(:order)[0]
+      @stations[i] = Station.joins(:station_railways).where("station_railways.railway_id = ? AND station_railways.order BETWEEN ? AND ? " , @railways[i].id, station_railways_id-2, station_railways_id+2)
     end
   end
 
@@ -59,8 +58,9 @@ class MessagesController < ApplicationController
   private
   def set_station
     # ユーザが検索した駅の情報を取得
-    stname = params.permit(:name)
-    station = Station.find_by(stname)
+    stname = params.permit(:station_id)
+    station = Station.find(stname[:station_id])
+    return station
   end
   def message_params
     params.require(:message).permit(:body).merge(params.permit(:station_id)).merge(user_id: current_user.id)
