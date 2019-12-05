@@ -3,7 +3,7 @@
 = content_for :gmap do
   = google_maps_api_script_tag
 = content_for :js do
-  = javascript_include_tag 'railways/index'
+  = javascript_include_tag 'railways/index','stations/index'
 .notifications
   - flash.each do |key, value|
     = content_tag(:div, value, class: key)
@@ -18,9 +18,9 @@
   .right-content
     %h6 チャット
     .form__chat
-      = form_for :current_user, url: station_messages_path(10),html: {method: 'GET'} do |f| # ()の中は相談@stationsになる予定 -> フォームの中の文字を渡すだけで駅のidは不要だから(0)のままでいいよ by nakamura
-        = f.text_field :name,class: 'form__search__chat', placeholder: 'Choose a station'
-        = f.submit 'GO!', class: 'form__search__chat--go'
-    =link_to '編集画面をみる', " /users/:0/edit", method: :GET
-    =link_to '地図検索画面をみる', "/stations/:0", method: :GET
-    =link_to 'Chat画面をみる', "/stations/0/messages", method: :GET
+      = form_for :current_user, url: station_messages_path(0), html: {class: 'station-input-form', method: 'GET'} do |f| # ()の中は相談@stationsになる予定 -> フォームの中の文字を渡すだけで駅のidは不要だから(0)のままでいいよ by nakamura
+        .station-textfield
+          = f.text_field :name,class: 'station-textfield__textfield', placeholder: 'Choose a station'
+          .station-list
+        .station-submit
+          = f.submit 'GO!', class: 'station-submit__submitbtn'

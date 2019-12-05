@@ -86,21 +86,38 @@ html, body {
     margin-top: 100px;
     padding: 20px 50px 20px 40px;
   }
-  .form__search__chat{
-    float: left;
-    height: 100px;
-    width: 450px;
-    font-size: 30px;
+
+  .station-textfield{
+      height: 100px;
+      width: 450px;   
+      float: left;
+      &__textfield{
+        height: 100%;
+        width: 100%;   
+        font-size: 30px;
+      }
   }
-  .form__search__chat--go{
-    background-color: lightblue;
-    border: none;
-    color: white;
-    float: right;
-    font-size: 40px;
-    height: 100px;
-    margin-left: 15px;
-    padding: 0 30px;
+  .station-list{
+    &__station{
+      height: 40px;
+      width: 100%;   
+      font-size: 26px;
+      background-color: lightgray;
+      border: medium solid black;    
+    }
+  }
+
+.station-submit{
+    &__submitbtn{
+      background-color: lightblue;
+      border: none;
+      color: white;
+      float: right;
+      font-size: 40px;
+      height: 100px;
+      margin-left: 15px;
+      padding: 0 30px;
+    }
   }
 
   .notifications {
