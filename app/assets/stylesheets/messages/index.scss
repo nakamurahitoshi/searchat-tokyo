@@ -95,8 +95,19 @@ a {
   position: absolute;
   left: 90vw;
 }
+
+// お気に入りボタンのスタイル
 .chat-header__favorite-btn {
   font-size: 50px;
+  vertical-align: middle; 
+}
+// お気に入り駅ならば黄色にする
+.chat-header__favorite-btn--yes {
+  color: yellow;
+}
+// 非お気に入り駅ならば白色にする
+.chat-header__favorite-btn--no {
+  color: white;
 }
 .messages {
   padding: 10px 20px 10px 20px;

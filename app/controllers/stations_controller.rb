@@ -1,15 +1,16 @@
 class StationsController < ApplicationController
 include StationsHelper
-  # インクリメンタルサーチを行うindexアクション
+  # 駅名のインクリメンタルサーチを行うindexアクション
   def index
-    # ユーザが駅名を入力したら、その駅名を含む駅データをstationsテーブルから抽出する
+    # ユーザが駅名を入力したら、その駅名を含む(前方一致)駅データをstationsテーブルから抽出する
     # 何も入力していない場合はnilを返す
-    if params[:station_name] == ""
+    params.permit(:station_name_input)
+    input = params[:station_name_input]
+    if input == ""
       return nil
     else
-      # 部分一致した駅を表示
-      @stations = Station.where(["name LIKE ?", "%#{params[:station_name]}%"] ).limit(10)
-      
+      # 部分一致した駅を表示(最大10件)
+      @stations = Station.where(["name LIKE ?", "#{input}%"] ).limit(10)
       # html,jsonのリクエストに応じてレスポンスを返す
       respond_to do |format|
         format.html

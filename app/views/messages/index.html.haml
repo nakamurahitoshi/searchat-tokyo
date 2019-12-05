@@ -1,7 +1,7 @@
 = content_for :css do
   = stylesheet_link_tag "messages/index", :media => "all"
 = content_for :js do
-  = javascript_include_tag "messages/index"
+  = javascript_include_tag "messages/index", "users/create"
 .contents
   .left-content
     .railway
@@ -77,8 +77,10 @@
         .chat-header__commmon-name
           　えきのチャット
       .chat-header__btn
-        =link_to users_path, method: :post, class: "chat-header__favorite-btn" do
-          =fa_icon 'star'
+        -if current_user.station_id == @station.id
+          =fa_icon 'star', class: "chat-header__favorite-btn chat-header__favorite-btn--yes", data: {station_id: @station.id}
+        - else
+          =fa_icon 'star', class: "chat-header__favorite-btn chat-header__favorite-btn--no", data: {station_id: @station.id}
     .messages
       = render partial: 'message', collection: @messages
     .form

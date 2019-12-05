@@ -16,10 +16,24 @@ class UsersController < ApplicationController
 
   # ユーザのお気に入り駅を登録するcreateアクション
   def create
-    # お気に入りボタンをクリックしたら、その駅のidをユーザのDBレコードに登録する
-    favst_id = params.permit(:station_id)
-    # 既存のidがあればidを更新する
-    current_user.station_id = favst_id
+    params.permit(:station_id, :flag)
+    # お気に入り駅のIDを取得
+    station_id = params[:station_id]
+    # フラグにより、お気に入り登録(フラグ0)/解除(フラグ1)を分ける
+    if params[:flag].to_i == 0
+      # お気に入り登録操作
+      # ログイン中のユーザのお気に入り駅を更新する
+      current_user.station_id = station_id
+      # お気に入り駅を取得
+      @favorite_station = Station.find(station_id)
+    elsif params[:flag].to_i == 1
+      # お気に入り解除操作
+      # ログイン中のユーザのお気に入り駅idをnilにする
+      current_user.station_id = nil
+      # お気に入り駅にnilを代入
+      @favorite_station = nil
+    end
+    current_user.save
     # リクエストに応じて処理を分ける
     respond_to do |format|
       format.html

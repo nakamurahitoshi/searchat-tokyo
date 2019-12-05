@@ -1,3 +1,4 @@
+/// 行きたいところの場所名をオートコンプリートする機能のJavascript ///
 $(function() {
   // フォームとオートコンプリートを関連づける
   var input = $(".form__search__message").get(0);
