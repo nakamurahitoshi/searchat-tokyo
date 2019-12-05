@@ -18,9 +18,11 @@
         .username
           = current_user.name
         .userpoint
-          
+          myPoint
+          = current_user.point
+          Pt
         %ul.mystation
-          my station
+          myStation
           %li.mystation__body
             %a.btn__station-btn{:href => "/stations/#{current_user.station_id}/messages"}
               = current_user.station.name

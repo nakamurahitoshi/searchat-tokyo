@@ -86,5 +86,5 @@
       -#   %input{type: "text", placeholder: "type a message", class: "form__message"}
       -#   %input{type: "submit", value: "Send", class: "form__button"}
       = form_for [@station, @message], html: {class: 'form__box'} do |f|
-        = f.text_field :body, class: 'form__message', placeholder: 'type a message'
+        = f.text_field :body, class: 'form__message', placeholder: 'type a message', value: ''
         = f.submit 'Send', class: 'form__button'
