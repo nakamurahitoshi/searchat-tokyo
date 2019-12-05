@@ -62,6 +62,7 @@ class MessagesController < ApplicationController
     station = Station.find(stname[:station_id])
     return station
   end
+
   def message_params
     params.require(:message).permit(:body).merge(params.permit(:station_id)).merge(user_id: current_user.id)
   end
