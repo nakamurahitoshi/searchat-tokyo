@@ -1,4 +1,4 @@
-.message{"data-messageid": "#{message.id}"}
+.message{"data-messageid": "#{message.id}", "data-user_id": "#{message.user.id}"}
   .message__info
     .message__username
       = message.user.name
@@ -8,3 +8,5 @@
     - if message.body.present?
       %p.message__text
         = message.body
+      %p.message__text
+        = link_to (message.body).split(/[#]/)[1], station_message_path(station_id: @station.id, id: message.id, user_id: message.user.id, keyword: (message.body).split(/[#]/)[1]), class: "message__text_hashtag", method: 'GET'

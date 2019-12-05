@@ -2,9 +2,9 @@ class MessagesController < ApplicationController
   # 路線図と駅チャット画面を表示するindexアクション
   def index
     @message = Message.new
-    # @messages = @station.messages.includes(:user)
     # 駅情報を取得
     @station = set_station
+    @messages = @station.messages
     # その駅の属する路線の情報を全て取得
     @railways = @station.railways
     # 路線ごとに、その駅の前後2駅を取得。多次元で実装する。
@@ -47,11 +47,11 @@ class MessagesController < ApplicationController
   # 投稿ユーザにポイントを加算し地図と目的地を表示するshowアクション
   def show
     # 投稿ユーザにポイントを1加算する
-    user = User.find(params.permit(:user_id))
+    user = User.find((params.permit(:user_id))[:user_id])
     user.point = user.point + 1
     user.save
     # statonsコントローラ#showアクションにハッシュタグ文を渡してリダイレクトする
-    redirect_to station_path(destination: message_params[:body])
+    redirect_to station_path(destination: (params.permit(:keyword))[:keyword])
   end
   
   # name=station[:name]というタグに入力された文字が送信されるため、このような取得方法が必要

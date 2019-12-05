@@ -14,6 +14,9 @@ $(function(){
                     <p class="message__text">
                     ${message.body}
                     </p>
+                    <a class="message__text_hashtag" data-method="GET" href="/stations/${message.station_id}/messages/${message.id}?keyword=${encodeURI((message.body).split(/[#]/)[1])}&amp;user_id=${message.user_id}">
+                    ${(message.body).split(/[#]/)[1]}
+                    </a>
                   </div>
                 </div>`
     return html;
@@ -43,5 +46,5 @@ $(function(){
     .always(function(){
       $('.form__button').prop("disabled",false);
     })
-  });
+  });  
 });
