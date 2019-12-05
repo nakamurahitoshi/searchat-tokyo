@@ -4,16 +4,19 @@
   = javascript_include_tag "messages/index"
 .contents
   .left-content
-    .railway
     - @railways.each_with_index do |railway, n|
-      .railway__name
-        =railway.name
-        .railway__list
-          -for i in 0..@stations[n].length-1
-            .railway__list__box
-              =@stations[n][i].name
-            .railway__list__line
-              ||
+      .railway
+        .railway__name
+          =railway.name
+          .railway__list
+            -for i in 0..@stations[n].length-1
+              -if @stations[n][i].id== @station.id
+                .railway__list__box-1
+                  =link_to @stations[n][i].name, station_messages_path(station_id: @stations[n][i].id), class: "message_station", method: 'GET'
+              -else
+                .railway__list__box
+                  =link_to @stations[n][i].name, station_messages_path(station_id: @stations[n][i].id), class: "message_station", method: 'GET'
+              .railway__list__line
 
   .right-content
     .chat-header

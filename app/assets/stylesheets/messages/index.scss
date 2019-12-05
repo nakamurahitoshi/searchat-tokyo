@@ -33,23 +33,31 @@ html, body {
   text-align: center;
 }
 .railway__list {
-  height: 480px;
-  // width: 100px;
-  font-size: 2.1vmin;
-  background-color: yellow;
-  box-sizing: border-box;
-  white-space: nowrap;
-  padding: 10px;
-  float: left;
-  position: relative;
-  left: 10%;
+  margin: 2em 25px;
+  padding: 1em;
+  background-color: #fff59d;
+  border: dashed 3px #fdd835;
+  box-shadow: 0 0 0 10px #fff59d, 0 0 0 25px #fdd835;
+  border-radius: 3px;
 }
 .railway__list__box {
-  height: 50px;
-  line-height: 50px;
-  text-align: center;
-  border: solid 1px green;
-  padding: 0 5px;
+  margin: 1em 0;
+  padding: 1em;
+  box-shadow: 0 0 3px 3px #b2ff59, 0 0 3px 2px #b2ff59 inset;
+  border-radius: 10px;
+  background: #f9fbe7;
+  //height: 50px;
+  //line-height: 50px;
+  //text-align: center;
+  //border: solid 1px green;
+  //padding: 0 5px;
+}
+.railway__list__box-1 {
+  margin: 1em 0;
+  padding: 1em;
+  box-shadow: 0 0 3px 3px #e57373, 0 0 3px 2px #e57373 inset;
+  border-radius: 10px;
+  background: #f9fbe7;
 }
 a {
   text-decoration: none;
