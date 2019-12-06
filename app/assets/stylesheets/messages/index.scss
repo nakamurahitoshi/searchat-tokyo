@@ -2,6 +2,7 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
+  font-family: 'Hiragino Maru Gothic Pro'
 }
 
 .contents {
@@ -41,7 +42,7 @@ html, body {
   border-radius: 3px;
 }
 .railway__list__box {
-  margin: 1em 0;
+  margin: 5px 0;
   padding: 1em;
   box-shadow: 0 0 3px 3px #b2ff59, 0 0 3px 2px #b2ff59 inset;
   border-radius: 10px;
@@ -53,7 +54,7 @@ html, body {
   //padding: 0 5px;
 }
 .railway__list__box-1 {
-  margin: 1em 0;
+  margin: 5px 0;
   padding: 1em;
   box-shadow: 0 0 3px 3px #e57373, 0 0 3px 2px #e57373 inset;
   border-radius: 10px;
@@ -63,8 +64,18 @@ a {
   text-decoration: none;
 }
 .railway__list__line {
-  height: 50px;
-  line-height: 50px;
+  height: 15px;
+  line-height: 15px;
+  text-align: center;
+}
+.railway__list__line-1 {
+  height: 200px;
+  line-height: 40px;
+  text-align: center;
+}
+.railway__list__line-2 {
+  height: 120px;
+  line-height: 40px;
   text-align: center;
 }
 .railsway__list__box__station3--emphasis {
