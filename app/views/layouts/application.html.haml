@@ -17,10 +17,12 @@
       .header
         .username
           = current_user.name
-        .userpoint
+        %ul.userpoint
           myPoint
-          = current_user.point
-          Pt
+          %li.userpoint__body
+            = current_user.point
+          %li.userpoint__unit
+            pt
         %ul.mystation
           myStation
           %li.mystation__body
