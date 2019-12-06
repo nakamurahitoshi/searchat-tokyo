@@ -19,19 +19,32 @@ html, body {
   font-size: 30px;
 }
 .userpoint {
+  display: flex;
   position: absolute;
   bottom: 10px;
-  left: 170px;
+  left: 50px;
+  font-size: 20px;
+  &__body {
+    margin-left: 20px;
+    font-weight: bold;
+  }
+  &__unit {
+    margin-left: 5px;
+  }
+}
+.mystation {
+  position: absolute;
+  left: 40%;
   font-size: 20px;
 }
-ul {
-  margin-left: 25%;
-  font-size: 20px;
-}
-li {
+.mystation__body {
   list-style: none;
   font-size: 30px;
   margin-left: 20px;
+  color: yellow;
+}
+.btn__station-btn {
+  text-decoration: none;
   color: yellow;
 }
 .btn {
