@@ -1,4 +1,4 @@
-= content_for :css do
+= content_for :css do 
   = stylesheet_link_tag "messages/index", :media => "all"
 = content_for :js do
   = javascript_include_tag "messages/index", "users/create"
@@ -9,15 +9,28 @@
         .railway__name
           =railway.name
           .railway__list
+            -if @stations[n][0].id== @station.id
+              .railway__list__line-1
+              //i=1が存在するときの場合わけはのちほど考えることにする
+            -if @stations[n][1].id== @station.id
+              .railway__list__line-2
             -for i in 0..@stations[n].length-1
+              .railway__list__line
+                ‡
               -if @stations[n][i].id== @station.id
                 .railway__list__box-1
                   =link_to @stations[n][i].name, station_messages_path(station_id: @stations[n][i].id), class: "message_station", method: 'GET'
+                .railway__list__line
+                  ‡
               -else
                 .railway__list__box
                   =link_to @stations[n][i].name, station_messages_path(station_id: @stations[n][i].id), class: "message_station", method: 'GET'
-              .railway__list__line
-
+                .railway__list__line
+                  ‡
+            -if @stations[n][@stations[n].length-1].id == @station.id && @stations[n].length == 3
+              .railway__list__line-1
+            -if (@stations[n][@stations[n].length-2].id == @station.id && @stations[n].length == 4)||(@stations[n][@stations[n].length-2].id == @station.id && @stations[n].length == 3)
+              .railway__list__line-2
   .right-content
     .chat-header
       .chat-header__name
