@@ -1,12 +1,32 @@
-.message{"data-messageid": "#{message.id}", "data-user_id": "#{message.user.id}"}
-  .message__info
-    .message__username
-      = message.user.name
-    .message__date
-      = message.created_at.strftime("%Y/%m/%d %H:%M")
-  .message__body
-    - if message.body.present?
-      %p.message__text
-        = message.body
-      %p.message__text
-        = link_to (message.body).split(/[#]/)[1], station_message_path(station_id: @station.id, id: message.id, user_id: message.user.id, keyword: (message.body).split(/[#]/)[1]), class: "message__text_hashtag", method: 'GET'
+-if current_user.id == message.user.id
+  .message1{"data-messageid": "#{message.id}", "data-user_id": "#{message.user.id}"}
+    .message1__info
+      .message1__username
+        = message.user.name
+      .message1__date
+        = message.created_at.strftime("%Y/%m/%d %H:%M")
+      -if current_user.id == message.user.id
+        %div{class: "btn__delete-btn", data:{station_id: @station.id, message_id: message.id}}
+          削除
+    .message1__body
+      - if message.body.present?
+        %p.message1__text
+          = message.body
+        %p.message1__text
+          = link_to (message.body).split(/[#]/)[1], station_message_path(station_id: @station.id, id: message.id, user_id: message.user.id, keyword: (message.body).split(/[#]/)[1]), class: "message1__text_hashtag", method: 'GET'
+-else
+  .message{"data-messageid": "#{message.id}", "data-user_id": "#{message.user.id}"}
+    .message__info
+      .message__username
+        = message.user.name
+      .message__date
+        = message.created_at.strftime("%Y/%m/%d %H:%M")
+      -if current_user.id == message.user.id
+        %div{class: "btn__delete-btn", data:{station_id: @station.id, message_id: message.id}}
+          削除
+    .message__body
+      - if message.body.present?
+        %p.message__text
+          = message.body
+        %p.message__text
+          = link_to (message.body).split(/[#]/)[1], station_message_path(station_id: @station.id, id: message.id, user_id: message.user.id, keyword: (message.body).split(/[#]/)[1]), class: "message__text_hashtag", method: 'GET'
