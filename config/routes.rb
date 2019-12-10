@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   # 非同期で駅をお気に入り登録するためのルーティング(deviseのuserとかち合うため、URIを変更)
   get '/users/create', to: 'users#create'
   resources :stations, only: [:index, :show] do
-    resources :messages, only: [:index, :create, :show]
+    resources :messages, only: [:index, :create, :show, :destroy]
   end
   resources :railways, only: [:index, :update]
   resources :users, only: [:edit, :update, :create] 

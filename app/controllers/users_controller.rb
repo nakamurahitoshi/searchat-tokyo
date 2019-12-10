@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 
   # ユーザ情報を変更するupdateアクション
   def update
-     # current_userに対して更新が成功したらルートに戻り、
+    # current_userに対して更新が成功したらルートに戻り、
     # そうでなければ編集画面に戻る
     if current_user.update(user_params)
       redirect_to root_path
