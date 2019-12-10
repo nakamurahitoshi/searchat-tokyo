@@ -6,67 +6,172 @@ html, body {
 
 .header {
   background-color: #bbb;
-  height: 100px;
+  height: 140px;
   width: 100%;
-  padding-left: 50px;
+  padding-left: 30px;
   display: flex;
   box-sizing: border-box;
   position: relative;
 }
 .username {
-  line-height: 90px;
-  color: blue;
+  line-height: 70px;
   font-size: 30px;
 }
 .userpoint {
   display: flex;
   position: absolute;
-  bottom: 10px;
+  top: 60px;
   left: 50px;
   font-size: 20px;
-  &__body {
-    margin-left: 20px;
-    font-weight: bold;
+  &__mark {
+    color: pink;
+    font-size: 30px;
+    position: relative;
+    bottom: 10px;
   }
-  &__unit {
+  &__times {
+    font-size: 15px;
+    position: relative;
+    top: 5px;
+  }
+  &__body {
+    font-weight: bold;
+    font-size: 20px;
+  }
+  &__level {
+    margin-left: 20px;
+    font-size: 30px;
+    position: relative;
+    bottom: 10px;
+  }
+  &__level-number {
     margin-left: 5px;
+    font-weight: bold;
+    font-size: 30px;
+    position: relative;
+    bottom: 10px;
+  }
+  &__level-info {
+    position: relative;
+    right: 160px;
+    top: 30px;
   }
 }
+.user-btn {
+  &__edit-icon {
+    position: relative;
+    height: 40px;
+    top: 10px;
+    font-size: 30px;
+    margin-left: 20px;
+    color: springgreen;
+  }
+  &__edit-name {
+    position: relative;
+    height: 15px;
+    top: 42px;
+    font-size: 10px;
+    right: 35px;
+    text-decoration: none;
+    color: black;
+
+  }
+}
+
 .mystation {
   position: absolute;
-  left: 40%;
+  left: 35%;
   font-size: 20px;
 }
-.mystation__body {
+.mystation-header {
+  margin-left: 10px;
+  font-size: 15px;
+}
+.mystation-body {
+  border: solid 3px;
+  height: 95px;
+  padding: 5px;
+}
+.mystation-top {
+  display: flex;
+}
+.mystation-mark {
+  height: 50px;
+  width: 30px;
+  background-color: black;
+  text-align: center;
+  border-radius: 5px;
+  &__header {
+    font-size: 10px;
+    color: white;
+  }
+  &__body {
+    background-color: white;
+    font-size: 10px;
+    border: solid 3px green;
+    border-radius: 5px;
+  }
+}
+.mystation__name {
   list-style: none;
   font-size: 30px;
-  margin-left: 20px;
   color: yellow;
+  margin-left: 5px;
 }
 .btn__station-btn {
   text-decoration: none;
   color: yellow;
 }
+.mystation-shape {
+  height: 20px;
+  width: 100%;
+  background-color: green;
+  bottom: 30px;
+  margin-top: 5px;
+  &__square {
+    height: 20px;
+    width: 20px;
+    background-color: lightgreen;
+    margin: auto;
+  }
+}
+.mystation-footer {
+  font-size: 15px;
+  bottom: 0;
+  text-align: center;
+}
+
 .btn {
-  position: absolute;
-  right: 0;
-  top: 70px;
+  display: flex;
+  position: relative;
+  left: 50%;
+  top: 100px;
   margin-right: 30px;
   font-size: 20px;
 }
-.btn__edit-btn {
-  margin-right: 50px;
-  color: green;
+// .btn-top {}
+.btn-top__icon {
+  color: springgreen;
+  font-size: 30px;
+}
+.btn-top__btn {
+  text-decoration: none;
+  margin-right: 30px;
+}
+// .btn-logout {}
+.btn-logout__icon {
+  color: springgreen;
+  font-size: 30px;
+}
+.btn-logout__btn {
+  text-decoration: none;
 }
 
-.btn__top-btn {
-  color: red;
-}
-.btn__update-btn {
-  margin-left: 30px;
-  color: orange;
-}
-.message-current__date__btn {
-  color: orange;
-  margin-left: 30px;
-}
+// &__edit-name {
+//   position: relative;
+//   height: 15px;
+//   top: 42px;
+//   font-size: 10px;
+//   right: 35px;
+//   text-decoration: none;
+//   color: black;

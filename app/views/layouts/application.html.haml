@@ -17,21 +17,88 @@
       .header
         .username
           = current_user.name
-        %ul.userpoint
-          myPoint
-          %li.userpoint__body
-            = current_user.point
-          %li.userpoint__unit
-            pt
-        %ul.mystation
-          myStation
-          %li.mystation__body
-            -if current_user.station_id != nil
-              %a.btn__station-btn{:href => "/stations/#{current_user.station_id}/messages"}
-                = current_user.station.name
+        .userpoint
+          .userpoint__mark
+            = fa_icon 'heart'
+          .userpoint__times
+            = fa_icon 'times'
+          .userpoint__body
+            =current_user.point
+          .userpoint__level
+            Lv.
+          -if current_user.point < 100
+            .userpoint__level-number
+              1
+            .userpoint__level-info
+              ( あと#{fa_icon 'heart'}#{100 - current_user.point}でレベルアップ )
+          -elsif current_user.point < 200
+            .userpoint__level-number
+              2
+            .userpoint__level-info
+              ( あと#{fa_icon 'heart'}#{200 - current_user.point}でレベルアップ )
+          -elsif current_user.point < 300
+            .userpoint__level-number
+              3
+            .userpoint__level-info
+              ( あと#{fa_icon 'heart'}#{300 - current_user.point}でレベルアップ )
+          -elsif current_user.point < 400
+            .userpoint__level-number
+              4
+            .userpoint__level-info
+              ( あと#{fa_icon 'heart'}#{400 - current_user.point}でレベルアップ )
+          -elsif current_user.point < 500
+            .userpoint__level-number
+              5
+            .userpoint__level-info
+              ( あと#{fa_icon 'heart'}#{500 - current_user.point}でレベルアップ )
+          -else current_user.point >= 500
+            .userpoint__level-number
+              Max
+            .userpoint__level-info
+              Tokyoますたー
+
+        .user-btn
+        %a.user-btn__edit-icon{:href => "/users/#{current_user.id}/edit"}
+          = fa_icon 'cog'
+        %a.user-btn__edit-name{:href => "/users/#{current_user.id}/edit"} へんしゅう
+
+        .mystation
+          .mystation-header
+            お気に入りのえき
+          .mystation-body
+            .mystation-top
+              .mystation-mark
+                .mystation-mark__header
+                  EKI
+                .mystation-mark__body
+                  -if current_user.station_id != nil
+                    My
+                    %br
+                    01
+              %li.mystation__name
+                -if current_user.station_id != nil
+                  %a.btn__station-btn{:href => "/stations/#{current_user.station_id}/messages"}
+                    = current_user.station.name
+                -else
+                  .mystation__name__nil
+                    お気に入りの駅を登録できます
+            .mystation-shape
+              .mystation-shape__square
+            .mystation-footer
+              -if current_user.station_id != nil
+                .mystation-footer__not-nil
+                  ↑↑駅名をクリックするとチャットに飛べるよ
+              -else
+                .mystation__body__nil
+                  チャット画面の#{fa_icon 'star'}をクリックしてね
           
         .btn
-          %a.btn__edit-btn{:href => "/users/#{current_user.id}/edit"} Edit
-          %a.btn__top-btn{:href => "/"} TOP
-          =link_to "UPDATE", "/railways/0", class: "btn__update-btn", method: 'PATCH' # ここだけHTTPメソッドをPATCHに指定する必要があったので、aタグからlink_toに変更しました by nakamura
+          .btn-top
+          %a.btn-top__icon{:href => "/"}
+            = fa_icon 'home'
+          %a.btn-top__btn{:href => "/"} トップ
+          .btn-logout
+          %a.btn-logout__icon{:href => "/users/sign_out"}
+            = fa_icon 'sign-out'
+          %a.btn-logout__btn{:href => "/users/sign_out"} ログアウト
     = yield
