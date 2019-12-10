@@ -8,9 +8,9 @@
       = form_for(current_user) do |f|
         .field
           .field-label
-            = f.label :なまえ
+            = f.label :なまえ（８文字以内）
           .field-input
-            = f.text_field :name, autofocus: true
+            = f.text_field :name, maxlength:8, autofocus: true
         .field
           .field-label
             = f.label :メール

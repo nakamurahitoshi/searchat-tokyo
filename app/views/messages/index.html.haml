@@ -6,14 +6,20 @@
   .left-content
     - @railways.each_with_index do |railway, n|
       .railway
+        -if n == 0
+          .railway__name__length
+            ="路線数#{@railways.length}"
+        -else
+          .railway__name__none
         .railway__name
           =railway.name
           .railway__list
             -if @stations[n][0].id== @station.id
               .railway__list__line-1
               //i=1が存在するときの場合わけはのちほど考えることにする
-            -if @stations[n][1].id== @station.id
-              .railway__list__line-2
+            -if @stations[n].length > 1
+              -if @stations[n][1].id== @station.id
+                .railway__list__line-2
             -for i in 0..@stations[n].length-1
               .railway__list__line
                 ‡
