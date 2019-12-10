@@ -21,7 +21,7 @@
           .field
             .field-label
               = f.label :パスワード
-              %i (数字6文字)
+              %i (半角英数字８文字以上)
             .field-input
               = f.password_field :password, autocomplete: "off"
             .actions

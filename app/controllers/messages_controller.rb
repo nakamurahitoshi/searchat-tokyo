@@ -46,14 +46,30 @@ class MessagesController < ApplicationController
 
   # 投稿ユーザにポイントを加算し地図と目的地を表示するshowアクション
   def show
-    # 投稿ユーザにポイントを1加算する
     user = User.find((params.permit(:user_id))[:user_id])
-    user.point = user.point + 1
-    user.save
-    # statonsコントローラ#showアクションにハッシュタグ文を渡してリダイレクトする
-    redirect_to station_path(destination: (params.permit(:keyword))[:keyword])
+    if current_user.id == user.id
+      # statonsコントローラ#showアクションにハッシュタグ文を渡してリダイレクトする
+      redirect_to station_path(destination: (params.permit(:keyword))[:keyword])
+    else
+      # 投稿ユーザにポイントを1加算する
+      user.point = user.point + 1
+      user.save
+      # statonsコントローラ#showアクションにハッシュタグ文を渡してリダイレクトする
+      redirect_to station_path(destination: (params.permit(:keyword))[:keyword])
+    end
   end
-  
+
+  def destroy
+    message = Message.find(params[:id])
+    message.destroy
+    respond_to do |format|
+      format.html{
+        redirect_to station_messages_path(params[:station_id])
+      }
+      format.json 
+    end
+  end
+
   # name=station[:name]というタグに入力された文字が送信されるため、このような取得方法が必要
   private
   def set_station

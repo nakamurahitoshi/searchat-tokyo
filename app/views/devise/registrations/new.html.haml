@@ -21,13 +21,12 @@
             = f.email_field :email, autofocus: true, autocomplete: "email"
         .field
           .field-label
-            = f.label :なまえ
+            = f.label :なまえ（８文字以内）
           .field-input
-            = f.text_field :name, autofocus: true, autocomplete: "name"
+            = f.text_field :name, maxlength:8, autofocus: true, autocomplete: "name"
         .field
           .field-label
-            = f.label :パスワード
-            %i (数字6文字)
+            = f.label :パスワード（半角英数字８文字以上）
           .field-input
             = f.password_field :password, autocomplete: "off"
         .field
