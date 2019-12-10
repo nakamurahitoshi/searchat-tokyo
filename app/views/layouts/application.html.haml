@@ -100,5 +100,5 @@
           .btn-logout
           %a.btn-logout__icon{:href => "/users/sign_out"}
             = fa_icon 'sign-out'
-          %a.btn-logout__btn{:href => "/users/sign_out"} ログアウト
+          %a.btn-logout__btn{:href => "/users/sign_out"}(data-method="delete") ログアウト
     = yield
