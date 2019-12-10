@@ -10,7 +10,7 @@ include StationsHelper
       return nil
     else
       # 部分一致した駅を表示(最大10件)
-      @stations = Station.where(["name LIKE ?", "#{input}%"] ).limit(10)
+      @stations = Station.where(["name LIKE ?", "#{input}%"]).limit(10)
       # html,jsonのリクエストに応じてレスポンスを返す
       respond_to do |format|
         format.html
@@ -34,8 +34,8 @@ include StationsHelper
     lat = params[:lat].to_f
     lng = params[:lng].to_f
     @stations = Station.where("lat BETWEEN ? and ? AND lng BETWEEN ? and ?", (lat - 0.1), (lat + 0.1), (lng - 0.1), (lng + 0.1))
-    # 現在地から最も近い距離にある駅を検索する
-    @station = search_nearest_station(lat, lng, @stations)
+    # 現在地から近い順に駅とその駅までの距離を検索する
+    @nearby_station = search_nearby_station(lat, lng, @stations)
     # jsonのリクエストに応じてレスポンスを返す
     respond_to do |format|
       format.json

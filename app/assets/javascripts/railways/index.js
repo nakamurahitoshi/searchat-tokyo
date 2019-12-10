@@ -1,5 +1,17 @@
-/// 行きたいところの場所名をオートコンプリートする機能のJavascript ///
+/// 行きたいところの場所名をオートコンプリート・空白送信防止、の機能のJavascript ///
 $(function() {
+  // 行き先が空白のときはGoボタンを無効化する
+  $(".form__search__message").on("keyup" ,function(){
+  // 入力フォームが空白にならなくなったら、Goボタンを有効化する
+  if ($(this).val() != ""){
+    //Goボタンのdisalbedを外す
+    $(".form__search__message--go").prop("disabled", false);
+  }else{
+    //Goボタンにdisalbedを設定する
+    $(".form__search__message--go").prop("disabled", true);
+  }
+});
+
   // フォームとオートコンプリートを関連づける
   var input = $(".form__search__message").get(0);
   var options = {

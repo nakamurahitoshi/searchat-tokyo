@@ -58,24 +58,34 @@ module StationsHelper
     end
   end
 
-  # 現在地の緯度経度をもとに、最も近くにある駅を検索する
-  def search_nearest_station(now_lat, now_lng, stations)
-    # 最短距離とその時のインデクスを格納しておく変数
-    nearest_dist = 10000.0
-    nearest_idx = 0
+  # 現在地の緯度経度をもとに、近くにある駅を検索する
+  def search_nearby_station(now_lat, now_lng, stations)
+    # 検索する最寄駅数。
+    station_num = 3
+    # 距離とインデクスを格納しておく変数
+    stations_indexes = []
     stations.each_with_index do |station, i|
       st_lat = station.lat.to_f
       st_lng = station.lng.to_f
-      dist = Math.sqrt((st_lat - now_lat)*(st_lat - now_lat) + (st_lng - now_lng) * (st_lng - now_lng))
-      # 最短距離の更新
-      if dist < nearest_dist
-        nearest_dist = dist
-        nearest_idx = i
+      # 緯度・経度を元に2地点間の距離を計算(km->mに変換して)
+      dist = calcDist(st_lat, st_lng, now_lat, now_lng) * 1000
+      #dist = Math.sqrt((st_lat - now_lat)*(st_lat - now_lat) + (st_lng - now_lng) * (st_lng - now_lng))
+      stations_indexes << {dist: dist,index: i}
+    end
+    # 現在地から近い順にstation_num個の駅を返戻する
+    # ソート
+    stations_indexes.sort!{|a,b| a[:dist]<=>b[:dist]}
+    # 返す駅の配列
+    return_stations = Array.new(station_num)
+    for i in 0..station_num-1 do
+      if stations_indexes[i] != nil
+        # 駅オブジェクトと駅までの距離を配列に格納
+        return_stations[i] = {stobj: stations[stations_indexes[i][:index]], dist:stations_indexes[i][:dist]}
+      else
+        return_stations[i] = nil
       end
     end
-    # 現在地から最も近い距離の駅を返戻
-    
-    return stations[nearest_idx]
+    return return_stations
   end
 
   private
