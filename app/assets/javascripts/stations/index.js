@@ -1,8 +1,10 @@
 /// 駅名をインクリメンタルサーチ(非同期通信)する機能のJavascript ///
 $(function() {
+  // 存在する駅名
+  var station_name = "";
+
   // 駅入力フォームのオートコンプリート機能をoffにする
   $(".station-textfield__textfield").attr("autocomplete", "off");
-
 
   // 駅一覧がクリックされたら駅名がフォームに入力され、<form>タグの"action"がその駅のidになるようにする
   function addClickEventListener() {
@@ -10,13 +12,15 @@ $(function() {
       // 駅idを取得
       var station_id = $(this).data("station-id");
       // 駅名を取得
-      var station_name = $(this).children("p").text();
+      station_name = $(this).children("p").text();
       // テキストフォームに駅名を入れる
       $(".station-textfield__textfield").val(station_name);
       // テキストフォームのactionタグに駅idを入れる
       $(".station-input-form").attr("action", `/stations/${station_id}/messages`);
       // 検索結果一覧を削除
       $(".station-list").empty();
+      //Goボタンのdisalbedを解除する
+      $(".station-submit__submitbtn").prop("disabled", false);
     });
   }
 
@@ -39,10 +43,19 @@ $(function() {
     `;
     $(".station-list").append(html);
   }
+  function changeTextMonitoring(){
+    console.log("changed")
+    // テキストフォームの駅名が有効な駅名から変わったら送信ボタンをdisableにする
+      if ($(".station-textfield__textfield").val() != station_name){
+      //Goボタンにdisalbedを設定する
+      $(".station-submit__submitbtn").prop("disabled", true);
+    }
+  }
 
   // テキストフォームに文字が入力されるたびに非同期通信を実行
   $(".station-textfield__textfield").on("keyup" ,function(event){
     var keycode = (event.keyCode ? event.keyCode : event.which);
+
     // backspaceキーまたはenterキーが押されたらアクションを実行する
     if(keycode == "8" || keycode == "13"){
       // フォームに入力された値を取得
@@ -55,18 +68,20 @@ $(function() {
         dataType: "json"
       })  
       .done(function(stations) {
-        //既存の結果一覧を削除
+        // 既存の結果一覧を削除
         $(".station-list").empty();
-        
       if (stations.length == 0) {
-        // 取得された駅が0件なら、駅が無い旨を表示
-        addNoStation();
+        // フォームが空白でない時に駅が無い旨を表示
+        if ($(".station-textfield__textfield").val() != "" ){
+          // 取得された駅が0件なら、駅が無い旨を表示
+          addNoStation();
+          }
         } else {
           //インクリメンタルサーチで取得した駅一覧をフォームの下に表示
           stations.forEach(function(station){
             addStationToList(station);
           });
-          // 駅一覧をクリックするとその駅の情報がフォームに入るようにする
+          // 駅一覧をクリックするとその駅の情報がフォームに入り、Goボタンのdisableを解除する
           addClickEventListener();
         }
       })
@@ -75,4 +90,6 @@ $(function() {
       });
     }
   });
+  // 有効な駅名から変化してしまったら送信できないようにする
+  setInterval(changeTextMonitoring, 300);
 });

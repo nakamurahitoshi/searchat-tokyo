@@ -68,64 +68,44 @@
         dataType: "json",
         data: { lat: result[0].geometry.location.lat(),lng: result[0].geometry.location.lng()}
       })
-        //最寄駅のデータが返ってくる
-        .done(function(station) {
-          // 最寄駅の駅チャット画面にリンクするhtmlタグを作成し、result__stationクラスのdivタグに追加する
-          // 複数のhtmlが入るようにする
-          var html = `<a href="/stations/${station.id}/messages">${station.name}駅</a>`;
-          $(".result__station").append(html);
-          /// 検索した駅にマーカーを立てる
-          // マーカーオブジェクトの生成
-          marker = new google.maps.Marker({
-            map: map,
-            position: {lat: station.lat, lng: station.lng},
-            label: {
-              text: `${station.name}駅はここ`,                           //ラベル文字
-              color: '#32CD32',                    //文字の色
-              fontSize: '16px'                     //文字のサイズ
+        // 現在地から近い順に最大3駅のデータが返ってくる
+        .done(function(stations) {
+          // 付近の駅が1つ以上取得できたら最寄駅の駅チャット画面にリンクするhtmlタグを作成し、
+          // result__stationクラスのdivタグに追加する
+          if(stations[0].name != null){
+            stations.forEach(function(station, index){
+              if(station.name != null){
+              var html = `${index+1}番目に近い駅 : <a href="/stations/${station.id}/messages">${station.name}駅</a> (ここから${station.dist}m) <br>`;
+              $(".result__station").append(html);
+              /// 検索した駅にマーカーを立てる
+              // マーカーオブジェクトの生成
+              marker = new google.maps.Marker({
+                map: map,
+                position: {lat: station.lat, lng: station.lng},
+                label: {
+                  text: `${station.name}駅はここ`,                           //ラベル文字
+                  color: '#32CD32',                    //文字の色
+                  fontSize: `${16-index}px`                     //文字のサイズ
+                }
+              })
+              // マーカーをクリックしたら場所の名前を表示するよう設定
+              google.maps.event.addListener(marker, 'click', function() {
+                // 場所の名前と住所
+                infowindow.setContent(station.name);
+                infowindow.open(map, this);
+              });
+              markers.push(marker);
             }
           })
-          // マーカーをクリックしたら場所の名前を表示するよう設定
-          google.maps.event.addListener(marker, 'click', function() {
-            // 場所の名前と住所
-            infowindow.setContent(station.name);
-            infowindow.open(map, this);
-          });
-          markers.push(marker);
-        })
-        .fail(function() {
-          alert("最寄駅の取得に失敗しました...");
-        });
+        }else{
+          // 駅が存在しない場合には、行き先のみを地図に表示し、駅名には「検索可能な駅が付近に存在しません」のメッセージを表示する
+          var html = `<p>検索可能な駅が付近に存在しません</p>`;
+          $(".result__station").append(html);
+        }
+      })
+      .fail(function() {
+        alert("最寄駅の取得に失敗しました...");
+      });
     }
   });
-
-
-
-
-
-
-
-
-
-// 地図クリック時のイベントを定義
-// function getClickLatLng(lat_lng, map) {
-//   //すでに定義されているマーカーがあれば削除
-//   if ( marker ) {
-//     marker.setMap(null);
-//   }
-//   // 座標を取得
-//   var lat = lat_lng.lat();
-//   var lng = lat_lng.lng();
-  
-//   // マーカー設置
-//   marker = new google.maps.Marker({
-//     position: lat_lng,
-//     map: map
-//   });
-//   // 座標の中心をずらす
-//   map.panTo(lat_lng);
-//   $(".lat").text(`緯度は${lat}です。`)
-//   $(".lng").text(`経度は${lng}です。`)
-//   }
-
 });
