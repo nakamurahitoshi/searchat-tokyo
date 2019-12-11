@@ -120,11 +120,24 @@
           
         .btn
           .btn-top
-          %a.btn-top__icon{:href => "/"}
-            = fa_icon 'home'
-          %a.btn-top__btn{:href => "/"} トップ
+            %a.btn-top__icon{:href => "/"}
+              = fa_icon 'home'
+              %span<>
+            %a.btn-top__btn{:href => "/"}トップ
           .btn-logout
-          %a.btn-logout__icon{:href => "/users/sign_out"}
-            = fa_icon 'sign-out'
-          %a.btn-logout__btn{:href => "/users/sign_out"} ログアウト
+            %a.btn-logout__icon{:href => "/users/sign_out"}(data-method="delete")
+              = fa_icon 'sign-out'
+              %span<>
+            %a.btn-logout__btn{:href => "/users/sign_out"}(data-method="delete")ログアウト
+          - if current_user.try(:admin?) 
+            .btn-admin
+              %a.btn-admin__icon{:href => "/admin"}
+                = fa_icon 'database'
+                %span<>
+              %a.btn-admin__btn{:href => "/admin"}DB編集
+            .btn-admin
+              %a.btn-admin__icon{:href => "/admin"}
+                = fa_icon 'repeat'
+                %span<>
+              %a.btn-admin__btn{:href => "/railways/0"}(data-method="patch")DB更新
     = yield

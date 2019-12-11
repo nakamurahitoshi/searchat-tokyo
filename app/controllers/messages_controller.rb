@@ -14,7 +14,44 @@ class MessagesController < ApplicationController
       # その路線における、ユーザが選択した駅の順番
       station_railways_id = @station.station_railways.where("railway_id = ?", @railways[i].id).pluck(:order)[0]
       @stations[i] = Station.joins(:station_railways).where("station_railways.railway_id = ? AND station_railways.order BETWEEN ? AND ? " , @railways[i].id, station_railways_id-2, station_railways_id+2)
+
+      # 山手線の例外処理
+      if @railways[i].odptrailway == "odpt.Railway:JR-East.Yamanote"
+        #駅配列先頭が大崎かつ長さが5に満たない場合は、満たすまで先頭から、最終駅から順に付加してゆく
+        if (@stations[i][0].name == "大崎") && @stations[i].length < 5
+          for j in 0..(4-@stations[i].length)
+            station_order = @railways[i].station_railways.maximum(:order) - j
+            add_station = Station.find(@railways[i].station_railways.find_by(order: station_order).station_id)
+            @stations[i] = [add_station] + @stations[i]
+          end
+        end
+
+        #駅配列最後が品川かつ長さが5に満たない場合は、満たすまで最後から、最終駅から順に付加してゆく
+        if (@stations[i][@stations[i].length-1].name == "品川") && @stations[i].length < 5
+          for j in 0..(4-@stations[i].length)
+            station_order = 1 + j
+            add_station = Station.find(@railways[i].station_railways.find_by(order: station_order).station_id)
+            @stations[i] = @stations[i]+[add_station]
+          end
+        end
+      end
     end
+
+    # 各路線の始発駅・終着駅を独自で持たせる
+    # 例: [東海道線[first:東京,last:熱海], ...]
+    @first_last_station = Array.new(@railways.length)
+    for i in 0..@first_last_station.length-1
+      # その路線の始発駅id
+      first_st_order = @railways[i].station_railways.minimum(:order)
+      first_station_id = @railways[i].station_railways.find_by(order: first_st_order).station_id
+      # その路線の終着駅id
+      last_st_order = @railways[i].station_railways.maximum(:order)
+      last_station_id = @railways[i].station_railways.find_by(order: last_st_order).station_id
+      # 始発・終着駅の取得
+      @first_last_station[i] = {first: Station.find(first_station_id), last: Station.find(last_station_id)}
+    end
+
+
   end
 
   # 駅チャットの投稿を保存するcreateアクション

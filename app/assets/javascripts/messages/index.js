@@ -1,6 +1,15 @@
 $(function(){
 
   function buildHTML(message){
+    // #タグがあればリンクを生成し、そうでなければしない
+    var hashtag_link
+    if ((message.body).split(/[#]/)[1] != null){
+      hashtag_link = `<a class="message1__text_hashtag" data-method="GET" href="/stations/${message.station_id}/messages/${message.id}?keyword=${encodeURI((message.body).split(/[#]/)[1])}&amp;user_id=${message.user_id}">
+      ${(message.body).split(/[#]/)[1]}</a>`
+    }else{
+      hashtag_link = ""
+    }
+
     var html = `<div class="message1" data-messageid="${message.id}">
                   <div class="message1__info">
                     <div class="message1__username">
@@ -15,9 +24,7 @@ $(function(){
                     <p class="message1__text">
                     ${message.body}
                     </p>
-                    <a class="message1__text_hashtag" data-method="GET" href="/stations/${message.station_id}/messages/${message.id}?keyword=${encodeURI((message.body).split(/[#]/)[1])}&amp;user_id=${message.user_id}">
-                    ${(message.body).split(/[#]/)[1]}
-                    </a>
+                    ${hashtag_link}
                   </div>
                 </div>`
     return html;
