@@ -165,8 +165,16 @@ html, body {
 }
 .btn-logout__btn {
   text-decoration: none;
+  margin-right: 30px;
 }
-
+.btn-admin__icon {
+  color: springgreen;
+  font-size: 30px;
+}
+.btn-admin__btn {
+  text-decoration: none;
+  margin-right: 30px;
+}
 // &__edit-name {
 //   position: relative;
 //   height: 15px;
