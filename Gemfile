@@ -87,3 +87,7 @@ end
 
 # 20191130 faradayを追加
 gem 'faraday'
+
+# 20191210追加 管理者画面のgem
+gem 'rails_admin', '~> 2.0'
+gem 'cancancan', '~> 1.10'
