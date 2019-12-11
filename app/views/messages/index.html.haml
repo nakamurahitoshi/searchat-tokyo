@@ -57,9 +57,8 @@
     .chat-header
       .chat-header__name
         %a.chat-header__station-name
-          = @station.name
-        .chat-header__commmon-name
-          　えきのチャット
+          = "#{@station.name}えき"
+          //.chat-header__commmon-name
       .chat-header__btn
         -if current_user.station_id == @station.id
           =fa_icon 'star', class: "chat-header__favorite-btn chat-header__favorite-btn--yes", data: {station_id: @station.id}
