@@ -22,17 +22,10 @@ html, body {
 }
 
 .contents {
-  background-color: gray;
-  height: calc(100% - 100px);
+  height: calc(100% - 140px);
   width: 100%;
+  background-color: lightgoldenrodyellow;
 }
-
-  .left-content {
-    background-color: white;
-    height: 100%;
-    width: 50%;
-    float: left;
-  }
   h5 {
     padding: 0.5em;/*文字周りの余白*/
     color: #494949;/*文字色*/
@@ -52,7 +45,12 @@ html, body {
     height: 100px;
     width: 450px;
     font-size: 30px;
+    box-shadow: 0 0 3px 3px #e57373, 0 0 3px 2px #e57373 inset;
+    border-radius: 10px;
+    background: #f9fbe7;
+
   }
+  
   .form__search__message--go{
     background-color: lightblue;
     border: none;
@@ -60,8 +58,9 @@ html, body {
     float: right;
     font-size: 40px;
     height: 100px;
-    margin-left: 15px;
+    margin-left: 38px;
     padding: 0 30px;
+    border-radius: 20px;        /* 角丸指定 */
   }
 
   .right-content {
@@ -69,7 +68,6 @@ html, body {
     width: 50%;
     float: right;
     position: relative;
-    background-color: #F7F5AD;
   }
 
   h6 {
@@ -84,7 +82,7 @@ html, body {
     box-sizing: border-box;
     height: 150px;
     margin-top: 100px;
-    padding: 20px 50px 20px 40px;
+    padding: 10px 50px 20px 40px;
   }
 
   .station-textfield{
@@ -95,6 +93,10 @@ html, body {
         height: 100%;
         width: 100%;   
         font-size: 30px;
+        box-shadow: 0 0 3px 3px #e57373, 0 0 3px 2px #e57373 inset;
+        border-radius: 15px;
+        background: #f9fbe7;
+        
       }
   }
   .station-list{
@@ -115,8 +117,9 @@ html, body {
       float: right;
       font-size: 40px;
       height: 100px;
-      margin-left: 15px;
+      margin-left: 5px;
       padding: 0 30px;
+      border-radius: 20px;        /* 角丸指定 */
     }
   }
 
@@ -127,4 +130,198 @@ html, body {
       background-color: cyan;
     }
   }
-  
+.form__search{
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.description1 {
+    display: none;
+    position: absolute;
+    padding: 10px;
+    font-size: 18px;
+    line-height: 2.6em;
+    color: #fff;
+    border-radius: 5px;
+    background: lightpink;
+    width: 100px;
+    text-align: center;
+}
+.description1:before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    border: 15px solid transparent;
+    border-top: 15px solid lightpink;
+    margin-left: -15px;
+}
+.form__search:hover .description1{
+    display: inline-block;
+    top: -70px;
+    left: 50px;
+}
+.description2 {
+  display: none;
+  position: absolute;
+  padding: 10px;
+  font-size: 18px;
+  line-height: 2.6em;
+  color: #fff;
+  border-radius: 5px;
+  background: lightpink;
+  width: 100px;
+  text-align: center;
+}
+.description2:before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  border: 15px solid transparent;
+  border-top: 15px solid lightpink;
+  margin-left: -15px;
+}
+.form__search:hover .description2{
+  display: inline-block;
+  top: -70px;
+  left: 180px;
+}
+
+.description3 {
+  display: none;
+  position: absolute;
+  padding: 10px;
+  font-size: 18px;
+  line-height: 2.6em;
+  color: #fff;
+  border-radius: 5px;
+  background: lightpink;
+  width: 200px;
+  text-align: center;
+}
+.description3:before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  border: 15px solid transparent;
+  border-top: 15px solid lightpink;
+  margin-left: -15px;
+}
+.form__search:hover .description3{
+  display: inline-block;
+  top: -70px;
+  left: 310px;
+}
+.station-textfield{
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+}
+.description4 {
+  display: none;
+  position: absolute;
+  padding: 10px;
+  font-size: 18px;
+  line-height: 2.0em;
+  color: #fff;
+  border-radius: 5px;
+  background: lightpink;
+  width: 100px;
+  text-align: center;
+}
+.description4:before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  border: 15px solid transparent;
+  border-top: 15px solid lightpink;
+  margin-left: -15px;
+}
+.station-textfield:hover .description4{
+  display: inline-block;
+  top: -70px;
+  left: -20px;
+}
+.description5 {
+display: none;
+position: absolute;
+padding: 10px;
+font-size: 18px;
+line-height: 2.0em;
+color: #fff;
+border-radius: 5px;
+background: lightpink;
+width: 100px;
+text-align: center;
+}
+.description5:before {
+content: "";
+position: absolute;
+top: 100%;
+left: 50%;
+border: 15px solid transparent;
+border-top: 15px solid lightpink;
+margin-left: -15px;
+}
+.station-textfield:hover .description5{
+display: inline-block;
+top: -70px;
+left: 110px;
+}
+
+.description6 {
+display: none;
+position: absolute;
+padding: 10px;
+font-size: 18px;
+line-height: 2.0em;
+color: #fff;
+border-radius: 5px;
+background: lightpink;
+width: 100px;
+text-align: center;
+}
+.description6:before {
+content: "";
+position: absolute;
+top: 100%;
+left: 50%;
+border: 15px solid transparent;
+border-top: 15px solid lightpink;
+margin-left: -15px;
+}
+.station-textfield:hover .description6{
+display: inline-block;
+top: -70px;
+left: 240px;
+}
+.description7 {
+  display: none;
+  position: absolute;
+  padding: 10px;
+  font-size: 18px;
+  line-height: 2.0em;
+  color: #fff;
+  border-radius: 5px;
+  background: lightpink;
+  width: 100px;
+  text-align: center;
+  }
+  .description7:before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  border: 15px solid transparent;
+  border-top: 15px solid lightpink;
+  margin-left: -15px;
+  }
+  .station-textfield:hover .description7{
+  display: inline-block;
+  top: -70px;
+  left: 370px;
+  }

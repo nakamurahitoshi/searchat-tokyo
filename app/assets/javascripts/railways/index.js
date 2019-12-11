@@ -10,7 +10,7 @@ $(function() {
     //Goボタンにdisalbedを設定する
     $(".form__search__message--go").prop("disabled", true);
   }
-});
+  });
 
   // フォームとオートコンプリートを関連づける
   var input = $(".form__search__message").get(0);
@@ -32,3 +32,5 @@ $(function() {
     $(".form__search__message").val(this.getPlace().name);
   });
 });
+
+
