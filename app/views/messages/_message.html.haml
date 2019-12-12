@@ -3,6 +3,26 @@
     .message1__info
       .message1__username
         = message.user.name
+      .message1__userpoint-level
+        Lv.
+      -if message.user.point < 100
+        .message1__userpoint-level__number
+          1
+      -elsif message.user.point < 200
+        .message1__userpoint-level__number
+          2
+      -elsif message.user.point < 300
+        .message1__userpoint-level__number
+          3
+      -elsif message.user.point < 400
+        .message1__userpoint-level__number
+          4
+      -elsif message.user.point < 500
+        .message1__userpoint-level__number
+          5
+      -else
+        .message1__userpoint-level__number
+          Max
       .message1__date
         = message.created_at.strftime("%Y/%m/%d %H:%M")
       -if current_user.id == message.user.id
@@ -15,12 +35,34 @@
         %p.message1__text
           - if (message.body).split(/[#]/)[1] != nil 
             = link_to (message.body).split(/[#]/)[1], station_message_path(station_id: @station.id, id: message.id, user_id: message.user.id, keyword: (message.body).split(/[#]/)[1]), class: "message1__text_hashtag", method: 'GET'
+            = fa_icon 'heart', id: "message1__text__icon"
+            = link_to "←", station_message_path(station_id: @station.id, id: message.id, user_id: message.user.id, keyword: (message.body).split(/[#]/)[1]), class: "message1__text__arrows", method: 'GET'
 
 -else
   .message{"data-messageid": "#{message.id}"}
     .message__info
       .message__username
         = message.user.name
+      .message__userpoint-level
+        Lv.
+      -if message.user.point < 100
+        .message__userpoint-level__number
+          1
+      -elsif message.user.point < 200
+        .message__userpoint-level__number
+          2
+      -elsif message.user.point < 300
+        .message__userpoint-level__number
+          3
+      -elsif message.user.point < 400
+        .message__userpoint-level__number
+          4
+      -elsif message.user.point < 500
+        .message__userpoint-level__number
+          5
+      -else
+        .message__userpoint-level__number
+          Max
       .message__date
         = message.created_at.strftime("%Y/%m/%d %H:%M")
       -if current_user.id == message.user.id
@@ -31,5 +73,7 @@
         %p.message__text
           = message.body
         %p.message__text
-          - if (message.body).split(/[#]/)[1] != nil 
-            = link_to (message.body).split(/[#]/)[1], station_message_path(station_id: @station.id, id: message.id, user_id: message.user.id, keyword: (message.body).split(/[#]/)[1]), class: "message1__text_hashtag", method: 'GET'
+      - if (message.body).split(/[#]/)[1] != nil 
+          = link_to (message.body).split(/[#]/)[1], station_message_path(station_id: @station.id, id: message.id, user_id: message.user.id, keyword: (message.body).split(/[#]/)[1]), class: "message__text_hashtag", method: 'GET'
+          = fa_icon 'heart', id: "message__text__icon"
+          = link_to "←", station_message_path(station_id: @station.id, id: message.id, user_id: message.user.id, keyword: (message.body).split(/[#]/)[1]), class: "message__text__arrows", method: 'GET'

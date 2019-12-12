@@ -1,11 +1,32 @@
 $(function(){
 
   function buildHTML(message){
+    var point
+      if (message.user_point < 100){
+        point = 1
+      }else if (message.user_point < 200){
+        point = 2
+      }else if (message.user_point < 300){
+        point = 3
+      }else if (message.user_point < 400){
+        point = 4
+      }else if (message.user_point < 500){
+        point = 5
+      }else{
+        point = Max
+      }
     // #タグがあればリンクを生成し、そうでなければしない
     var hashtag_link
     if ((message.body).split(/[#]/)[1] != null){
-      hashtag_link = `<a class="message1__text_hashtag" data-method="GET" href="/stations/${message.station_id}/messages/${message.id}?keyword=${encodeURI((message.body).split(/[#]/)[1])}&amp;user_id=${message.user_id}">
-      ${(message.body).split(/[#]/)[1]}</a>`
+      hashtag_link = 
+                    `<a class="message1__text_hashtag" data-method="GET" href="/stations/${message.station_id}/messages/${message.id}?keyword=${encodeURI((message.body).split(/[#]/)[1])}&amp;user_id=${message.user_id}">
+                    ${(message.body).split(/[#]/)[1]}
+                    </a>
+                    <i id="message1__text__icon" class="fa fa-heart">
+                    </i>
+                    <a class="message1__text__arrows" data-method="GET" href="/stations/${message.station_id}/messages/${message.id}?keyword=${encodeURI((message.body).split(/[#]/)[1])}&amp;user_id=${message.user_id}">
+                    ←
+                 </a>`
     }else{
       hashtag_link = ""
     }
@@ -14,6 +35,12 @@ $(function(){
                   <div class="message1__info">
                     <div class="message1__username">
                     ${message.user_name}
+                    </div>
+                    <div class="message1__userpoint-level">
+                    Lv.
+                    </div>
+                    <div class="message1__userpoint-level__number">
+                    ${point}
                     </div>
                     <div class="message1__date">
                     ${message.created_at}

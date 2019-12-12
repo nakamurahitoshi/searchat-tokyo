@@ -19,7 +19,9 @@ $(function() {
         // お気に入りマーク(星)の色を白色から黄色にするためにクラス名前を変更する
         $(".chat-header__favorite-btn--no").removeClass("chat-header__favorite-btn--no").addClass("chat-header__favorite-btn--yes");
         // my stationをお気に入り駅にする
-        $(".mystation__body").text(station.name);
+        $(".mystation__name").text(station.name);
+        $('.mystation-footer__nil').removeClass("mystation-footer__nil").addClass("mystation-footer__not-nil").text("↑↑駅名をクリックするとチャットに飛べるよ");
+        $(".mystation-mark__body").text("My \n 01");
       })
       .fail(function() {
         alert("駅のお気に入り登録ができませんでした...");
@@ -37,7 +39,12 @@ $(function() {
         // お気に入りマーク(星)の色を黄色から白色にするためにクラス名前を変更する
         $(".chat-header__favorite-btn--yes").removeClass("chat-header__favorite-btn--yes").addClass("chat-header__favorite-btn--no");
         // my stationを「なし」にする
-        $(".mystation__body").text("なし");
+        $(".mystation__name").text("お気に入りの駅を登録できます");
+        $('.mystation-footer__not-nil').removeClass("mystation-footer__not-nil").addClass("mystation-footer__nil")
+        $('.mystation-footer__nil').html(`<div class="mystation-footer__nil">
+                                          チャット画面の<i class="fa fa-star"></i>をクリックしてね
+                                        </div>`);
+        $(".mystation-mark__body").text(" ");
       })
       .fail(function() {
         alert("駅のお気に入り解除ができませんでした...");
