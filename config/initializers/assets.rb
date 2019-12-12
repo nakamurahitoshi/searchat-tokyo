@@ -14,4 +14,4 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 # Rails.application.config.assets.precompile += %w( admin.js admin.css )
 
 # scss,jsのプリコンパイル
-Rails.application.config.assets.precompile += %w(application.css reset.css railways/index.css messages/create.css messages/index.css messages/show.css shared/header.css stations/index.css stations/show.css users/edit.css users/update.css *.js )
+Rails.application.config.assets.precompile += %w(application.css reset.css railways/index.css railways/index_partials.css messages/create.css messages/index.css messages/show.css shared/header.css stations/index.css stations/show.css users/edit.css users/update.css *.js )

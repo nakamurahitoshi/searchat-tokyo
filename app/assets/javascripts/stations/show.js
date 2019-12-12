@@ -82,15 +82,15 @@
               $(".result__station").append(html);
               /// 検索した駅にマーカーを立てる
               // マーカーオブジェクトの生成
-              marker = new google.maps.Marker({
-                map: map,
-                position: {lat: station.lat, lng: station.lng},
-                label: {
-                  text: `${station.name}駅はここ`,                           //ラベル文字
-                  color: '#0000ff',                    //文字の色
-                  fontSize: `${16-index}px`                     //文字のサイズ
-                }
-              })
+              //marker = new google.maps.Marker({
+                //map: map,
+                //position: {lat: station.lat, lng: station.lng},
+                //label: {
+                  //text: `${station.name}駅はここ`,                           //ラベル文字
+                  //color: '#0000ff',                    //文字の色
+                  //fontSize: `${16-index}px`                     //文字のサイズ
+                //}
+              //})
               // マーカーをクリックしたら場所の名前を表示するよう設定
               google.maps.event.addListener(marker, 'click', function() {
                 // 場所の名前と住所
