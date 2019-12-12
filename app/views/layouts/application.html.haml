@@ -20,37 +20,63 @@
         .userpoint
           .userpoint__mark
             = fa_icon 'heart'
+            .description__mark
+              .description__mark1
+                えきの掲示板でオススメのスポットを発信してみよう！
+              .description__mark2
+                他のユーザーにクリックされたら、ポイントがたまるよ！
+              .description__mark3
+                東京をたくさん旅して『東京マスター』になろう！！！！
           .userpoint__times
             = fa_icon 'times'
           .userpoint__body
             =current_user.point
           .userpoint__level
             Lv.
+            .description__level
+              .description__level1
+                %ul{class: "heart_description"}
+                  %li{class: "heart_description--li"}
+                    %i{class: 'fa fa-heart'}
+                  %li{class: "heart_description--li"}
+                    のせつめい
+              .description__level3
+                Lv.1・・・0〜99
+              .description__level4
+                Lv.2・・・100〜199
+              .description__level5
+                Lv.3・・・200〜299
+              .description__level6
+                Lv.4・・・300〜399
+              .description__level7
+                Lv.5・・・400〜499
+              .description__level8
+                Lv.Max・・500〜
           -if current_user.point < 100
             .userpoint__level-number
               1
             .userpoint__level-info
-              ( あと#{fa_icon 'heart'}#{100 - current_user.point}でレベルアップ )
+              //( あと#{fa_icon 'heart'}#{100 - current_user.point}でレベルアップ )
           -elsif current_user.point < 200
             .userpoint__level-number
               2
             .userpoint__level-info
-              ( あと#{fa_icon 'heart'}#{200 - current_user.point}でレベルアップ )
+              //( あと#{fa_icon 'heart'}#{200 - current_user.point}でレベルアップ )
           -elsif current_user.point < 300
             .userpoint__level-number
               3
             .userpoint__level-info
-              ( あと#{fa_icon 'heart'}#{300 - current_user.point}でレベルアップ )
+              //( あと#{fa_icon 'heart'}#{300 - current_user.point}でレベルアップ )
           -elsif current_user.point < 400
             .userpoint__level-number
               4
             .userpoint__level-info
-              ( あと#{fa_icon 'heart'}#{400 - current_user.point}でレベルアップ )
+              //( あと#{fa_icon 'heart'}#{400 - current_user.point}でレベルアップ )
           -elsif current_user.point < 500
             .userpoint__level-number
               5
             .userpoint__level-info
-              ( あと#{fa_icon 'heart'}#{500 - current_user.point}でレベルアップ )
+              //( あと#{fa_icon 'heart'}#{500 - current_user.point}でレベルアップ )
           -else current_user.point >= 500
             .userpoint__level-number
               Max
@@ -95,11 +121,24 @@
           
         .btn
           .btn-top
-          %a.btn-top__icon{:href => "/"}
-            = fa_icon 'home'
-          %a.btn-top__btn{:href => "/"} トップ
+            %a.btn-top__icon{:href => "/"}
+              = fa_icon 'home'
+              %span<>
+            %a.btn-top__btn{:href => "/"}トップ
           .btn-logout
-          %a.btn-logout__icon{:href => "/users/sign_out"}(data-method="delete")
-            = fa_icon 'sign-out'
-          %a.btn-logout__btn{:href => "/users/sign_out"}(data-method="delete") ログアウト
+            %a.btn-logout__icon{:href => "/users/sign_out"}(data-method="delete")
+              = fa_icon 'sign-out'
+              %span<>
+            %a.btn-logout__btn{:href => "/users/sign_out"}(data-method="delete")ログアウト
+          - if current_user.try(:admin?) 
+            .btn-admin
+              %a.btn-admin__icon{:href => "/admin"}
+                = fa_icon 'database'
+                %span<>
+              %a.btn-admin__btn{:href => "/admin"}DB編集
+            .btn-admin
+              %a.btn-admin__icon{:href => "/admin"}
+                = fa_icon 'repeat'
+                %span<>
+              %a.btn-admin__btn{:href => "/railways/0"}(data-method="patch")DB更新
     = yield

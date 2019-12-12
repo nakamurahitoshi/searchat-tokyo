@@ -75,19 +75,22 @@
           if(stations[0].name != null){
             stations.forEach(function(station, index){
               if(station.name != null){
-              var html = `${index+1}番目に近い駅 : <a href="/stations/${station.id}/messages">${station.name}駅</a> (ここから${station.dist}m) <br>`;
+              var html = `<div class="station__info">
+                            <div class="station__info__number">${index+1}番目に近い駅</div>
+                              <div class="station__info__name"><a href="/stations/${station.id}/messages">${station.name}駅</a></div>
+                                <div class="station__info__length">(目的地から${station.dist}m) <br></div></div>`;
               $(".result__station").append(html);
               /// 検索した駅にマーカーを立てる
               // マーカーオブジェクトの生成
-              marker = new google.maps.Marker({
-                map: map,
-                position: {lat: station.lat, lng: station.lng},
-                label: {
-                  text: `${station.name}駅はここ`,                           //ラベル文字
-                  color: '#32CD32',                    //文字の色
-                  fontSize: `${16-index}px`                     //文字のサイズ
-                }
-              })
+              //marker = new google.maps.Marker({
+                //map: map,
+                //position: {lat: station.lat, lng: station.lng},
+                //label: {
+                  //text: `${station.name}駅はここ`,                           //ラベル文字
+                  //color: '#0000ff',                    //文字の色
+                  //fontSize: `${16-index}px`                     //文字のサイズ
+                //}
+              //})
               // マーカーをクリックしたら場所の名前を表示するよう設定
               google.maps.event.addListener(marker, 'click', function() {
                 // 場所の名前と住所

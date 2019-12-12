@@ -1,5 +1,5 @@
 module StationsHelper
-  include CalcDistHelper #新しく追記
+  include CalcDistHelper
   # APIにより全部の駅を取得し、既存データとの差分があれば更新するrefreshメソッド
   def refreshStations
     # 全ての駅を取得し、配列で返す

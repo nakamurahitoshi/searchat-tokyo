@@ -22,17 +22,33 @@
                 .railway__list__line-2
             -for i in 0..@stations[n].length-1
               .railway__list__line
-                ‡
+                / 始発駅でない限りレールを表示する
+                -if @stations[n][i].id != @first_last_station[n][:first].id
+                  ‡
+                  / 山手線大崎駅でもレールを表示する
+                -if @stations[n][i].name =="大崎" && railway.odptrailway == "odpt.Railway:JR-East.Yamanote"
+                  ‡
               -if @stations[n][i].id== @station.id
                 .railway__list__box-1
                   =link_to @stations[n][i].name, station_messages_path(station_id: @stations[n][i].id), class: "message_station", method: 'GET'
                 .railway__list__line
-                  ‡
+                  / 終着駅でない限りレールを表示する
+                  -if @stations[n][i].id != @first_last_station[n][:last].id
+                    ‡
+                    / 山手線品川駅でもレールを表示する
+                  -if @stations[n][i].name =="品川" && railway.odptrailway == "odpt.Railway:JR-East.Yamanote"
+                    ‡
               -else
                 .railway__list__box
                   =link_to @stations[n][i].name, station_messages_path(station_id: @stations[n][i].id), class: "message_station", method: 'GET'
                 .railway__list__line
-                  ‡
+                  / 終着駅でない限りレールを表示する
+                  -if @stations[n][i].id != @first_last_station[n][:last].id
+                    ‡
+                    / 山手線品川駅でもレールを表示する
+                  -if @stations[n][i].name =="品川" && railway.odptrailway == "odpt.Railway:JR-East.Yamanote"
+                    ‡
+
             -if @stations[n][@stations[n].length-1].id == @station.id && @stations[n].length == 3
               .railway__list__line-1
             -if (@stations[n][@stations[n].length-2].id == @station.id && @stations[n].length == 4)||(@stations[n][@stations[n].length-2].id == @station.id && @stations[n].length == 3)
@@ -41,9 +57,8 @@
     .chat-header
       .chat-header__name
         %a.chat-header__station-name
-          = @station.name
-        .chat-header__commmon-name
-          　えきのチャット
+          = "#{@station.name}えき"
+          //.chat-header__commmon-name
       .chat-header__btn
         -if current_user.station_id == @station.id
           =fa_icon 'star', class: "chat-header__favorite-btn chat-header__favorite-btn--yes", data: {station_id: @station.id}

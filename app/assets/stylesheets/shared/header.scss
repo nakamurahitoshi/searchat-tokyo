@@ -5,7 +5,7 @@ html, body {
 }
 
 .header {
-  background-color: #bbb;
+  background-color: lightblue;
   height: 140px;
   width: 100%;
   padding-left: 30px;
@@ -56,6 +56,87 @@ html, body {
     right: 160px;
     top: 30px;
   }
+}
+.userpoin__mark{
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.description__mark {
+  display: none;
+  position: absolute;
+  padding: 5px;
+  font-size: 13px;
+  line-height: 1.6em;
+  color: #fff;
+  border-radius: 5px;
+  background: lightsalmon;
+  width: 360px;
+  z-index: 2;
+  .description__mark1{
+    text-decoration-line: underline;
+    margin-bottom: 3px;
+  }
+}
+.description__mark:before {
+  content: "";
+  position: absolute;
+  top: -24px;
+  right: 92%;
+  border: 15px solid transparent;
+  border-top: 15px solid lightsalmon;
+  margin-left: -15px;
+  transform: rotateZ(180deg);
+  z-index: 2;
+}
+.userpoint__mark:hover .description__mark{
+  display: inline-block;
+  top: 30px;
+  left: 0px;
+  z-index: 2;
+}
+.userpoin__level{
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.description__level {
+  display: none;
+  position: absolute;
+  padding: 5px;
+  font-size: 13px;
+  line-height: 1.6em;
+  color: #fff;
+  border-radius: 5px;
+  background: lightsalmon;
+  width: 150px;
+  z-index: 2;
+  .heart_description{
+    display: inline-block;
+    &--li{
+      display: inline-block;
+    }
+  }
+  
+}
+.description__level:before {
+  content: "";
+  position: absolute;
+  top: -24px;
+  right: 70%;
+  border: 15px solid transparent;
+  border-top: 15px solid lightsalmon;
+  margin-left: -15px;
+  transform: rotateZ(180deg);
+  z-index: 2;
+}
+.userpoint__level:hover .description__level{
+  display: inline-block;
+  top: 30px;
+  left: 0px;
+  z-index: 2;
 }
 .user-btn {
   &__edit-icon {
@@ -189,3 +270,21 @@ html, body {
   text-decoration: none;
   box-sizing: border-box;
 }
+  margin-right: 30px;
+}
+.btn-admin__icon {
+  color: springgreen;
+  font-size: 30px;
+}
+.btn-admin__btn {
+  text-decoration: none;
+  margin-right: 30px;
+}
+// &__edit-name {
+//   position: relative;
+//   height: 15px;
+//   top: 42px;
+//   font-size: 10px;
+//   right: 35px;
+//   text-decoration: none;
+//   color: black;

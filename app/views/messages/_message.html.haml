@@ -1,5 +1,5 @@
 -if current_user.id == message.user.id
-  .message1{"data-messageid": "#{message.id}", "data-user_id": "#{message.user.id}"}
+  .message1{"data-messageid": "#{message.id}"}
     .message1__info
       .message1__username
         = message.user.name
@@ -33,12 +33,13 @@
         %p.message1__text
           = message.body
         %p.message1__text
-          = link_to (message.body).split(/[#]/)[1], station_message_path(station_id: @station.id, id: message.id, user_id: message.user.id, keyword: (message.body).split(/[#]/)[1]), class: "message1__text_hashtag", method: 'GET'
-          = fa_icon 'heart', id: "message1__text__icon"
-          = link_to "←", station_message_path(station_id: @station.id, id: message.id, user_id: message.user.id, keyword: (message.body).split(/[#]/)[1]), class: "message1__text__arrows", method: 'GET'
+          - if (message.body).split(/[#]/)[1] != nil 
+            = link_to (message.body).split(/[#]/)[1], station_message_path(station_id: @station.id, id: message.id, user_id: message.user.id, keyword: (message.body).split(/[#]/)[1]), class: "message1__text_hashtag", method: 'GET'
+            = fa_icon 'heart', id: "message1__text__icon"
+            = link_to "←", station_message_path(station_id: @station.id, id: message.id, user_id: message.user.id, keyword: (message.body).split(/[#]/)[1]), class: "message1__text__arrows", method: 'GET'
 
 -else
-  .message{"data-messageid": "#{message.id}", "data-user_id": "#{message.user.id}"}
+  .message{"data-messageid": "#{message.id}"}
     .message__info
       .message__username
         = message.user.name
@@ -72,6 +73,7 @@
         %p.message__text
           = message.body
         %p.message__text
+      - if (message.body).split(/[#]/)[1] != nil 
           = link_to (message.body).split(/[#]/)[1], station_message_path(station_id: @station.id, id: message.id, user_id: message.user.id, keyword: (message.body).split(/[#]/)[1]), class: "message__text_hashtag", method: 'GET'
           = fa_icon 'heart', id: "message__text__icon"
           = link_to "←", station_message_path(station_id: @station.id, id: message.id, user_id: message.user.id, keyword: (message.body).split(/[#]/)[1]), class: "message__text__arrows", method: 'GET'

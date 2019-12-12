@@ -8,19 +8,24 @@
   - flash.each do |key, value|
     = content_tag(:div, value, class: key)
 .contents
-  .left-content
-    %h5 行きたいところ
+  .left_content
+    = render "partials/left_content"
+  .right-content
     .form__search
       = form_tag(station_path(0), method: 'get') do
-        = text_field_tag 'destination', '', class: 'form__search__message', placeholder: "Where do you go?"#stationではない 空白をつくることでボックス内に文字記載 -> コントローラでparams[:destination]で受け取れるようにしたよ by nakamura
+        = text_field_tag 'destination', '', class: 'form__search__message', placeholder: "どこに行く？"
         = submit_tag 'GO!', class: 'form__search__message--go', disabled: true
-        
-  .right-content
-    %h6 チャット
+      .description1 東京タワー
+      .description2 東京大学
+      .description3 JR東日本　本社
     .form__chat
       = form_for :current_user, url: station_messages_path(0), html: {class: 'station-input-form', method: 'GET'} do |f| # ()の中は相談@stationsになる予定 -> フォームの中の文字を渡すだけで駅のidは不要だから(0)のままでいいよ by nakamura
         .station-textfield
-          = f.text_field :name,class: 'station-textfield__textfield', placeholder: 'Choose a station'
+          = f.text_field :name,class: 'station-textfield__textfield', placeholder: 'どこの駅のチャットをみる?'
           .station-list
+          .description4 渋谷
+          .description5 新宿
+          .description6 横浜
+          .description7 高崎
         .station-submit
           = f.submit 'GO!', class: 'station-submit__submitbtn', disabled: true

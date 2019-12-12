@@ -19,17 +19,20 @@ html, body {
 }
 h1 {
   padding: 0.5em;/*文字周りの余白*/
-  color: green;/*文字色*/
-  border-left: solid 10px lightgreen;/*左線（実線 太さ 色）*/
-  font-size: 30px;
+  color: rgb(128, 178, 184);/*文字色*/
+  font-size: 20px;
   margin-top: 0px;
 }
 
 .map{
-  width: 500px;
-  height: 500px;
-  background-color: aquamarine;
+  width: 90%;
+  height: 90%;
   margin: auto;
+  border-radius: 10px;
+  color: #565656;
+  background: #c1d8e9;
+  box-shadow: 0px 0px 0px 10px #c1d8e9;
+  border: dashed 2px #86c6e6;
 }
 
 .right-content {
@@ -83,4 +86,8 @@ h3 {
   height: 100px;
   margin-left: 15px;
   padding: 0 30px;
+}
+.station__info__number{
+  color: black;
+  
 }
