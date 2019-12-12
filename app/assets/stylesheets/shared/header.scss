@@ -91,6 +91,7 @@ html, body {
   border: solid 3px;
   height: 95px;
   padding: 5px;
+  background-color: #fff;
 }
 .mystation-top {
   display: flex;
@@ -112,15 +113,22 @@ html, body {
     border-radius: 5px;
   }
 }
+.mystation-mark--end {
+  height: 50px;
+  width: 30px;
+}
+
 .mystation__name {
   list-style: none;
   font-size: 30px;
-  color: yellow;
-  margin-left: 5px;
+  color: green;
+  margin: auto;
+  padding: 0 10px;
+  text-align: center;
 }
 .btn__station-btn {
   text-decoration: none;
-  color: yellow;
+  color: green;
 }
 .mystation-shape {
   height: 20px;
@@ -143,35 +151,41 @@ html, body {
 
 .btn {
   display: flex;
-  position: relative;
-  left: 50%;
+  position: absolute;
+  right: 0;
   top: 100px;
   margin-right: 30px;
   font-size: 20px;
 }
-// .btn-top {}
 .btn-top__icon {
+  position: relative;
   color: springgreen;
   font-size: 30px;
+  bottom: 10px;
+  left: 30px;
 }
 .btn-top__btn {
+  position: relative;
+  color: black;
+  height: 15px;
+  font-size: 10px;
+  top: 25px;
   text-decoration: none;
-  margin-right: 30px;
+  box-sizing: border-box;
 }
-// .btn-logout {}
 .btn-logout__icon {
+  position: relative;
   color: springgreen;
   font-size: 30px;
+  bottom: 10px;
+  left: 40px;
 }
 .btn-logout__btn {
+  position: relative;
+  color: black;
+  height: 15px;
+  font-size: 10px;
+  top: 25px;
   text-decoration: none;
+  box-sizing: border-box;
 }
-
-// &__edit-name {
-//   position: relative;
-//   height: 15px;
-//   top: 42px;
-//   font-size: 10px;
-//   right: 35px;
-//   text-decoration: none;
-//   color: black;

@@ -82,6 +82,7 @@
                 -else
                   .mystation__name__nil
                     お気に入りの駅を登録できます
+              .mystation-mark--end
             .mystation-shape
               .mystation-shape__square
             .mystation-footer
@@ -89,7 +90,7 @@
                 .mystation-footer__not-nil
                   ↑↑駅名をクリックするとチャットに飛べるよ
               -else
-                .mystation__body__nil
+                .mystation-footer__nil
                   チャット画面の#{fa_icon 'star'}をクリックしてね
           
         .btn
@@ -98,7 +99,7 @@
             = fa_icon 'home'
           %a.btn-top__btn{:href => "/"} トップ
           .btn-logout
-          %a.btn-logout__icon{:href => "/users/sign_out"}
+          %a.btn-logout__icon{:href => "/users/sign_out"}(data-method="delete")
             = fa_icon 'sign-out'
-          %a.btn-logout__btn{:href => "/users/sign_out"} ログアウト
+          %a.btn-logout__btn{:href => "/users/sign_out"}(data-method="delete") ログアウト
     = yield
