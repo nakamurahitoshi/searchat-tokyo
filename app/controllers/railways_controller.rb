@@ -15,7 +15,11 @@ class RailwaysController < ApplicationController
 
     # station_railwaysテーブルを更新
     view_context.refreshStationRailways
-
-    redirect_to railways_path, notice: "駅・路線のデータベースを更新しました"
+    respond_to do |format|
+      format.html{
+        redirect_to railways_path, notice: "駅・路線のデータベースを更新しました"
+      }
+      format.json{}
+    end
   end
 end
