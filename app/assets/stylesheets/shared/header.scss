@@ -282,6 +282,26 @@ html, body {
   color: black;
   text-decoration: none;
 }
+.btn-update {
+  display: flex;
+  width: 90px;
+  position: relative;
+  bottom: 100px;
+  margin-left: 10px;
+}
+.btn-update__icon {
+  color: blue;
+  font-size: 30px;
+}
+.btn-update__btn {
+  font-size: 15px;
+  color: black;
+  text-decoration: none;
+  padding-left: 5px;
+  position: relative;
+  top: 16px;
+}
+
 .header-bar {
   height: 24px;
   width: 100%;
