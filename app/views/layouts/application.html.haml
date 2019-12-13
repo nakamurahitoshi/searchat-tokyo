@@ -86,7 +86,7 @@
         .user-btn
         %a.user-btn__edit-icon{:href => "/users/#{current_user.id}/edit"}
           = fa_icon 'cog'
-        %a.user-btn__edit-name{:href => "/users/#{current_user.id}/edit"} へんしゅう
+        -# %a.user-btn__edit-name{:href => "/users/#{current_user.id}/edit"} へんしゅう
 
         .mystation
           .mystation-header
@@ -141,4 +141,5 @@
                 = fa_icon 'repeat'
                 %span<>
               %a.btn-admin__btn{:href => "/railways/0"}(data-method="patch")DB更新
+      .header-bar
     = yield

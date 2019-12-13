@@ -1,6 +1,8 @@
 $(function(){
 
   function buildHTML(message){
+
+    // コメント欄のユーザー名の横に獲得したポイントのレベルを表記する
     var point
       if (message.user_point < 100){
         point = 1
@@ -56,7 +58,7 @@ $(function(){
                 </div>`
     return html;
   }
-  
+
   $(document).on('click', '.btn__delete-btn' ,function(){
     obj = $(this)
     var stationid = $(this).data('station-id');
@@ -75,6 +77,18 @@ $(function(){
       alert('削除に失敗しました');
     })
   });
+
+  // コメントが空白のときは送信ボタンを無効化する
+  $(".form__message").on('keyup' ,function(){
+    // 入力フォームが入力されたら、送信ボタンを有効化する
+    if ($(this).val() != ""){
+      //送信ボタンのdisalbedを外す
+      $(".form__button").prop("disabled", false);
+    }else{
+      //送信ボタンにdisalbedを設定する
+      $(".form__button").prop("disabled", true);
+    }
+  })
 
   $('.form__box').on('submit', function(e){
     e.preventDefault()

@@ -5,7 +5,7 @@ html, body {
 }
 
 .header {
-  background-color: lightblue;
+  background-color: #FCF97A;
   height: 140px;
   width: 100%;
   padding-left: 30px;
@@ -14,42 +14,40 @@ html, body {
   position: relative;
 }
 .username {
-  line-height: 70px;
-  font-size: 30px;
+  line-height: 10vh;
+  font-size: 3vw;
 }
 .userpoint {
   display: flex;
   position: absolute;
-  top: 60px;
-  left: 50px;
-  font-size: 20px;
+  top: 8vh;
+  left: 5vw;
+  font-size: 1vw;
   &__mark {
-    color: pink;
-    font-size: 30px;
-    position: relative;
-    bottom: 10px;
+    color: deeppink;
+    font-size: 2.5vw;
   }
   &__times {
-    font-size: 15px;
+    font-size: 1.5vw;
     position: relative;
-    top: 5px;
+    top: 1vw;
   }
   &__body {
-    font-weight: bold;
-    font-size: 20px;
+    font-size: 2vw;
+    position: relative;
+    top: 0.5vw;
   }
   &__level {
     margin-left: 20px;
-    font-size: 30px;
+    font-size: 2vw;
     position: relative;
-    bottom: 10px;
+    top: 0.9vh;
   }
   &__level-number {
     margin-left: 5px;
-    font-weight: bold;
-    font-size: 30px;
+    font-size: 2vw;
     position: relative;
-    bottom: 10px;
+    top: 0.9vh;
   }
   &__level-info {
     position: relative;
@@ -57,6 +55,7 @@ html, body {
     top: 30px;
   }
 }
+
 .userpoin__mark{
   position: relative;
   cursor: pointer;
@@ -141,22 +140,21 @@ html, body {
 .user-btn {
   &__edit-icon {
     position: relative;
-    height: 40px;
-    top: 10px;
-    font-size: 30px;
-    margin-left: 20px;
-    color: springgreen;
+    height: 50px;
+    line-height: 15vh;
+    left: 0.5vw;
+    font-size: 3vw;
+    color: blue;
   }
-  &__edit-name {
-    position: relative;
-    height: 15px;
-    top: 42px;
-    font-size: 10px;
-    right: 35px;
-    text-decoration: none;
-    color: black;
-
-  }
+  // &__edit-name {
+  //   position: relative;
+  //   height: 15px;
+  //   top: 11vh;
+  //   font-size: 0.5vw;
+  //   right: 5.5vw;
+  //   text-decoration: none;
+  //   color: black;
+  // }
 }
 
 .mystation {
@@ -235,56 +233,56 @@ html, body {
   position: absolute;
   right: 0;
   top: 100px;
-  margin-right: 30px;
   font-size: 20px;
 }
 .btn-top__icon {
   position: relative;
-  color: springgreen;
+  color: blue;
   font-size: 30px;
-  bottom: 10px;
-  left: 30px;
+  bottom: 12px;
+  left: 158px;
 }
 .btn-top__btn {
   position: relative;
   color: black;
   height: 15px;
+  left: 122px;
   font-size: 10px;
-  top: 25px;
   text-decoration: none;
-  box-sizing: border-box;
 }
 .btn-logout__icon {
   position: relative;
-  color: springgreen;
+  color: blue;
   font-size: 30px;
-  bottom: 10px;
-  left: 40px;
+  bottom: 12px;
+  left: 195px;
 }
 .btn-logout__btn {
   position: relative;
   color: black;
   height: 15px;
+  left: 145px;
   font-size: 10px;
-  top: 25px;
   text-decoration: none;
-  box-sizing: border-box;
-  margin-right: 30px;
 }
-  
+
+.btn-admin {
+  width: 90px;
+  position: relative;
+  bottom: 100px;
+  margin-left: 10px;
+}
 .btn-admin__icon {
-  color: springgreen;
+  color: blue;
   font-size: 30px;
 }
 .btn-admin__btn {
+  font-size: 15px;
+  color: black;
   text-decoration: none;
-  margin-right: 30px;
 }
-// &__edit-name {
-//   position: relative;
-//   height: 15px;
-//   top: 42px;
-//   font-size: 10px;
-//   right: 35px;
-//   text-decoration: none;
-//   color: black;
+.header-bar {
+  height: 24px;
+  width: 100%;
+  background-color: #00ffff;
+}

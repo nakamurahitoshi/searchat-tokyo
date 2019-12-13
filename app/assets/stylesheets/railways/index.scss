@@ -22,9 +22,9 @@ html, body {
 }
 
 .contents {
-  height: calc(100% - 140px);
+  height: calc(100% - 140px - 24px);
   width: 100%;
-  background-color: lightgoldenrodyellow;
+  background-color: lightyellow;
 }
   h5 {
     padding: 0.5em;/*文字周りの余白*/

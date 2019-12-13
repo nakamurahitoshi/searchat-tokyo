@@ -7,7 +7,7 @@ html, body {
 
 .contents {
   background-color: #eee;
-  height: calc(100vh - 140px);
+  height: calc(100vh - 140px - 24px);
   width: 100%;
   display: flex;
 }
@@ -116,27 +116,23 @@ a {
   overflow: scroll;
 }
 .chat-header__name {
-  display: flex;
-  position: relative;
-  left: 10vw;
+  width: 100%;
+  margin: 0 7vw;
+  text-align: center;
 }
 .chat-header__station-name {
-  font-size: 3em;
+  font-size: 4vw;
   white-space: nowrap;
   overflow:scroll;
 }
-.chat-header__commmon-name {
-  font-size: 3vmin;
-  padding-right: 20px;
-}
 .chat-header__btn {
   position: absolute;
-  padding-left: 40px;
+  padding-left: 2vw;
 }
 
 // お気に入りボタンのスタイル
 .chat-header__favorite-btn {
-  font-size: 50px;
+  font-size: 5vw;
   vertical-align: middle; 
 }
 // お気に入り駅ならば黄色にする
@@ -150,7 +146,7 @@ a {
 
 .messages {
   padding: 10px 20px 10px 20px;
-  height: calc(100vh - 140px - 110px - 100px);
+  height: calc(100vh - 140px - 110px - 70px - 24px);
   width: 100%;
   box-sizing: border-box;
   overflow: scroll;
@@ -260,8 +256,7 @@ a {
 .form {
   height: 50px;
   background-color:lightyellow;
-  padding: 20px 20px;
-  margin-top: 10px;
+  padding: 10px 20px;
   width: calc(70% - 60px);
   position: fixed;
   bottom: 0;

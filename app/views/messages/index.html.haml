@@ -58,7 +58,6 @@
       .chat-header__name
         %a.chat-header__station-name
           = "#{@station.name}えき"
-          //.chat-header__commmon-name
       .chat-header__btn
         -if current_user.station_id == @station.id
           =fa_icon 'star', class: "chat-header__favorite-btn chat-header__favorite-btn--yes", data: {station_id: @station.id}
@@ -72,4 +71,4 @@
       -#   %input{type: "submit", value: "Send", class: "form__button"}
       = form_for [@station, @message], html: {class: 'form__box'} do |f|
         = f.text_field :body, class: 'form__message', placeholder: 'コメントを入力　『#(半角)○○○』と入力すると、#以降が検索できるようになります', value: ''
-        = f.submit 'Send', class: 'form__button'
+        = f.submit '送信', class: 'form__button', disabled: true
