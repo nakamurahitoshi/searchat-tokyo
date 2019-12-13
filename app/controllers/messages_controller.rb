@@ -84,15 +84,40 @@ class MessagesController < ApplicationController
   # 投稿ユーザにポイントを加算し地図と目的地を表示するshowアクション
   def show
     user = User.find((params.permit(:user_id))[:user_id])
+    # 行き先の名称
+    destination = (params.permit(:keyword))[:keyword]
+    # 駅名ID
+    station_id = (params.permit(:station_id))[:station_id]
+    # 駅名
+    station_name = Station.find(station_id).name
+    # 行き先名に現在の駅を追加したものをキーワードとする
+    destination_with_station_name = destination + " " + station_name
+
+    # 自分自身にはポイントを付与せずにリダイレクト
     if current_user.id == user.id
-      # statonsコントローラ#showアクションにハッシュタグ文を渡してリダイレクトする
-      redirect_to station_path(destination: (params.permit(:keyword))[:keyword])
+      # statonsコントローラ#showアクションにハッシュタグ文+駅名を渡してリダイレクトする
+      redirect_to station_path(destination: destination_with_station_name)
     else
-      # 投稿ユーザにポイントを1加算する
-      user.point = user.point + 1
-      user.save
-      # statonsコントローラ#showアクションにハッシュタグ文を渡してリダイレクトする
-      redirect_to station_path(destination: (params.permit(:keyword))[:keyword])
+      # メッセージID
+      message_id = (params.permit(:message_id))[:message_id]
+      # この投稿に自分がポイントを付与した実績がなければ、ポイントを付与
+      is_gave = UserMessage.where("user_id = ? and message_id = ?", current_user.id, message_id)
+      if is_gave == [] 
+        # 投稿ユーザにポイントを1加算
+        user.point = user.point + 1
+        user.save
+        # 付与した実績をテーブルに追加
+        new_user_message = UserMessage.create(user_id: current_user.id, message_id: message_id.to_i, is_gave: true)
+      elsif !(is_gave[0].is_gave)
+        # 投稿ユーザにポイントを1加算
+        user.point = user.point + 1
+        user.save
+        # 付与した実績でカラムを更新
+        is_gave.is_gave = true
+        is_gave.save
+      end 
+      # statonsコントローラ#showアクションにハッシュタグ文+駅名を渡してリダイレクトする
+      redirect_to station_path(destination: destination_with_station_name)
     end
   end
 
