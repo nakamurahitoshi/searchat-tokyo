@@ -24,16 +24,24 @@ $(function(){
   // 透明なdivタグを貼って画面をロックさせる関数
   function screenLock(lock){
     if(lock){
-      // 画面ロック
-      // ロック用のdivを生成
-      $("body").prepend($("<div></div>", {
-        width: "100vw",
-        height: "100vh",
-        left: "0px",
-        css: {border: "5px solid gray"},
-        addClass: "screenlock",
-        opacity: '50',
-        zIndex: '9999'//最上位に表示
+     // 画面ロック
+     // ロック用のdivを生成
+     $("body").prepend(
+       $("<div> <p>ただいま路線・駅データベースの更新中です しばらくお待ちください</p> </div>")
+        .addClass("screenlock")
+        .css({
+          "height" : "100vh",
+          "width" : "100vw",
+          "position" : "absolute",
+          "top" : "0px",
+          "left" : "0px",
+          "background-color" : "lightgray",
+          "opacity" : "0.9",
+          "line-height" : "50vh",
+          "text-align" : "center",
+          "zIndex" : "9999", //最上位に表示
+          "font-size" : "xx-large",
+          "font-weight" : "bold"  
       }));
     }else{
       // 画面ロックを解除
