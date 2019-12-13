@@ -77,7 +77,7 @@
               if(station.name != null){
               var html = `<div class="station__info">
                             <div class="station__info__number">${index+1}番目に近い駅</div>
-                              <div class="station__info__name"><a href="/stations/${station.id}/messages">${station.name}駅</a></div>
+                              <div><a class="station__info__name" href="/stations/${station.id}/messages">${station.name}駅</a></div>
                                 <div class="station__info__length">(目的地から${station.dist}m) <br></div></div>`;
               $(".result__station").append(html);
               /// 検索した駅にマーカーを立てる
