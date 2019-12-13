@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_10_080919) do
+ActiveRecord::Schema.define(version: 2019_12_12_044430) do
 
   create_table "messages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "body", default: "0", null: false
@@ -49,6 +49,16 @@ ActiveRecord::Schema.define(version: 2019_12_10_080919) do
     t.index ["name"], name: "index_stations_on_name"
   end
 
+  create_table "user_messages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "message_id"
+    t.boolean "is_gave", default: false, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["message_id"], name: "index_user_messages_on_message_id"
+    t.index ["user_id"], name: "index_user_messages_on_user_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.string "email", default: "", null: false
@@ -70,5 +80,7 @@ ActiveRecord::Schema.define(version: 2019_12_10_080919) do
   add_foreign_key "messages", "users"
   add_foreign_key "station_railways", "railways"
   add_foreign_key "station_railways", "stations"
+  add_foreign_key "user_messages", "messages"
+  add_foreign_key "user_messages", "users"
   add_foreign_key "users", "stations"
 end
