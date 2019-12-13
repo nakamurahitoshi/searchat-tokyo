@@ -37,16 +37,16 @@ html, body {
   .form__search {
     box-sizing: border-box;
     height: 150px;
-    margin-top: 100px;
+    margin-top: 150px;
     padding: 20px 50px 20px 40px;
-    position: relative;
+  
   }
   .form__search__message{
     float: left;
     height: 100px;
     width: 450px;
-    font-size: 30px;
-    box-shadow: 0 0 3px 3px #e57373, 0 0 3px 2px #e57373 inset;
+    font-size: 22px;
+    box-shadow: 0 0 3px 3px #70c8ce, 0 0 3px 2px #70c8ce inset;
     border-radius: 10px;
     background: #f9fbe7;
     position: relative;
@@ -67,7 +67,7 @@ html, body {
 
   .right-content {
     height: 100%;
-    width: 50%;
+    width: 70%;
     float: right;
     position: relative;
   }
@@ -82,32 +82,34 @@ html, body {
 
   .form__chat {
     box-sizing: border-box;
-    height: 150px;
-    margin-top: 100px;
+    height: 60px;
     padding: 10px 50px 20px 40px;
+    position: relative;
   }
 
   .station-textfield{
-      height: 100px;
-      width: 450px;   
+      height: 40px;
+      width: 180px;   
       float: left;
       &__textfield{
         height: 100%;
         width: 100%;   
-        font-size: 30px;
-        box-shadow: 0 0 3px 3px #e57373, 0 0 3px 2px #e57373 inset;
+        font-size: 15px;
+        box-shadow: 0 0 3px 3px #70c8ce, 0 0 3px 2px #70c8ce inset;
         border-radius: 15px;
         background: #f9fbe7;
-        
+        margin-left: 270px;
+        margin-top: -500px;
       }
   }
   .station-list{
     &__station{
-      height: 40px;
+      height: 30px;
       width: 100%;   
-      font-size: 26px;
-      background-color: lightgray;
-      border: medium solid black;    
+      font-size: 15px;
+      border: solid salmon;
+      margin-left: 270px;
+      font-family: 'Courier New', Courier, monospace;
     }
   }
 
@@ -117,11 +119,12 @@ html, body {
       border: none;
       color: white;
       float: right;
-      font-size: 40px;
-      height: 100px;
-      margin-left: 5px;
+      font-size: 15px;
+      height: 30px;
+      margin-right: 320px;
       padding: 0 30px;
-      border-radius: 20px;        /* 角丸指定 */
+      border-radius: 10px;        /* 角丸指定 */
+
     }
   }
 
@@ -326,4 +329,14 @@ left: 240px;
   display: inline-block;
   top: -70px;
   left: 370px;
+  }
+  .form__arrow{
+    font-size: 50px;
+    color: lightskyblue;
+    margin-left: 170px;
+    position: absolute;
+  }
+  .form__description{
+    font-size: 12px;
+    margin-left: 100px;
   }

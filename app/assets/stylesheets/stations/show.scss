@@ -12,7 +12,7 @@ html, body {
 }
 
 .left-content {
-  background-color: white;
+  background-color: lightgoldenrodyellow;
   height: 100%;
   width: 50%;
   float: left;
@@ -45,8 +45,8 @@ h1 {
 
   h2 {
     padding: 0.5em;/*文字周りの余白*/
-    color: green;/*文字色*/
-    border-left: solid 10px lightgreen;/*左線（実線 太さ 色）*/
+    color:#70c8ce;/*文字色*/
+    border-left: solid 10px lightskyblue;/*左線（実線 太さ 色）*/
     font-size: 20px;
     margin-top: 70px;
     width: 50%;
@@ -55,15 +55,15 @@ h1 {
   .result__where{
     font-size: 30px;
     margin-left: 10px;
+    margin-top: 10px;
+    position: absolute;
   }
 
 h3 {
-  padding: 0.5em;/*文字周りの余白*/
-  color: green;/*文字色*/
-  border-left: solid 10px lightgreen;/*左線（実線 太さ 色）*/
+  padding: 0.3em;/*文字周りの余白*/
+  color:#70c8ce;/*文字色*/
+  border-left: solid 10px lightskyblue;/*左線（実線 太さ 色）*/
   font-size: 20px;
-  margin-top: 70px;
-  
 }
 
 
@@ -71,6 +71,36 @@ h3 {
   box-sizing: border-box;
   height: 150px;
   padding: 20px 50px 20px 40px;
+  position: relative;
+  margin-left: 200px;
+  margin-top: 50px;
+}
+.form__search__message{
+  float: left;
+  height: 50px;
+  width: 200px;
+  font-size: 15px;
+  box-shadow: 0 0 3px 3px #70c8ce, 0 0 3px 2px #70c8ce inset;
+  border-radius: 10px;
+  background: #f9fbe7;
+  position: relative;;
+  margin-left: 100px
+}
+
+.form__search__message--go{
+  background-color: lightblue;
+  border: none;
+  color: white;
+  float: right;
+  font-size: 20px;
+  height: 50px;
+  padding: 0 30px;
+  border-radius: 20px;        /* 角丸指定 */
+  position: relative;
+}
+.result__station{
+  width: 80%;
+  position: absolute;
 }
 .result__station__name{
   float: left;
@@ -87,7 +117,75 @@ h3 {
   margin-left: 15px;
   padding: 0 30px;
 }
+
 .station__info__number{
   color: black;
+  position: relative;
+  margin-top: 30px;
   
+  padding-left: 10px;
+}
+.station__info__name{
+  float: left;
+  color:#7BA6EF;
+  font-size: 30px;
+  text-decoration-style: double;
+  font-weight: bold;
+  padding-left: 10px;
+  
+}
+.station__info__length{
+  margin-top: 10px;
+}
+.result__station__view{
+  position: relative;
+  margin-left: 550px;
+  width:20%;
+}
+.bms_message {
+  margin: 0px;
+  padding: 0 10px;/*吹き出しがタイムラインの側面にひっつかない様に隙間を開ける*/
+  font-size: 10px;
+  word-wrap: break-word;/* 吹き出し内で自動で改行 */
+  white-space: normal;/*指定widthに合わせて、文字を自動的に改行*/
+}
+.bms_message_box{
+  margin-top: 20px;/*上下の吹き出しがひっつかない様に隙間を入れる*/
+  max-width: 100%;/*文字が長くなった時に吹き出しがタイムラインからはみ出さない様にする*/
+  font-size: 10px;
+}
+/*
+*追加
+*/
+  .bms_message_content{
+      padding: 10px;/*文字や画像（コンテンツ）の外側に隙間を入れる*/
+  }
+/* メッセージ１（左側） */
+.bms_left {
+    float: left;/*吹き出しをbms_messagesに対して左寄せ*/
+    line-height: 1.3em;
+}
+  .bms_left .bms_message_box {
+    color: #333;/*テキストを黒にする*/
+    background: #fff;
+    border: 2px solid #13178E;
+    border-radius: 30px 30px 30px 0px;/*左下だけ尖らせて吹き出し感を出す*/
+    margin-right: 20px;/*左側の発言だとわかる様に、吹き出し右側に隙間を入れる*/
+}
+/* メッセージ２（右側） */
+.bms_right {
+    float: right;/*吹き出しをbms_messagesに対して右寄せ*/
+    line-height: 1.3em;
+}
+  .bms_right .bms_message_box {
+    color: #fff;/*テキストを白にする*/
+    background: #13178E;
+    border: 2px solid #13178E;
+    border-radius: 30px 30px 0px 30px;/*右下だけ尖らせて吹き出し感を出す*/
+    margin-left: 20px;/*右側の発言だとわかる様に、吹き出し左側に隙間を入れる*/
+  }
+/* 回り込みを解除 */
+.bms_clear {
+    clear: both; /* 左メッセージと右メッセージの回り込み(float)の効果の干渉を防ぐために必要（これが無いと、自分より下のメッセージにfloatが影響する） */
+
 }
