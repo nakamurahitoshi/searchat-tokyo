@@ -83,6 +83,8 @@ gem 'fog-aws'
 # AWSのAppサーバとしてUnicornの導入
 group :production do
   gem "unicorn", "5.4.1"
+  # herokuへのデプロイに必要なgem
+  gem 'rails_12factor'
 end
 
 # 20191130 faradayを追加
