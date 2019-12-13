@@ -28,17 +28,6 @@
 - belongs_to :stations
 - belongs_to :railways
 
-## messagesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|body|string|null: false, unique: false, default: false, primary_key: false, foreign_key: false, index: false|
-|created_at|int|null: false, unique: false, default: false, primary_key: false, foreign_key: false, index: false|
-|user_id|int|null: false, unique: false, default: false, primary_key: false, foreign_key: true, index: false|
-|station_id|int|null: false, unique: false, default: false, primary_key: false, foreign_key: true, index: false|
-### アソシエーション
-- belongs_to :user
-- belongs_to :station
-
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -51,3 +40,24 @@
 ### アソシエーション
 - has_many :messages
 - belongs_to :stations
+
+## messagesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|body|string|null: false, unique: false, default: false, primary_key: false, foreign_key: false, index: false|
+|created_at|int|null: false, unique: false, default: false, primary_key: false, foreign_key: false, index: false|
+|user_id|int|null: false, unique: false, default: false, primary_key: false, foreign_key: true, index: false|
+|station_id|int|null: false, unique: false, default: false, primary_key: false, foreign_key: true, index: false|
+### アソシエーション
+- belongs_to :user
+- belongs_to :station
+
+## user_messagesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|int|null: false, unique: false, default: false, primary_key: false, foreign_key: true, index: false|
+|message_id|int|null: false, unique: false, default: false, primary_key: false, foreign_key: true, index: false|
+|is_gave|boolean|null: false, unique: false, default: false, primary_key: false, foreign_key: false, index: false|
+### アソシエーション
+- has_many :users
+- has_many :messages

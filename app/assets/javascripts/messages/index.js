@@ -58,24 +58,44 @@ $(function(){
                 </div>`
     return html;
   }
+  
+    //ajax通信によりメッセージを削除する関数
+    function delete_message(obj, url, data_hash){
+      //完了を知らせるDeferredオブジェクトを生成
+      var deferred = new $.Deferred();
+      $.ajax({
+        url: url,
+        type: 'DELETE',
+        data: data_hash ,
+        dataType: 'json',
+      })
+      .done(function(data){
+        obj.parent().parent().remove()
+      })
+      .fail(function(){
+        alert('削除に失敗しました');
+      }).always(function(){
+        //ajax処理終了をDeferredオブジェクトに通知
+        deferred.resolve();
+      });
+      //完了を知らせるDeferredオブジェクトを生成し返す
+      return deferred;
+    }
 
   $(document).on('click', '.btn__delete-btn' ,function(){
-    obj = $(this)
-    var stationid = $(this).data('station-id');
-    var messageid = $(this).data('message-id');
-    var url = `/stations/${stationid}/messages/${messageid}`;
-    $.ajax({
-      url: url,
-      type: 'DELETE',
-      data: {id: messageid},
-      dataType: 'json',
-    })
-    .done(function(data){
-      obj.parent().parent().remove()
-    })
-    .fail(function(){
-      alert('削除に失敗しました');
-    })
+    var del_confirm = window.confirm("メッセージを削除してもよろしいですか?");
+    if( del_confirm ) {
+      obj = $(this)
+      var stationid = $(this).data('station-id');
+      var messageid = $(this).data('message-id');
+      var url = `/stations/${stationid}/messages/${messageid}`;
+      var data_hash = {id: messageid}
+      alert("メッセージを削除します")
+      var deferred = delete_message(obj, url, data_hash)
+      deferred.done(function(){
+        alert("メッセージを削除しました")
+      });
+    }
   });
 
   // コメントが空白のときは送信ボタンを無効化する

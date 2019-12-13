@@ -3,7 +3,7 @@
 = content_for :gmap do
   = google_maps_api_script_tag
 = content_for :js do
-  = javascript_include_tag 'stations/show'
+  = javascript_include_tag 'stations/show','railways/index'
 .contents
   .left-content
     %h1 地図
@@ -12,5 +12,29 @@
     %h2 あなたの行き先
     = hidden_field_tag :destination, @destination[:destination], class: "destination"
     .result__where
-    %h3 行き先の最寄駅
+    .form__search
+      = form_tag(station_path(0), method: 'get') do
+        = text_field_tag 'destination', '', class: 'form__search__message', placeholder: "他に行きたいところは？"
+        = submit_tag 'GO!', class: 'form__search__message--go', disabled: true
+    %h3 周辺えきの情報を知る！掲示板にGO
     .result__station
+    .result__station__view
+      / 回り込みを解除（スタイルはcssで充てる）
+      / メッセージ２（右側）
+      .bms_message.bms_right
+        .bms_message_box
+          .bms_message_content
+            .bms_message_text 美味しいパスタのお店教えて
+      .bms_clear
+      / 回り込みを解除（スタイルはcssで充てる）
+      / メッセージ3（左側）
+      .bms_message.bms_left
+        .bms_message_box
+          .bms_message_content
+            .bms_message_text ここオススメだよ#ランチ
+      .bms_clear
+      .bms_message.bms_left
+        .bms_message_box
+          .bms_message_content
+            .bms_message_text ディナーならここ！#ディナー
+      .bms_clear

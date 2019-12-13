@@ -13,19 +13,20 @@
   .right-content
     .form__search
       = form_tag(station_path(0), method: 'get') do
-        = text_field_tag 'destination', '', class: 'form__search__message', placeholder: "どこに行く？"
+        = text_field_tag 'destination', '', class: 'form__search__message', placeholder: "どこに行く？行きたい場所を検索してね"
         = submit_tag 'GO!', class: 'form__search__message--go', disabled: true
       .description1 東京タワー
       .description2 東京大学
       .description3 JR東日本　本社
+    .form__arrow
+      ↪︎
     .form__chat
       = form_for :current_user, url: station_messages_path(0), html: {class: 'station-input-form', method: 'GET'} do |f| # ()の中は相談@stationsになる予定 -> フォームの中の文字を渡すだけで駅のidは不要だから(0)のままでいいよ by nakamura
         .station-textfield
-          = f.text_field :name,class: 'station-textfield__textfield', placeholder: 'どこの駅のチャットをみる?'
+          = f.text_field :name,class: 'station-textfield__textfield', placeholder: 'えき名を検索してね'
           .station-list
-          .description4 渋谷
-          .description5 新宿
-          .description6 横浜
-          .description7 高崎
         .station-submit
           = f.submit 'GO!', class: 'station-submit__submitbtn', disabled: true
+    .form__description
+      行きたいえきはわかっている？
+    

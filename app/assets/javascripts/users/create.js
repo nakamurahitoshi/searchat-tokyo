@@ -19,7 +19,7 @@ $(function() {
         // お気に入りマーク(星)の色を白色から黄色にするためにクラス名前を変更する
         $(".chat-header__favorite-btn--no").removeClass("chat-header__favorite-btn--no").addClass("chat-header__favorite-btn--yes");
         // my stationをお気に入り駅にする
-        $(".mystation__name").text(station.name);
+        $(".mystation__name").text("").append(`<a class="btn__station-btn" href="/stations/${station.id}/messages">${station.name}</a>`);
         $('.mystation-footer__nil').removeClass("mystation-footer__nil").addClass("mystation-footer__not-nil").text("↑↑駅名をクリックするとチャットに飛べるよ");
         $(".mystation-mark__body").text("My \n 01");
       })
