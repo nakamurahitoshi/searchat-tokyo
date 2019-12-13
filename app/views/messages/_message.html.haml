@@ -74,6 +74,6 @@
           = message.body
         %p.message__text
       - if (message.body).split(/[#]/)[1] != nil 
-        = link_to (message.body).split(/[#]/)[1], station_message_path(station_id: @station.id, id: message.id, user_id: message.user.id, keyword: (message.body).split(/[#]/)[1]), class: "message__text_hashtag", method: 'GET'
+        = link_to (message.body).split(/[#]/)[1], station_message_path(station_id: @station.id, id: message.id, user_id: message.user.id, message_id: message.id,keyword: (message.body).split(/[#]/)[1]), class: "message__text_hashtag", method: 'GET'
         = fa_icon 'heart', id: "message__text__icon"
         = link_to "←", station_message_path(station_id: @station.id, id: message.id, user_id: message.user.id, keyword: (message.body).split(/[#]/)[1]), class: "message__text__arrows", method: 'GET'
