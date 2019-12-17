@@ -25,8 +25,8 @@ h1 {
 }
 
 .map{
-  width: 90%;
-  height: 85%;
+  width: 86%;
+  height: 86%;
   margin: auto;
   border-radius: 10px;
   color: #565656;
@@ -34,6 +34,37 @@ h1 {
   box-shadow: 0px 0px 0px 10px #c1d8e9;
   border: dashed 2px #86c6e6;
 }
+//検索されたスポット情報詳細画面
+.spot-info{
+  position: relative;
+  bottom: 26rem;
+  width: 40px;
+  height: 120px;
+}
+summary {
+  cursor: pointer;
+}
+details {
+  padding-left: 21px;
+}
+.summary-top {
+  font-size: 15px;
+  font-weight: bold;
+  width: 15px;
+  background-color: ghostwhite;
+}
+.detail {
+  position: absolute;
+  left: 38px;
+  top: 0;
+  font-size: 15px;
+  width: 130px;
+  background-color: #c3ecf7;
+}
+.detail-phote {
+  padding-left: 10px;
+}
+
 
 .right-content {
   background-color:lightgoldenrodyellow;

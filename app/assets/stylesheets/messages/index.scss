@@ -106,11 +106,11 @@ a {
   border-radius: 3px;
 }
 .chat-header {
-  height: 100px;
+  height: 6.2vw;
   width: 100%;
   background-color: lightpink;
   display: flex;
-  line-height: 90px;
+  line-height: 5.5vw;
   border: solid 5px #fff;
   box-sizing: border-box;
   overflow: scroll;
@@ -121,7 +121,7 @@ a {
   text-align: center;
 }
 .chat-header__station-name {
-  font-size: 4vw;
+  font-size: 3vw;
   white-space: nowrap;
   overflow:scroll;
 }
@@ -132,7 +132,7 @@ a {
 
 // お気に入りボタンのスタイル
 .chat-header__favorite-btn {
-  font-size: 5vw;
+  font-size: 3vw;
   vertical-align: middle; 
 }
 // お気に入り駅ならば黄色にする

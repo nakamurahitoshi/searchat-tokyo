@@ -130,7 +130,10 @@ html, body {
 
   .notifications {
     color: black;
-    text-align: center;  
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    top: 140px;
     .notice {
       background-color: cyan;
     }
