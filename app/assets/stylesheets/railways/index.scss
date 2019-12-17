@@ -84,6 +84,7 @@ html, body {
     box-sizing: border-box;
     height: 8vh;
     position: relative;
+    margin-top: 5vh;
   }
 
   .station-textfield{
@@ -105,7 +106,7 @@ html, body {
     &__station{
       height: 6vh;
       width: 100%;   
-      font-size: 5vw;
+      font-size: 2vw;
       border: solid salmon;
       margin-left: 27vw;
       font-family: 'Courier New', Courier, monospace;
@@ -120,7 +121,7 @@ html, body {
       float: right;
       font-size: 3vw;
       height: 3vh;
-      margin-right: 12vw;
+      margin-RIGHT: 8vw;
       padding: 0 30px;
       border-radius: 10px;        /* 角丸指定 */
       font-size: 2vh;
@@ -147,12 +148,12 @@ html, body {
     display: none;
     position: absolute;
     padding: 10px;
-    font-size: 18px;
+    font-size: 1.3vw;
     line-height: 2.6em;
     color: #fff;
-    border-radius: 5px;
+    border-radius: 20px;
     background: lightpink;
-    width: 100px;
+    width: 7vw;
     text-align: center;
 }
 .description1:before {
@@ -166,20 +167,20 @@ html, body {
 }
 .form__search:hover .description1{
     display: inline-block;
-    top: -70px;
-    left: 50px;
+    top: -11vh;
+    left: 3vw;
 }
 .description2 {
-  display: none;
-  position: absolute;
-  padding: 10px;
-  font-size: 18px;
-  line-height: 2.6em;
-  color: #fff;
-  border-radius: 5px;
-  background: lightpink;
-  width: 100px;
-  text-align: center;
+    display: none;
+    position: absolute;
+    padding: 10px;
+    font-size: 1.3vw;
+    line-height: 2.6em;
+    color: #fff;
+    border-radius: 20px;
+    background: lightpink;
+    width: 7vw;
+    text-align: center;
 }
 .description2:before {
   content: "";
@@ -192,21 +193,21 @@ html, body {
 }
 .form__search:hover .description2{
   display: inline-block;
-  top: -70px;
-  left: 180px;
+  top: -11vh;
+  left: 13vw;
 }
 
 .description3 {
-  display: none;
-  position: absolute;
-  padding: 10px;
-  font-size: 18px;
-  line-height: 2.6em;
-  color: #fff;
-  border-radius: 5px;
-  background: lightpink;
-  width: 200px;
-  text-align: center;
+    display: none;
+    position: absolute;
+    padding: 10px;
+    font-size: 1.3vw;
+    line-height: 2.6em;
+    color: #fff;
+    border-radius: 20px;
+    background: lightpink;
+    width: 10vw;
+    text-align: center;
 }
 .description3:before {
   content: "";
@@ -219,126 +220,24 @@ html, body {
 }
 .form__search:hover .description3{
   display: inline-block;
-  top: -70px;
-  left: 310px;
+  top: -11vh;
+  left: 23vw;
 }
 .station-textfield{
   position: relative;
   cursor: pointer;
   display: inline-block;
 }
-.description4 {
-  display: none;
-  position: absolute;
-  padding: 10px;
-  font-size: 18px;
-  line-height: 2.0em;
-  color: #fff;
-  border-radius: 5px;
-  background: lightpink;
-  width: 100px;
-  text-align: center;
-}
-.description4:before {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  border: 15px solid transparent;
-  border-top: 15px solid lightpink;
-  margin-left: -15px;
-}
-.station-textfield:hover .description4{
-  display: inline-block;
-  top: -70px;
-  left: -20px;
-}
-.description5 {
-display: none;
-position: absolute;
-padding: 10px;
-font-size: 18px;
-line-height: 2.0em;
-color: #fff;
-border-radius: 5px;
-background: lightpink;
-width: 100px;
-text-align: center;
-}
-.description5:before {
-content: "";
-position: absolute;
-top: 100%;
-left: 50%;
-border: 15px solid transparent;
-border-top: 15px solid lightpink;
-margin-left: -15px;
-}
-.station-textfield:hover .description5{
-display: inline-block;
-top: -70px;
-left: 110px;
-}
 
-.description6 {
-display: none;
-position: absolute;
-padding: 10px;
-font-size: 18px;
-line-height: 2.0em;
-color: #fff;
-border-radius: 5px;
-background: lightpink;
-width: 100px;
-text-align: center;
-}
-.description6:before {
-content: "";
-position: absolute;
-top: 100%;
-left: 50%;
-border: 15px solid transparent;
-border-top: 15px solid lightpink;
-margin-left: -15px;
-}
-.station-textfield:hover .description6{
-display: inline-block;
-top: -70px;
-left: 240px;
-}
-.description7 {
-  display: none;
-  position: absolute;
-  padding: 10px;
-  font-size: 18px;
-  line-height: 2.0em;
-  color: #fff;
-  border-radius: 5px;
-  background: lightpink;
-  width: 100px;
-  text-align: center;
-  }
-  .description7:before {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  border: 15px solid transparent;
-  border-top: 15px solid lightpink;
-  margin-left: -15px;
-  }
-  .station-textfield:hover .description7{
-  display: inline-block;
-  top: -70px;
-  left: 370px;
-  }
   .form__arrow{
     font-size: 50px;
     color: lightskyblue;
-    margin-left: 170px;
+    margin-left: 15vw;
+    margin-top:5vh;
     position: absolute;
   }
   .form__description{
     font-size: 12px;
-    margin-left: 100px;
+    margin-left: 10vw;
+    margin-top: 2vh;
   }
