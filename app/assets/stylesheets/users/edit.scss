@@ -3,13 +3,14 @@
   height: 100%;
   
   .account-page__inner {
-    width: 980px;
+    margin-left: 5vw;
+    margin-right: 10vw;
+    width:70vw;
     padding-top: 30px;
     padding-left: 60px;
     padding-right: 60px;
     margin-top: 3%;
     margin-bottom: 3%;
-    margin-left: 10%;
     background-color: lightgoldenrodyellow;
     border: dashed 3px #fdd835;
     box-shadow: 0 0 0 10px lightgoldenrodyellow, 0 0 0 25px #fdd835;
@@ -102,6 +103,7 @@
     text-align: center;
     border: none;
     border-radius: 5px;
+    margin-bottom: 100vh;
   }
 
   .btn2 {
@@ -149,19 +151,24 @@
   }
 }
 .login-description{
-  margin-top:35%; 
+  margin-top:20vh; 
 }
 .image-login2{
-  margin-top: -3%;
+  margin-top: -2vh;
+  margin-left: 1vw;
   position: absolute;
 }
 .balloon2 {
   position: relative;
-  margin-top:28%;
-  margin-left: 150px;
+  margin-top:40vh;
+  margin-left: 20vw;
   padding: 15px;
   background: white;
   border-radius: 30px;
+  text-align: center;
+  width: 50vw;
+  border:solid 2px;
+  border-color: #fdd835;
 }
 
 .balloon2:before {  
@@ -173,6 +180,8 @@
   bottom: 0;
   background: white;
   border-radius: 50%;
+  border:solid 2px;
+  border-color: #fdd835;
 }
 
 .balloon2:after {
@@ -184,6 +193,8 @@
   bottom: 3px;
   background: white;
   border-radius: 50%;
+  border:solid 2px;
+  border-color: #fdd835;
 }
 .balloon2 p {
   margin: 0; 
@@ -192,11 +203,15 @@
 
 .balloon3 {
   position: absolute;
-  margin-top:2%;
+  margin-top:5vh;
+  margin-left: 1vw;
   padding: 15px;
-  background:white;
+  background: white;
   border-radius: 30px;
-  width: 700px;
+  text-align: center;
+  width: 50vw;
+  border:solid 2px;
+  border-color: #fdd835;
 }
 
 .balloon3:before {  
@@ -208,6 +223,8 @@
   bottom: 0;
   background:white;
   border-radius: 50%;
+  border:solid 2px;
+  border-color: #fdd835;
 }
 
 .balloon3:after {
@@ -219,6 +236,8 @@
   bottom: 3px;
   background: white;
   border-radius: 50%;
+  border:solid 2px;
+  border-color: #fdd835;
 }
 .balloon3 p {
   margin: 0; 
@@ -227,22 +246,26 @@
 .image-login3{
   margin-top: 1%;
   position: relative;
-  margin-left: 800px;
+  margin-left: 60vw;
 }
 .image-login{
-  margin-left: 1%;
+  margin-left: 1vw;
   position: absolute; 
-  margin-bottom: 3%;
+  margin-bottom: 3vh;
+  margin-top: -1vh;
 }
 .balloon4 {
   position: relative;
-  margin-top:1%;
-  margin-bottom: 5%;
+  margin-top:3vh;
+  margin-left: 20vw;
   padding: 15px;
-  background:white;
+  background: white;
   border-radius: 30px;
-  width: 700px;
-  margin-left: 250px;
+  text-align: center;
+  width: 50vw;
+  margin-bottom: 3vh;
+  border:solid 2px;
+  border-color: #fdd835;
 }
 
 .balloon4:before {  
@@ -254,6 +277,8 @@
   bottom: 0;
   background:white;
   border-radius: 50%;
+  border:solid 2px;
+  border-color: #fdd835;
 }
 
 .balloon4:after {
@@ -265,6 +290,8 @@
   bottom: 3px;
   background: white;
   border-radius: 50%;
+  border:solid 2px;
+  border-color: #fdd835;
 }
 .balloon4 p {
   margin: 0; 
