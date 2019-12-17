@@ -7,6 +7,8 @@
   var markers = [];
   // 場所検索サービスオブジェクト
   var service;
+  // 行き先のwebサイトを取得するにはplaceDetailsなるサービスを使う必要。そのためにplaceIDを別途保存しておく
+  
 
   // jqueryオブジェクトからDOM要素を取得
   map = new google.maps.Map($(".map").get(0), {
@@ -23,12 +25,24 @@
     query: $(".destination").val(),
     fields: ['place_id','name', 'geometry','icon','photos','formatted_address','opening_hours'],
   };
+
+  service.getDetails({
+    placeId: 'ChIJ35ov0dCOGGARKvdDH7NPHX0'
+  }, function (place, status) {
+    if (status === google.maps.places.PlacesServiceStatus.OK) {
+      openend = place.opening_hours.weekday_text
+      //console.log(openend);
+      $(".detail-time").append(openend);
+    }
+  });
+
   // 場所結果結果
   var result = [];
-  // 行き先のwebサイトを取得するにはplaceDetailsなるサービスを使う必要。そのためにplaceIDを別途保存しておく
+
   var place_id = null;
 
   service.findPlaceFromQuery(request, function(results, status) {
+    
     if (status === google.maps.places.PlacesServiceStatus.OK) {
       for (var i = 0; i < results.length; i++) {
         // 場所とその緯度経度を取得し配列に保存
@@ -43,11 +57,9 @@
       img_url = results[0].photos[0].getUrl({maxWidth: a, maxHeight: b})
       h = `<img src ="${img_url}"/>`
       $(".detail-phote").append(h);
-      console.log(result[0].opening_hours.isOpen())
 
-      // place IDの取得
       place_id = results[0].place_id
-      console.log(place_id);
+      console.log(place_id)
 
       // 地図の中心を目的地に設定
       // 現在は取得結果の一番初めの場所に設定中
@@ -123,16 +135,28 @@
         alert("最寄駅の取得に失敗しました...");
       });
     }
+    console.log(place_id)
+    var request = {
+      placeId: place_id,
+      fields: ['website']
+    };
+    service.getDetails(request, function(place, status) {
+    if (status == google.maps.places.PlacesServiceStatus.OK) {
+      console.log(place_id);
+
+    }
+    });
   });
 
   // 行き先のウェブサイト情報は、別途PlaceDetailsなるサービスを使わなければならない
-  var request = {
-    placeId: place_id,
-    fields: ['website']
-  };
-  service.getDetails(request, function(place, status) {
-    if (status == google.maps.places.PlacesServiceStatus.OK) {
-      console.log(place);
-    }
-  });
+  
+  // var request = {
+  //   placeId: place_id,
+  //   fields: ['website']
+  // };
+  // service.getDetails(request, function(place, status) {
+  //   if (status == google.maps.places.PlacesServiceStatus.OK) {
+  //     //console.log(place);
+  //   }
+  // });
 });
