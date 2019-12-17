@@ -34,4 +34,4 @@ doc/
 .DS_Store
 .idea
 .secret
-/config/credentials.yml.enc
+#/config/credentials.yml.enc
