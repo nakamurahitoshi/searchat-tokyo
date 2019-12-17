@@ -8,6 +8,23 @@
   .left-content
     %h1 地図
     .map
+    .spot-info
+      %details{open: ""}
+        %summary.summary-top クリック
+        .detail
+          .detail1
+            phote
+            .detail-phote
+          .detail2
+            web site
+            .detail-site
+          .detail3
+            open time
+            .detail-time
+          .detail4
+            price
+            .detail-price
+
   .right-content
     %h2 あなたの行き先
     = hidden_field_tag :destination, @destination[:destination], class: "destination"

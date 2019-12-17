@@ -15,15 +15,16 @@ html, body {
 
 }
 .username {
-  line-height: 10vh;
+  line-height: 8vw;
   font-size: 3vw;
 }
 .userpoint {
   display: flex;
   position: absolute;
-  top: 8vh;
+  top: 5.5vw;
   left: 5vw;
   font-size: 1vw;
+  margin-top: 5px;
   &__mark {
     color: deeppink;
     font-size: 2.5vw;
@@ -42,13 +43,13 @@ html, body {
     margin-left: 20px;
     font-size: 2vw;
     position: relative;
-    top: 0.9vh;
+    top: 0.5vw;
   }
   &__level-number {
     margin-left: 5px;
     font-size: 2vw;
     position: relative;
-    top: 0.9vh;
+    top: 0.5vw;
   }
   &__level-info {
     position: relative;
@@ -142,7 +143,7 @@ html, body {
   &__edit-icon {
     position: relative;
     height: 50px;
-    line-height: 15vh;
+    line-height: 6vw;
     left: 0.5vw;
     font-size: 3vw;
     color: blue;
@@ -200,7 +201,7 @@ html, body {
 
 .mystation__name {
   list-style: none;
-  font-size: 30px;
+  font-size: 2vw;
   color: green;
   margin: auto;
   padding: 0 10px;
@@ -211,22 +212,23 @@ html, body {
   color: green;
 }
 .mystation-shape {
-  height: 20px;
+  height: 1.5vw;
   width: 100%;
   background-color: green;
   bottom: 30px;
   margin-top: 5px;
   &__square {
-    height: 20px;
-    width: 20px;
+    height: 1.5vw;
+    width: 1.5vw;
     background-color: lightgreen;
     margin: auto;
   }
 }
 .mystation-footer {
-  font-size: 15px;
+  font-size: 1vw;
   bottom: 0;
   text-align: center;
+  line-height: 25px;
 }
 
 .btn {
@@ -241,13 +243,12 @@ html, body {
   color: blue;
   font-size: 30px;
   bottom: 12px;
-  left: 158px;
 }
 .btn-top__btn {
   position: relative;
   color: black;
   height: 15px;
-  left: 122px;
+  right: 36px;
   font-size: 10px;
   text-decoration: none;
 }
@@ -256,22 +257,22 @@ html, body {
   color: blue;
   font-size: 30px;
   bottom: 12px;
-  left: 195px;
+  left: 40px;
 }
 .btn-logout__btn {
   position: relative;
   color: black;
   height: 15px;
-  left: 145px;
+  right: 8px;
   font-size: 10px;
   text-decoration: none;
 }
 
 .btn-admin {
   width: 90px;
-  position: relative;
+  position: absolute;
   bottom: 100px;
-  margin-left: 10px;
+  right: 100px;
 }
 .btn-admin__icon {
   color: blue;
@@ -285,9 +286,9 @@ html, body {
 .btn-update {
   display: flex;
   width: 90px;
-  position: relative;
+  position: absolute;
   bottom: 100px;
-  margin-left: 10px;
+  left: 55px;
 }
 .btn-update__icon {
   color: blue;

@@ -21,7 +21,7 @@
   
   var request = {
     query: $(".destination").val(),
-    fields: ['name', 'geometry','icon','photos','formatted_address'],
+    fields: ['name', 'geometry','icon','photos','formatted_address','opening_hours'],
   };
   // 場所結果結果
   var result = [];
@@ -35,6 +35,13 @@
       //場所の名前を表示する
       var html = results[0].name;
       $(".result__where").append(html);
+      //場所の画像を表示する
+      a = 150;
+      b = 150;
+      img_url = results[0].photos[0].getUrl({maxWidth: a, maxHeight: b})
+      h = `<img src ="${img_url}"/>`
+      $(".detail-phote").append(h);
+      console.log(result[0].opening_hours.isOpen())
 
       // 地図の中心を目的地に設定
       // 現在は取得結果の一番初めの場所に設定中
@@ -77,7 +84,7 @@
               if(station.name != null){
               var html = `<div class="station__info">
                             <div class="station__info__number">${index+1}番目に近い駅</div>
-                              <div><a class="station__info__name" href="/stations/${station.id}/messages">${station.name}駅</a></div>
+                              <div><a class="station__info__name" href="/stations/${station.id}/messages">${station.name}</a></div>
                                 <div class="station__info__length">(目的地から${station.dist}m) <br></div></div>`;
               $(".result__station").append(html);
               /// 検索した駅にマーカーを立てる
