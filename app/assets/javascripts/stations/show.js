@@ -21,10 +21,12 @@
   
   var request = {
     query: $(".destination").val(),
-    fields: ['name', 'geometry','icon','photos','formatted_address','opening_hours'],
+    fields: ['place_id','name', 'geometry','icon','photos','formatted_address','opening_hours'],
   };
   // 場所結果結果
   var result = [];
+  // 行き先のwebサイトを取得するにはplaceDetailsなるサービスを使う必要。そのためにplaceIDを別途保存しておく
+  var place_id = null;
 
   service.findPlaceFromQuery(request, function(results, status) {
     if (status === google.maps.places.PlacesServiceStatus.OK) {
@@ -42,6 +44,10 @@
       h = `<img src ="${img_url}"/>`
       $(".detail-phote").append(h);
       console.log(result[0].opening_hours.isOpen())
+
+      // place IDの取得
+      place_id = results[0].place_id
+      console.log(place_id);
 
       // 地図の中心を目的地に設定
       // 現在は取得結果の一番初めの場所に設定中
@@ -116,6 +122,17 @@
       .fail(function() {
         alert("最寄駅の取得に失敗しました...");
       });
+    }
+  });
+
+  // 行き先のウェブサイト情報は、別途PlaceDetailsなるサービスを使わなければならない
+  var request = {
+    placeId: place_id,
+    fields: ['website']
+  };
+  service.getDetails(request, function(place, status) {
+    if (status == google.maps.places.PlacesServiceStatus.OK) {
+      console.log(place);
     }
   });
 });
