@@ -1,12 +1,6 @@
 = content_for :css do
   = stylesheet_link_tag "users/edit"
 #account-page.account-page
-  %span.image-yamanoteline-1
-    = image_tag "/assets/train_e235_yamanote.png", size: "150x60"
-  %span.image-yamanoteline-2
-    = image_tag "/assets/train_e235_yamanote.png", size: "150x60"
-  %span.image-yamanoteline-3
-    = image_tag "/assets/train_e235_yamanote.png", size: "150x60"
   .account-page__inner.clearfix
     .account-page__inner--left.account-page__header
       %h2 SEARCHAT-TOKYO
@@ -26,3 +20,21 @@
               = f.password_field :password, autocomplete: "off"
             .actions
               = f.submit "ログイン", class: 'btn'
+    .login-description
+      .image-login2
+        = image_tag "/assets/login3.png", size: "120x120"
+        
+      .balloon2
+        %p 東京での新生活・・・
+        %p 電車にも乗り慣れていないし、目的地まで辿りつけるか心配だな
+
+      .balloon3
+        %p 似たようなお店が多すぎて・・・
+        %p 何がいいかわかんないよ
+      .image-login3
+        = image_tag "/assets/login2.png", size: "120x120"
+      .image-login
+        = image_tag "/assets/login.png", size: "180x130"
+      .balloon4
+        %p あの駅の近くには何かいいところはないかなー？
+        %p この前みつけたあのお店、教えてあげたいな！

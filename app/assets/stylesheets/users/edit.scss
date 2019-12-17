@@ -1,15 +1,18 @@
 .account-page {
-  .image-yamanoteline-1{
-    margin-left: 200px;
-  }
+  width: 100%;
+  height: 100%;
+  
   .account-page__inner {
     width: 980px;
-    margin: 60px auto;
-    padding: 60px;
-    margin-top: 17px;
-    background-color: #f0f8ff;
-    border: dashed 3px #00ffff;
-    box-shadow: 0 0 0 10px #f0f8ff, 0 0 0 25px #e0ffff;
+    padding-top: 30px;
+    padding-left: 60px;
+    padding-right: 60px;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    margin-left: 10%;
+    background-color: lightgoldenrodyellow;
+    border: dashed 3px #fdd835;
+    box-shadow: 0 0 0 10px lightgoldenrodyellow, 0 0 0 25px #fdd835;
     border-radius: 3px;
 
     .account-page__inner--left, .account-page__inner--right {
@@ -39,7 +42,7 @@
         display: block;
         width: 60px;
         margin-top: 5px;
-        border-bottom: 1px solid #38aef0;
+        border-bottom: 1px solid lightskyblue;
       }
     }
 
@@ -47,13 +50,13 @@
       margin-bottom: 20px;
       font-size: 14px;
       font-weight: 200;
-      color: #38aef0;
+      color: lightskyblue;
     }
 
     .btn {
       margin-top: 20px;
       color: #fff;
-      background-color: #38aef0;
+      background-color: lightskyblue;
       font-size: 14px;
       padding: 1em;
       border-radius: 5px;
@@ -61,7 +64,7 @@
     .btn1 {
       margin: 20px;
       color: #fff;
-      background-color:#38aef0;
+      background-color:lightskyblue;
       font-size: 14px;
       border-radius: 5px;
     }
@@ -115,8 +118,9 @@
   input[type='submit'] {
     float: left;
     margin-top: 20px;
+    margin-bottom: 20px;
     color: #fff;
-    background-color: #38aef0;
+    background-color: lightskyblue;
   }
 
   .field-label {
@@ -143,5 +147,127 @@
       }
     }
   }
+}
+.login-description{
+  margin-top:35%; 
+}
+.image-login2{
+  margin-top: -3%;
+  position: absolute;
+}
+.balloon2 {
+  position: relative;
+  margin-top:28%;
+  margin-left: 150px;
+  padding: 15px;
+  background: white;
+  border-radius: 30px;
+}
+
+.balloon2:before {  
+  content: "";
+  position: absolute;
+  left: -38px;
+  width: 13px;
+  height: 12px;
+  bottom: 0;
+  background: white;
+  border-radius: 50%;
+}
+
+.balloon2:after {
+  content: "";
+  position: absolute;
+  left: -24px;
+  width: 20px;
+  height: 18px;
+  bottom: 3px;
+  background: white;
+  border-radius: 50%;
+}
+.balloon2 p {
+  margin: 0; 
+  padding: 0;
+}
+
+.balloon3 {
+  position: absolute;
+  margin-top:2%;
+  padding: 15px;
+  background:white;
+  border-radius: 30px;
+  width: 700px;
+}
+
+.balloon3:before {  
+  content: "";
+  position: absolute;
+  right: -38px;
+  width: 13px;
+  height: 12px;
+  bottom: 0;
+  background:white;
+  border-radius: 50%;
+}
+
+.balloon3:after {
+  content: "";
+  position: absolute;
+  right: -24px;
+  width: 20px;
+  height: 18px;
+  bottom: 3px;
+  background: white;
+  border-radius: 50%;
+}
+.balloon3 p {
+  margin: 0; 
+  padding: 0;
+}
+.image-login3{
+  margin-top: 1%;
+  position: relative;
+  margin-left: 800px;
+}
+.image-login{
+  margin-left: 1%;
+  position: absolute; 
+  margin-bottom: 3%;
+}
+.balloon4 {
+  position: relative;
+  margin-top:1%;
+  margin-bottom: 5%;
+  padding: 15px;
+  background:white;
+  border-radius: 30px;
+  width: 700px;
+  margin-left: 250px;
+}
+
+.balloon4:before {  
+  content: "";
+  position: absolute;
+  left: -38px;
+  width: 13px;
+  height: 12px;
+  bottom: 0;
+  background:white;
+  border-radius: 50%;
+}
+
+.balloon4:after {
+  content: "";
+  position: absolute;
+  left: -24px;
+  width: 20px;
+  height: 18px;
+  bottom: 3px;
+  background: white;
+  border-radius: 50%;
+}
+.balloon4 p {
+  margin: 0; 
+  padding: 0;
 }
 
