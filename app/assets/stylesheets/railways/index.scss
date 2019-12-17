@@ -24,7 +24,7 @@ html, body {
 .contents {
   height: calc(100% - 140px - 24px);
   width: 100%;
-  background-color: lightyellow;
+  background-color: lightgoldenrodyellow;
 }
   h5 {
     padding: 0.5em;/*文字周りの余白*/
@@ -38,18 +38,18 @@ html, body {
     box-sizing: border-box;
     height: 150px;
     margin-top: 150px;
-    padding: 20px 50px 20px 40px;
+    
   
   }
   .form__search__message{
     float: left;
-    height: 100px;
-    width: 450px;
-    font-size: 22px;
+    height: 15vh;
+    width: 45vw;
+    font-size: 2vw;
     box-shadow: 0 0 3px 3px #70c8ce, 0 0 3px 2px #70c8ce inset;
     border-radius: 10px;
     background: #f9fbe7;
-    position: relative;
+    position: absolute;
   }
   
   .form__search__message--go{
@@ -57,9 +57,9 @@ html, body {
     border: none;
     color: white;
     float: right;
-    font-size: 40px;
-    height: 100px;
-    margin-left: 38px;
+    font-size: 5vw;
+    height: 15vh;
+    margin-left: 50vw;
     padding: 0 30px;
     border-radius: 20px;        /* 角丸指定 */
     position: relative;
@@ -82,33 +82,32 @@ html, body {
 
   .form__chat {
     box-sizing: border-box;
-    height: 60px;
-    padding: 10px 50px 20px 40px;
+    height: 8vh;
     position: relative;
   }
 
   .station-textfield{
-      height: 40px;
-      width: 180px;   
+      height: 6vh;
+      width: 18vw;   
       float: left;
       &__textfield{
         height: 100%;
         width: 100%;   
-        font-size: 15px;
+        font-size: 2vw;
         box-shadow: 0 0 3px 3px #70c8ce, 0 0 3px 2px #70c8ce inset;
         border-radius: 15px;
         background: #f9fbe7;
-        margin-left: 270px;
-        margin-top: -500px;
+        margin-left: 27vw;
+      
       }
   }
   .station-list{
     &__station{
-      height: 30px;
+      height: 6vh;
       width: 100%;   
-      font-size: 15px;
+      font-size: 5vw;
       border: solid salmon;
-      margin-left: 270px;
+      margin-left: 27vw;
       font-family: 'Courier New', Courier, monospace;
     }
   }
@@ -119,12 +118,12 @@ html, body {
       border: none;
       color: white;
       float: right;
-      font-size: 15px;
-      height: 30px;
-      margin-right: 320px;
+      font-size: 3vw;
+      height: 3vh;
+      margin-right: 12vw;
       padding: 0 30px;
       border-radius: 10px;        /* 角丸指定 */
-
+      font-size: 2vh;
     }
   }
 

@@ -108,12 +108,13 @@ a {
 .chat-header {
   height: 6.2vw;
   width: 100%;
-  background-color: lightpink;
+  background-color: #add8e6;
   display: flex;
   line-height: 5.5vw;
   border: solid 5px #fff;
   box-sizing: border-box;
   overflow: scroll;
+  border-radius: 15px;
 }
 .chat-header__name {
   width: 100%;
@@ -264,12 +265,14 @@ a {
   &__box {
     display: flex;
     width: calc(100% -80px -40px);
+    
   }
   &__message {
     height: 50px;
     border: none;
     padding: 0 20px 0 10px;
     width: 85%;
+    border-radius: 15px;
   }
   &__button {
     height: 50px;
@@ -279,5 +282,6 @@ a {
     color: #555;
     font-weight: bold;
     font-size: 20px;
+    border-radius: 5px;
   }
 }

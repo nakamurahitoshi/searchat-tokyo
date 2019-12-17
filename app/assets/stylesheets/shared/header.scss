@@ -2,6 +2,7 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
 }
 
 .header {
@@ -172,7 +173,8 @@ html, body {
   border: solid 3px;
   height: 95px;
   padding: 5px;
-  background-color: #fff;
+  background-color: white;
+  border-radius: 10px;
 }
 .mystation-top {
   display: flex;
@@ -217,6 +219,7 @@ html, body {
   background-color: green;
   bottom: 30px;
   margin-top: 5px;
+  border-radius: 5px;
   &__square {
     height: 1.5vw;
     width: 1.5vw;
