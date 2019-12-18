@@ -14,11 +14,11 @@ station_railways_csv = CSV.readlines("db/station_railways.csv")
 
 # 取り込み
 stations_csv.each do |row|
-  Product.create(name: row[1], lat: row[2], lng: row[3])
+  Station.create(name: row[1], lat: row[2], lng: row[3])
 end
 railways_csv.each do |row|
-  Product.create(name: row[1], odptrailway: row[2])
+  Railway.create(name: row[1], odptrailway: row[2])
 end
 station_railways_csv.each do |row|
-  Product.create(station_id: row[1], railway_id: row[2], order: row[3])
+  StationRailway.create(station_id: row[1], railway_id: row[2], order: row[3])
 end
