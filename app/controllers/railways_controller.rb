@@ -8,10 +8,10 @@ class RailwaysController < ApplicationController
   # DBの中身を更新するupdateアクション
   def update
     # stationsテーブルを更新
-    view_context.refreshRailways
+    #view_context.refreshRailways
     
     # stationsテーブルとstations_railwaysテーブルを更新
-    view_context.refreshStations
+    #view_context.refreshStations
 
     # station_railwaysテーブルを更新
     view_context.refreshStationRailways
