@@ -39,7 +39,7 @@ module StationsHelper
     railway_list.each do |railway|
       # 既存の路線レコードを取得
       existing_railway = Railway.find_by(odptrailway: railway["owl:sameAs"])
-      
+      if existing_railway.id >= 981 
       #路線に対し駅を紐づける
       railway["odpt:stationOrder"].each do |station|
         # その路線の駅のデータベースレコードを取得
@@ -56,6 +56,7 @@ module StationsHelper
           #new_station_railway[0].order = station["odpt:index"]
         end
       end
+    end#あとで消す
     end
   end
 
