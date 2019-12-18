@@ -5,65 +5,20 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-# 駅データを作成
-Station.create!(
-  [
-    {
-      name: "東京",
-      lat: 35.681935,
-      lng: 139.7648,
-      ucode: "urn:ucode:_00001C000000000000010000031027F1",
-    },
-    {
-      name: "横浜",
-      lat: 35.465264,
-      lng: 139.622848,
-      ucode: "urn:ucode:_00001C00000000000001000003102108",
-    }
-  ]
-)
+# csvファイルから路線・駅・駅路線データをインポート
+require "csv"
 
-# 路線データを作成
-Railway.create!(
-  [
-    {
-      name: "東海道線",
-      ucode: "urn:ucode:_00001C00000000000001000003100E25",
-    },
-    {
-      name: "総武快速線",
-      ucode: "urn:ucode:_00001C00000000000001000003100E1D",
-    }
-  ]
-)
+stations_csv = CSV.readlines("db/stations.csv")
+railways_csv = CSV.readlines("db/railways.csv")
+station_railways_csv = CSV.readlines("db/station_railways.csv")
 
-# 路線・駅データを作成
-StationRailway.create!(
-  [
-    {
-      station_id: 1,
-      railway_id: 1,
-      order: 1,
-    },
-    {
-      station_id: 1,
-      railway_id: 2,
-      order: 1,
-    },
-    {
-      station_id: 2,
-      railway_id: 1,
-      order: 5,
-    }
-  ]
-)
-
-Message.create!(
-  [
-    {
-      body: "こんにちは",
-      user_id: 1,
-      station_id: 1,
-    }
-  ]
-)
+# 取り込み
+stations_csv.each do |row|
+  Product.create(name: row[1], lat: row[2], lng: row[3])
+end
+railways_csv.each do |row|
+  Product.create(name: row[1], odptrailway: row[2])
+end
+station_railways_csv.each do |row|
+  Product.create(station_id: row[1], railway_id: row[2], order: row[3])
+end
