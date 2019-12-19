@@ -16,12 +16,10 @@
         = text_field_tag 'destination', '', class: 'form__search__message', placeholder: "どこに行く？行きたい場所を検索してね"
         = submit_tag 'GO!', class: 'form__search__message--go', disabled: true
       .description__word
-      =link_to "http://localhost:3000/stations/0?utf8=%E2%9C%93&destination=%E6%9D%B1%E4%BA%AC%E3%82%BF%E3%83%AF%E3%83%BC&commit=GO%21", class: "description1" do
-        東京タワー
-      =link_to "http://localhost:3000/stations/0?utf8=%E2%9C%93&destination=%E6%9D%B1%E4%BA%AC%E5%A4%A7%E5%AD%A6&commit=GO%21", class: "description2" do
-        東京大学
-      = link_to "http://localhost:3000/stations/0?utf8=%E2%9C%93&destination=JR%E6%9D%B1%E6%97%A5%E6%9C%AC&commit=GO%21",class: "description3" do
-        JR東日本　本社
+      = link_to "東京タワー", station_path(id: 0, destination: "東京タワー"), class: "description1", method: 'GET'
+      = link_to "東京大学", station_path(id: 0, destination: "東京大学"), class: "description2", method: 'GET' 
+      = link_to "JR東日本 本社", station_path(id: 0, destination: "JR東日本 本社"), class: "description3", method: 'GET'
+        
     .form__arrow
       ↪︎
     .form__chat
