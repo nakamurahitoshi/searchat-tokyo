@@ -99,29 +99,29 @@
               if(stations[0].name != null){
                 stations.forEach(function(station, index){
                   if(station.name != null){
-                  var html = `<div class="station__info">
-                                <div class="station__info__number">${index+1}番目に近い駅</div>
-                                  <div><a class="station__info__name" href="/stations/${station.id}/messages">${station.name}</a></div>
-                                    <div class="station__info__length">(目的地から${station.dist}m) <br></div></div>`;
-                  $(".result__station").append(html);
-                  /// 検索した駅にマーカーを立てる
-                  // マーカーオブジェクトの生成
-                  //marker = new google.maps.Marker({
-                    //map: map,
-                    //position: {lat: station.lat, lng: station.lng},
-                    //label: {
-                      //text: `${station.name}駅はここ`,                           //ラベル文字
-                      //color: '#0000ff',                    //文字の色
-                      //fontSize: `${16-index}px`                     //文字のサイズ
-                    //}
-                  //})
-                  // マーカーをクリックしたら場所の名前を表示するよう設定
-                  google.maps.event.addListener(marker, 'click', function() {
-                    // 場所の名前と住所
-                    infowindow.setContent(station.name);
-                    infowindow.open(map, this);
-                  });
-                  markers.push(marker);
+                      // 行き先までの徒歩時間を検索
+                      var directionsService = new google.maps.DirectionsService();
+                      // 駅(緯度経度で指定)
+                      var start = new google.maps.LatLng({lat: station.lat, lng: station.lng});
+                      //目的地(緯度経度で指定)
+                      var end = new google.maps.LatLng({lat: result[0].geometry.location.lat(),lng: result[0].geometry.location.lng()});
+                      var request = {
+                        origin:start,
+                        destination:end,
+                        travelMode: 'WALKING'
+                      };
+                      
+                      directionsService.route(request, function(response, status) {
+                        if (status == 'OK') {
+                          var duration = response.routes[0].legs[0].duration.text;
+                          var html = `<div class="station__info">
+                          <div class="station__info__number">${index+1}番目に近い駅</div>
+                            <div><a class="station__info__name" href="/stations/${station.id}/messages">${station.name}</a></div>
+                              <div class="station__info__length">(目的地から徒歩${duration}) <br></div></div>`;
+                $(".result__station").append(html);
+                        }
+                      });
+
                 }
               })
             }else{
@@ -151,15 +151,23 @@
       service.getDetails(request, function (place, status) {
         if (status === google.maps.places.PlacesServiceStatus.OK) {
           // 行き先の開店・閉店時間を取得し表示する
-          openend = place.opening_hours.weekday_text
-          $(".detail-time").append(openend);
-          
+          open_end = place.opening_hours
+          if (open_end != null){
+            open_end_time = open_end.weekday_text
+            $(".detail-time").append(openend);
+          }else{
+            $(".detail-time").append("情報がありません");
+          }
           // 行き先のウェブサイトを取得し表示する
           website = place.website
-          website_link = `<a href="${website}" target="_blank">
-                          ${website}
-                          </a>`
-          $(".detail-site").append(website_link);
+          if (website != null){
+            website_link = `<a href="${website}" target="_blank">
+                            ${website}
+                            </a>`
+            $(".detail-site").append(website_link);
+          }else{
+            $(".detail-time").append("情報がありません");
+          }
         }
       });
     })
