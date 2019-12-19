@@ -143,21 +143,23 @@ html, body {
 .user-btn {
   &__edit-icon {
     position: relative;
-    height: 50px;
+    height: 0;
     line-height: 6vw;
     left: 0.5vw;
     font-size: 3vw;
     color: blue;
   }
-  // &__edit-name {
-  //   position: relative;
-  //   height: 15px;
-  //   top: 11vh;
-  //   font-size: 0.5vw;
-  //   right: 5.5vw;
-  //   text-decoration: none;
-  //   color: black;
-  // }
+}
+@media screen and (max-width:1000px) {
+  .username {
+    line-height: 15vw;
+  }
+  .userpoint {
+    top: 9vw;
+  }
+  .user-btn__edit-icon {
+    line-height: 11vw;
+  }
 }
 
 .mystation {
