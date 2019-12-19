@@ -1,9 +1,10 @@
-html {
-  overflow: hidden;
-}
-@media screen and (max-width:800px) {
+@media screen and (max-width:800px) and (min-height:1000px){
   html {
     margin-top: 5vw;
+  }
+  .image-login {
+    left: 40px;
+    bottom: 60px;
   }
 }
 
