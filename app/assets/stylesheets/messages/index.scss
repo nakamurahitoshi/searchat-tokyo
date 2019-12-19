@@ -106,7 +106,7 @@ a {
   border-radius: 3px;
 }
 .chat-header {
-  height: 6.2vw;
+  height: 7.5vw;
   width: 100%;
   background-color: #add8e6;
   display: flex;
@@ -120,11 +120,13 @@ a {
   width: 100%;
   margin: 0 7vw;
   text-align: center;
+  margin-top: .1vw;
 }
 .chat-header__station-name {
-  font-size: 3vw;
+  font-size: 3.5vw;
   white-space: nowrap;
   overflow:scroll;
+  vertical-align: -webkit-baseline-middle;
 }
 .chat-header__btn {
   position: absolute;
@@ -133,8 +135,9 @@ a {
 
 // お気に入りボタンのスタイル
 .chat-header__favorite-btn {
-  font-size: 3vw;
-  vertical-align: middle; 
+  font-size: 5vw;
+  vertical-align: -webkit-baseline-middle; 
+  margin-top: .2vw;
 }
 // お気に入り駅ならば黄色にする
 .chat-header__favorite-btn--yes {
@@ -147,7 +150,7 @@ a {
 
 .messages {
   padding: 10px 20px 10px 20px;
-  height: calc(100vh - 140px - 110px - 70px - 24px);
+  height: calc(100vh - 140px - 110px - 70px);
   width: 100%;
   box-sizing: border-box;
   overflow: scroll;
@@ -273,6 +276,7 @@ a {
     padding: 0 20px 0 10px;
     width: 85%;
     border-radius: 15px;
+    font-size: 1.3vw;
   }
   &__button {
     height: 50px;

@@ -1,7 +1,9 @@
 html, body {
   height: 100%;
+  width: 100%;
   margin: 0;
   padding: 0;
+  background-color: lightgoldenrodyellow;
 }
 
 // .header {
@@ -43,13 +45,14 @@ html, body {
   }
   .form__search__message{
     float: left;
-    height: 15vh;
+    height: 7vw;
     width: 45vw;
     font-size: 2vw;
     box-shadow: 0 0 3px 3px #70c8ce, 0 0 3px 2px #70c8ce inset;
     border-radius: 10px;
     background: #f9fbe7;
     position: absolute;
+    padding-left: 5px;
   }
   
   .form__search__message--go{
@@ -58,11 +61,12 @@ html, body {
     color: white;
     float: right;
     font-size: 5vw;
-    height: 15vh;
-    margin-left: 50vw;
-    padding: 0 30px;
+    height: 7vw;
+    margin-left: 51vw;
+    padding: 0 2vw;
     border-radius: 20px;        /* 角丸指定 */
     position: relative;
+    line-height: 7vw;
   }
 
   .right-content {
@@ -82,34 +86,35 @@ html, body {
 
   .form__chat {
     box-sizing: border-box;
-    height: 8vh;
+    height: 4.5vw;
     position: relative;
-    margin-top: 5vh;
+    margin-top: 10vw;
   }
 
   .station-textfield{
-      height: 6vh;
+      height: 4vw;
       width: 18vw;   
       float: left;
       &__textfield{
         height: 100%;
         width: 100%;   
-        font-size: 2vw;
+        font-size: 1.5vw;
         box-shadow: 0 0 3px 3px #70c8ce, 0 0 3px 2px #70c8ce inset;
         border-radius: 15px;
         background: #f9fbe7;
         margin-left: 27vw;
-      
+        padding-left: 5px;
       }
   }
   .station-list{
     &__station{
-      height: 6vh;
+      height: 2vw;
       width: 100%;   
-      font-size: 2vw;
+      font-size: 1.5vw;
       border: solid salmon;
       margin-left: 27vw;
       font-family: 'Courier New', Courier, monospace;
+      overflow: auto;
     }
   }
 
@@ -120,11 +125,11 @@ html, body {
       color: white;
       float: right;
       font-size: 3vw;
-      height: 3vh;
+      height: 4.5vw;
       margin-RIGHT: 8vw;
-      padding: 0 30px;
+      padding: 0 2vw;
       border-radius: 10px;        /* 角丸指定 */
-      font-size: 2vh;
+      line-height: 4.5vw;
     }
   }
 
@@ -142,6 +147,7 @@ html, body {
     position: relative;
     cursor: pointer;
     display: inline-block;
+    height: 8vw;
 }
 
 .description1 {
@@ -149,11 +155,12 @@ html, body {
     position: absolute;
     padding: 10px;
     font-size: 1.3vw;
-    line-height: 2.6em;
+    line-height: 3.5vw;
     color: #fff;
     border-radius: 20px;
     background: lightpink;
     width: 7vw;
+    height: 3.5vw;
     text-align: center;
 }
 .description1:before {
@@ -167,7 +174,7 @@ html, body {
 }
 .form__search:hover .description1{
     display: inline-block;
-    top: -11vh;
+    top: -6.5vw;
     left: 3vw;
 }
 .description2 {
@@ -175,11 +182,12 @@ html, body {
     position: absolute;
     padding: 10px;
     font-size: 1.3vw;
-    line-height: 2.6em;
+    line-height: 3.5vw;
     color: #fff;
     border-radius: 20px;
     background: lightpink;
     width: 7vw;
+    height: 3.5vw;
     text-align: center;
 }
 .description2:before {
@@ -193,7 +201,7 @@ html, body {
 }
 .form__search:hover .description2{
   display: inline-block;
-  top: -11vh;
+  top: -6.5vw;
   left: 13vw;
 }
 
@@ -202,11 +210,12 @@ html, body {
     position: absolute;
     padding: 10px;
     font-size: 1.3vw;
-    line-height: 2.6em;
+    line-height: 3.5vw;
     color: #fff;
     border-radius: 20px;
     background: lightpink;
     width: 10vw;
+    height: 3.5vw;
     text-align: center;
 }
 .description3:before {
@@ -220,7 +229,7 @@ html, body {
 }
 .form__search:hover .description3{
   display: inline-block;
-  top: -11vh;
+  top: -6.5vw;
   left: 23vw;
 }
 .station-textfield{
@@ -230,14 +239,14 @@ html, body {
 }
 
   .form__arrow{
-    font-size: 50px;
+    font-size: 3.5vw;
     color: lightskyblue;
-    margin-left: 15vw;
-    margin-top:5vh;
+    margin-left: 14vw;
+    margin-top: 10vw;
     position: absolute;
   }
   .form__description{
-    font-size: 12px;
-    margin-left: 10vw;
-    margin-top: 2vh;
+    font-size: .9vw;
+    margin-left: 9vw;
+    margin-top: 5px;
   }

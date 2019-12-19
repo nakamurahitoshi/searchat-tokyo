@@ -46,10 +46,16 @@
 
           //場所の画像を表示する
           // 要素の横幅に合わせる
-          maxwidth = $(".detail").width();
-          img_url = results[0].photos[0].getUrl({maxWidth: maxwidth})
+          maxwidth = $(".detail-phote").width();
+          var img_url = results[0].photos[0].getUrl({maxWidth: maxwidth})
           h = `<img src ="${img_url}"/>`
-          $(".detail-phote").append(h);
+          console.log(img_url)
+          if (img_url != null) {
+            $(".detail-phote").append(h);
+          }
+          if (img_url == "") {
+            $(".spot-info").removeClass("spot-info").addClass("not-spot-info");
+          }
 
           // 検索結果のIDを取得する
           place_id = results[0].place_id
@@ -150,7 +156,10 @@
           
           // 行き先のウェブサイトを取得し表示する
           website = place.website
-          $(".detail-site").append(website);
+          website_link = `<a href="${website}" target="_blank">
+                          ${website}
+                          </a>`
+          $(".detail-site").append(website_link);
 
           // 行き先の価格帯を取得し表示する
           // ※取得されないこともある
