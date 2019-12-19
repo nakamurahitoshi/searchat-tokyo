@@ -46,10 +46,16 @@
 
           //場所の画像を表示する
           // 要素の横幅に合わせる
-          maxwidth = $(".detail").width();
-          img_url = results[0].photos[0].getUrl({maxWidth: maxwidth})
+          maxwidth = $(".detail-phote").width();
+          var img_url = results[0].photos[0].getUrl({maxWidth: maxwidth})
           h = `<img src ="${img_url}"/>`
+          // console.log(img_url)
+          // if (img_url != null) {
           $(".detail-phote").append(h);
+          // }
+          // if (img_url == "") {
+          //   $(".spot-info").removeClass("spot-info").addClass("not-spot-info");
+          // }
 
           // 検索結果のIDを取得する
           place_id = results[0].place_id
@@ -135,12 +141,12 @@
   }
 
   // 次に、取得したplaceIDを用いたPlaceDetailsサービスにて、
-  // 行き先の開店閉店時間・ウェブサイト・価格帯情報を取得する
+  // 行き先の開店閉店時間・ウェブサイトを取得する
   placeSearch()
     .then(() => {
       var request = {
         placeId: place_id,
-        fields: ["opening_hours", "website", "price_level"]
+        fields: ["opening_hours", "website"]
       };
       service.getDetails(request, function (place, status) {
         if (status === google.maps.places.PlacesServiceStatus.OK) {
@@ -150,12 +156,10 @@
           
           // 行き先のウェブサイトを取得し表示する
           website = place.website
-          $(".detail-site").append(website);
-
-          // 行き先の価格帯を取得し表示する
-          // ※取得されないこともある
-          price = place.price_level
-          $(".detail-price").append(price);
+          website_link = `<a href="${website}" target="_blank">
+                          ${website}
+                          </a>`
+          $(".detail-site").append(website_link);
         }
       });
     })
