@@ -46,16 +46,15 @@
 
           //場所の画像を表示する
           // 要素の横幅に合わせる
-          maxwidth = $(".detail-phote").width();
-          var img_url = results[0].photos[0].getUrl({maxWidth: maxwidth})
-          h = `<img src ="${img_url}"/>`
-          // console.log(img_url)
-          // if (img_url != null) {
-          $(".detail-phote").append(h);
-          // }
-          // if (img_url == "") {
-          //   $(".spot-info").removeClass("spot-info").addClass("not-spot-info");
-          // }
+          if ( results[0].photos[0] != undefined ) {
+            maxwidth = $(".detail-phote").width();
+            var img_url = results[0].photos[0].getUrl({maxWidth: maxwidth})
+            h = `<img src ="${img_url}"/>`
+            $(".detail-phote").append(h);
+          }
+          else{
+            $(".spot-info").removeClass("spot-info").addClass("not-spot-info");
+          }
 
           // 検索結果のIDを取得する
           place_id = results[0].place_id
