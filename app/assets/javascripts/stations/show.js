@@ -115,10 +115,9 @@
                         if (status == 'OK') {
                           var duration = response.routes[0].legs[0].duration.text;
                           var html = `<div class="station__info">
-                          <div class="station__info__number">${index+1}番目に近い駅</div>
                             <div><a class="station__info__name" href="/stations/${station.id}/messages">${station.name}</a></div>
                               <div class="station__info__length">(目的地から徒歩${duration}) <br></div></div>`;
-                $(".result__station").append(html);
+                        $(".result__station").append(html);
                         }
                       });
 
@@ -154,7 +153,7 @@
           open_end = place.opening_hours
           if (open_end != null){
             open_end_time = open_end.weekday_text
-            $(".detail-time").append(openend);
+            $(".detail-time").append(open_end_time);
           }else{
             $(".detail-time").append("情報がありません");
           }
