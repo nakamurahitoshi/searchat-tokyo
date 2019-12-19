@@ -1,3 +1,12 @@
+html {
+  overflow: hidden;
+}
+@media screen and (max-width:800px) {
+  html {
+    margin-top: 5vw;
+  }
+}
+
 .account-page {
   width: 100%;
   height: 100%;
@@ -169,6 +178,11 @@
   width: 50vw;
   border:solid 2px;
   border-color: #fdd835;
+  & p {
+    text-align: center;
+    position: relative;
+    right: 8vw;
+  }
 }
 
 .balloon2:before {  
@@ -207,6 +221,11 @@
   width: 50vw;
   border:solid 2px;
   border-color: #fdd835;
+  & p {
+    text-align: center;
+    position: relative;
+    left: 2vw;
+  }
 }
 
 .balloon3:before {  
@@ -260,6 +279,11 @@
   margin-bottom: 3vh;
   border:solid 2px;
   border-color: #fdd835;
+  & p {
+    text-align: center;
+    position: relative;
+    right: 8vw;
+  }
 }
 
 .balloon4:before {  

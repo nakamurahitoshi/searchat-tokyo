@@ -2,6 +2,7 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
+  background-color: lightyellow;
   font-family: 'Hiragino Maru Gothic Pro'
 }
 
@@ -150,7 +151,7 @@ a {
 
 .messages {
   padding: 10px 20px 10px 20px;
-  height: calc(100vh - 140px - 110px - 70px);
+  height: calc(100% - 6px - 10px - 7.5vw - 50px);
   width: 100%;
   box-sizing: border-box;
   overflow: scroll;
@@ -168,27 +169,27 @@ a {
       box-sizing: border-box;
     }
     &__username {
-      font-size: 16px;
+      font-size: 1.1vw;
       font-weight: bold;
       color: #434A56;
       margin-left: 10px;
     }
     &__userpoint-level {
-      font-size: 13px;
+      font-size: .9vw;
       margin-left: 5px;
       &__number {
-        font-size: 13px;
+        font-size: .9vw;
         font-weight: bold;
       }
     }
     &__date {
       margin-left: 20px;
-      font-size: 12px;
+      font-size: .8vw;
       color: gray;
     }
     &__body {
       margin: 10px 0;
-      font-size: 14px;
+      font-size: 1vw;
       margin-left: 10px;
     }
     &__text__arrows {
@@ -217,27 +218,27 @@ a {
       box-sizing: border-box;
     }
     &__username {
-      font-size: 16px;
+      font-size: 1.1vw;
       font-weight: bold;
       color: #434A56;
       margin-left: 10px;
     }
     &__userpoint-level {
-      font-size: 13px;
+      font-size: .9vw;
       margin-left: 5px;
       &__number {
-        font-size: 13px;
+        font-size: .9vw;
         font-weight: bold;
       }
     }
     &__date {
       margin-left: 20px;
-      font-size: 12px;
+      font-size: .8vw;
       color: gray;
     }
     &__body {
       margin: 10px 0;
-      font-size: 14px;
+      font-size: 1vw;
       margin-left: 10px;
     }
     &__text__arrows {
@@ -257,6 +258,7 @@ a {
   background-color: lightyellow;
   color: orange;
   margin-left: 30px;
+  font-size: 1vw;
 }
 .form {
   height: 50px;
