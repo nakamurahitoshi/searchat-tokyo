@@ -46,14 +46,14 @@
 
           //場所の画像を表示する
           // 要素の横幅に合わせる
-          if ( results[0].photos[0] != undefined ) {
+          if ( results[0].photos[0] != null ) {
             maxwidth = $(".detail-phote").width();
             var img_url = results[0].photos[0].getUrl({maxWidth: maxwidth})
             h = `<img src ="${img_url}"/>`
             $(".detail-phote").append(h);
           }
           else{
-            $(".spot-info").removeClass("spot-info").addClass("not-spot-info");
+            $(".detail-phote").append("情報がありません");
           }
 
           // 検索結果のIDを取得する
@@ -164,7 +164,7 @@
                             </a>`
             $(".detail-site").append(website_link);
           }else{
-            $(".detail-time").append("情報がありません");
+            $(".detail-site").append("情報がありません");
           }
         }
       });
