@@ -84,7 +84,7 @@ details {
 }
 .detail-time {
   padding: 0 2px;
-  font-size: .5vw;
+  font-size: .7rem;
   overflow-wrap: break-word;
   word-wrap: break-word;
   padding-bottom: 5px;
@@ -126,7 +126,7 @@ h3 {
  .form__search {
   box-sizing: border-box;
   height: 130px;
-  padding: 50px 50px 0 40px;
+  padding: 20px 50px 0 40px;
   position: relative;
   margin-left: 15vw;
   margin-top: 40px;
@@ -202,6 +202,7 @@ h3 {
 }
 .station__info__length{
   margin-top: 1vw;
+  margin-left: 8vw;
   font-size: 1vw;
   position: relative;
   top: 1.2vw;
