@@ -70,7 +70,7 @@ details {
   width: 130px;
 }
 .detail-site {
-  padding-left: 5px;
+  padding: 0 2px;
   font-size: .8rem;
   width: 130px;
   overflow-wrap: break-word;
@@ -157,10 +157,13 @@ h3 {
 }
 .result__station{
   width: 80%;
-  position: absolute;
+  // position: absolute;
+}
+.station__info {
+  height: 40px;
 }
 .result__station__name{
-  float: left;
+  // float: left;
   
   font-size: 30px;
 }
@@ -192,8 +195,10 @@ h3 {
   
 }
 .station__info__length{
-  margin-top: 10px;
+  margin-top: 1vw;
   font-size: 1vw;
+  position: relative;
+  top: 1.2vw;
 }
 .result__station__view{
   position: relative;
