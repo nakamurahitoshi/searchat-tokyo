@@ -45,6 +45,12 @@ h1 {
     bottom: 43rem;
   }
 }
+@media screen and (min-width:1300px) {
+  .spot-info{
+    bottom: 58vh;
+  }
+}
+
 summary {
   cursor: pointer;
 }
@@ -120,7 +126,7 @@ h3 {
  .form__search {
   box-sizing: border-box;
   height: 130px;
-  padding: 20px 50px 0 40px;
+  padding: 50px 50px 0 40px;
   position: relative;
   margin-left: 15vw;
   margin-top: 40px;

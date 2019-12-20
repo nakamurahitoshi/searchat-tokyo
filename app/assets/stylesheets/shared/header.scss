@@ -19,6 +19,8 @@ html, body {
   line-height: 8vw;
   font-size: 3vw;
 }
+
+
 .userpoint {
   display: flex;
   position: absolute;
@@ -150,6 +152,7 @@ html, body {
     color: blue;
   }
 }
+
 @media screen and (max-width:1000px) {
   .username {
     line-height: 15vw;
@@ -216,15 +219,15 @@ html, body {
   color: green;
 }
 .mystation-shape {
-  height: 1.5vw;
+  height: 1.3vw;
   width: 100%;
   background-color: green;
   bottom: 30px;
   margin-top: 5px;
   border-radius: 5px;
   &__square {
-    height: 1.5vw;
-    width: 1.5vw;
+    height: 1.3vw;
+    width: 1.3vw;
     background-color: lightgreen;
     margin: auto;
   }
@@ -312,4 +315,78 @@ html, body {
   height: 24px;
   width: 100%;
   background-color: #00ffff;
+}
+
+@media screen and (min-width:1500px){
+  .username {
+    line-height: 8vh;
+    font-size: 3vh;
+  }
+  .userpoint {
+    display: flex;
+    position: absolute;
+    top: 5vh;
+    left: 5vh;
+    font-size: 1vw;
+    margin-top: 5px;
+    &__mark {
+      color: deeppink;
+      font-size: 2.5vw;
+    }
+    &__times {
+      font-size: 1.5vw;
+      position: relative;
+      top: 1vw;
+    }
+    &__body {
+      font-size: 2vw;
+      position: relative;
+      top: 0.5vw;
+    }
+    &__level {
+      margin-left: 20px;
+      font-size: 2vw;
+      position: relative;
+      top: 0.5vw;
+    }
+    &__level-number {
+      margin-left: 5px;
+      font-size: 2vw;
+      position: relative;
+      top: 0.5vw;
+    }
+    &__level-info {
+      position: relative;
+      right: 160px;
+      top: 30px;
+    }
+  }
+  .mystation-shape {
+    height: 1.5vh;
+    width: 100%;
+    background-color: green;
+    bottom: 30px;
+    margin-top: .5vh;
+    border-radius: .5vh;
+    &__square {
+      height: 1.5vh;
+      width: 1.5vh;
+      background-color: lightgreen;
+      margin: auto;
+    }
+  }
+  .mystation-footer {
+    font-size: .8vw;
+    bottom: 0;
+    text-align: center;
+    line-height: 3vh;
+  }
+  .user-btn__edit-icon {
+    position: relative;
+    height: 0;
+    line-height: 6vh;
+    left: 0.5vw;
+    font-size: 3vh;
+    color: blue;
+}
 }
