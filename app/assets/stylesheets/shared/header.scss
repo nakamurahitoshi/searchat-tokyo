@@ -15,11 +15,15 @@ html, body {
   position: relative;
 
 }
+
+.userinfo{
+  width: 30vw;
+}
+
 .username {
   line-height: 8vw;
   font-size: 3vw;
 }
-
 
 .userpoint {
   display: flex;
@@ -166,8 +170,7 @@ html, body {
 }
 
 .mystation {
-  position: absolute;
-  left: 35%;
+  width: 50vw;
   font-size: 20px;
 }
 .mystation-header {
@@ -240,75 +243,86 @@ html, body {
 }
 
 .btn {
-  display: flex;
-  position: absolute;
-  right: 0;
-  top: 100px;
+  position: relative;
   font-size: 20px;
-}
-.btn-top__icon {
-  position: relative;
-  color: blue;
-  font-size: 30px;
-  bottom: 12px;
-}
-.btn-top__btn {
-  position: relative;
-  color: black;
-  height: 15px;
-  right: 36px;
-  font-size: 10px;
-  text-decoration: none;
-}
-.btn-logout__icon {
-  position: relative;
-  color: blue;
-  font-size: 30px;
-  bottom: 12px;
-  left: 40px;
-}
-.btn-logout__btn {
-  position: relative;
-  color: black;
-  height: 15px;
-  right: 8px;
-  font-size: 10px;
-  text-decoration: none;
+  width: 30vw;
 }
 
-.btn-admin {
-  width: 90px;
+.btn-admin{
   position: absolute;
-  bottom: 100px;
-  right: 100px;
+  left: 15%;
+  top: 5%;
+  width: 35%;
+  text-align:center;
+  &__icon {
+    color: blue;
+    font-size: 1em;
+    display: block;
+  }
+  &__word {
+    font-size: 0.3em;
+    color: black;
+    text-decoration: none;
+    display: block;
+    margin-left : auto ;
+    margin-right : auto ;
+  }
 }
-.btn-admin__icon {
-  color: blue;
-  font-size: 30px;
-}
-.btn-admin__btn {
-  font-size: 15px;
-  color: black;
-  text-decoration: none;
-}
-.btn-update {
-  display: flex;
-  width: 90px;
+
+.btn-update{
   position: absolute;
-  bottom: 100px;
-  left: 55px;
+  right: 5%;
+  top: 5%;
+  width: 45%;
+  text-align:center;
+  &__icon {
+    color: blue;
+    font-size: 1em;
+    display: block;
+  }
+  &__word {
+    font-size: 0.3em;
+    color: black;
+    text-decoration: none;
+    display: block;
+  }
 }
-.btn-update__icon {
-  color: blue;
-  font-size: 30px;
+
+.btn-top{
+  position: absolute;
+  left: 15%;
+  bottom: 5%;
+  width: 35%;
+  text-align:center;
+  &__icon {
+    color: blue;
+    font-size: 1em;
+    display: block;
+  }
+  &__word {
+    color: black;
+    font-size: 0.3em;
+    text-decoration: none;
+    display: block;
+  }
 }
-.btn-update__btn {
-  font-size: 15px;
-  color: black;
-  text-decoration: none;
-  padding-left: 5px;
-  position: relative;
-  top: 16px;
+.btn-logout{
+  position: absolute;
+  right: 5%;
+  bottom: 5%;
+  width: 45%;
+  text-align:center;
+  &__icon {
+    color: blue;
+    font-size: 1em;
+    display: block;
+  }
+  &__word {
+    color: black;
+    font-size: 0.3em;
+    text-decoration: none;
+    display: block;
+  }
 }
 
 .header-bar {
