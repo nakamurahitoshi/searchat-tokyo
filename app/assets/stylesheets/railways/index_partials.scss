@@ -286,10 +286,10 @@
       display: block;
       background-color: #cb7a4d;
       width: 50px;
-      height: 50px;
+      height: 170px;
       transform: skewX(45deg);
-      top: 0px;
-      left: -25px;
+      top: -110px;
+      left: -70px;
     }
     .brickhouse .wall-one div{
       position: absolute;
@@ -305,31 +305,79 @@
                   0 20px 0 0 black,
                   0 30px 0 0 black,
                   0 40px 0 0 black,
+                  0 50px 0 0 black,
+                  0 60px 0 0 black,
+                  0 70px 0 0 black,
+                  0 80px 0 0 black,
+                  0 90px 0 0 black,
+                  0 100px 0 0 black,
+                  0 110px 0 0 black,
+                  0 120px 0 0 black,
+                  0 130px 0 0 black,
+                  0 140px 0 0 black,
+                  0 150px 0 0 black,
+                  0 160px 0 0 black,
                   10px 0px 0 0 black,
                   10px 10px 0 0 black,
                   10px 20px 0 0 black,
                   10px 30px 0 0 black,
                   10px 40px 0 0 black,
+                  10px 50px 0 0 black,
+                  10px 60px 0 0 black,
+                  10px 70px 0 0 black,
+                  10px 80px 0 0 black,
+                  10px 90px 0 0 black,
+                  10px 100px 0 0 black,
+                  10px 110px 0 0 black,
+                  10px 120px 0 0 black,
+                  10px 130px 0 0 black,
+                  10px 140px 0 0 black,
+                  10px 150px 0 0 black,
+                  10px 160px 0 0 black,
                   20px 0px 0 0 black,
                   20px 10px 0 0 black,
                   20px 20px 0 0 black,
                   20px 30px 0 0 black,
                   20px 40px 0 0 black,
+                  20px 50px 0 0 black,
+                  20px 60px 0 0 black,
+                  20px 70px 0 0 black,
+                  20px 80px 0 0 black,
+                  20px 90px 0 0 black,
+                  20px 100px 0 0 black,
+                  20px 110px 0 0 black,
+                  20px 120px 0 0 black,
+                  20px 130px 0 0 black,
+                  20px 140px 0 0 black,
+                  20px 150px 0 0 black,
+                  20px 160px 0 0 black,
                   30px 0px 0 0 black,
                   30px 10px 0 0 black,
                   30px 20px 0 0 black,
                   30px 30px 0 0 black,
-                  30px 40px 0 0 black;
+                  30px 40px 0 0 black,
+                  30px 50px 0 0 black,
+                  30px 60px 0 0 black,
+                  30px 70px 0 0 black,
+                  30px 80px 0 0 black,
+                  30px 90px 0 0 black,
+                  30px 100px 0 0 black,
+                  30px 110px 0 0 black,
+                  30px 120px 0 0 black,
+                  30px 130px 0 0 black,
+                  30px 140px 0 0 black,
+                  30px 150px 0 0 black,
+                  30px 160px 0 0 black;
     }
     .brickhouse .wall-two{
       position: absolute;
       display: block;
       background-color: #b76538;
-      width: 50px;
+      width: 170px;
       height: 50px;
       transform: skewY(45deg);
-      top: -25px;
-      left: 0px;
+      top: -75px;
+      left: -105px;
     }
     .brickhouse .wall-two div{
       position: absolute;
@@ -345,21 +393,69 @@
                   20px 0 0 0 black,
                   30px 0 0 0 black,
                   40px 0 0 0 black,
+                  50px 0 0 0 black,
+                  60px 0 0 0 black,
+                  70px 0 0 0 black,
+                  80px 0 0 0 black,
+                  90px 0 0 0 black,
+                  100px 0 0 0 black,
+                  110px 0 0 0 black,
+                  120px 0 0 0 black,
+                  130px 0 0 0 black,
+                  140px 0 0 0 black,
+                  150px 0 0 0 black,
+                  160px 0 0 0 black,
                   0px 10px 0 0 black,
                   10px 10px 0 0 black,
                   20px 10px 0 0 black,
                   30px 10px 0 0 black,
                   40px 10px 0 0 black,
+                  50px 10px 0 0 black,
+                  60px 10px 0 0 black,
+                  70px 10px 0 0 black,
+                  80px 10px 0 0 black,
+                  90px 10px 0 0 black,
+                  100px 10px 0 0 black,
+                  110px 10px 0 0 black,
+                  120px 10px 0 0 black,
+                  130px 10px 0 0 black,
+                  140px 10px 0 0 black,
+                  150px 10px 0 0 black,
+                  160px 10px 0 0 black,
                   0px 20px 0 0 black,
                   10px 20px 0 0 black,
                   20px 20px 0 0 black,
                   30px 20px 0 0 black,
                   40px 20px 0 0 black,
+                  50px 20px 0 0 black,
+                  60px 20px 0 0 black,
+                  70px 20px 0 0 black,
+                  80px 20px 0 0 black,
+                  90px 20px 0 0 black,
+                  100px 20px 0 0 black,
+                  110px 20px 0 0 black,
+                  120px 20px 0 0 black,
+                  130px 20px 0 0 black,
+                  140px 20px 0 0 black,
+                  150px 20px 0 0 black,
+                  160px 20px 0 0 black,
                   0px 30px 0 0 black,
                   10px 30px 0 0 black,
                   20px 30px 0 0 black,
                   30px 30px 0 0 black,
-                  40px 30px 0 0 black;
+                  40px 30px 0 0 black,
+                  50px 30px 0 0 black,
+                  60px 30px 0 0 black,
+                  70px 30px 0 0 black,
+                  80px 30px 0 0 black,
+                  90px 30px 0 0 black,
+                  100px 30px 0 0 black,
+                  110px 30px 0 0 black,
+                  120px 30px 0 0 black,
+                  130px 30px 0 0 black,
+                  140px 30px 0 0 black,
+                  150px 30px 0 0 black,
+                  160px 30px 0 0 black;
     }
     .brickhouse .roof{
       position: absolute;
@@ -367,8 +463,196 @@
       background-color: #444;
       width: 50px;
       height: 50px;
-      top: -50px;
-      left: -50px;
+      top: -160px;
+      left: -155px;
+      
+      box-shadow: inset 0 0 0 3px #313131;
+    }
+    /*--------------Point Lv.Max------------------------*/
+    .brickhouse-max .wall-one-max{
+      position: absolute;
+      display: block;
+      background-color: #cb7a4d;
+      width: 50px;
+      height: 170px;
+      transform: skewX(45deg);
+      top: -110px;
+      left: -70px;
+    }
+    .brickhouse-max .wall-one-max div{
+      position: absolute;
+      display: block;
+      background-color: black;
+      opacity: 0.35;
+      width: 5px;
+      height: 7px;
+      top: 3px;
+      left: 8px;
+      
+      box-shadow: 0 10px 0 0 black,
+                  0 20px 0 0 black,
+                  0 30px 0 0 black,
+                  0 40px 0 0 black,
+                  0 50px 0 0 black,
+                  0 60px 0 0 black,
+                  0 70px 0 0 black,
+                  0 80px 0 0 black,
+                  0 90px 0 0 black,
+                  0 100px 0 0 black,
+                  0 110px 0 0 black,
+                  0 120px 0 0 black,
+                  0 130px 0 0 black,
+                  0 140px 0 0 black,
+                  0 150px 0 0 black,
+                  0 160px 0 0 black,
+                  10px 0px 0 0 black,
+                  10px 10px 0 0 black,
+                  10px 20px 0 0 black,
+                  10px 30px 0 0 black,
+                  10px 40px 0 0 black,
+                  10px 50px 0 0 black,
+                  10px 60px 0 0 black,
+                  10px 70px 0 0 black,
+                  10px 80px 0 0 black,
+                  10px 90px 0 0 black,
+                  10px 100px 0 0 black,
+                  10px 110px 0 0 black,
+                  10px 120px 0 0 black,
+                  10px 130px 0 0 black,
+                  10px 140px 0 0 black,
+                  10px 150px 0 0 black,
+                  10px 160px 0 0 black,
+                  20px 0px 0 0 black,
+                  20px 10px 0 0 black,
+                  20px 20px 0 0 black,
+                  20px 30px 0 0 black,
+                  20px 40px 0 0 black,
+                  20px 50px 0 0 black,
+                  20px 60px 0 0 black,
+                  20px 70px 0 0 black,
+                  20px 80px 0 0 black,
+                  20px 90px 0 0 black,
+                  20px 100px 0 0 black,
+                  20px 110px 0 0 black,
+                  20px 120px 0 0 black,
+                  20px 130px 0 0 black,
+                  20px 140px 0 0 black,
+                  20px 150px 0 0 black,
+                  20px 160px 0 0 black,
+                  30px 0px 0 0 black,
+                  30px 10px 0 0 black,
+                  30px 20px 0 0 black,
+                  30px 30px 0 0 black,
+                  30px 40px 0 0 black,
+                  30px 50px 0 0 black,
+                  30px 60px 0 0 black,
+                  30px 70px 0 0 black,
+                  30px 80px 0 0 black,
+                  30px 90px 0 0 black,
+                  30px 100px 0 0 black,
+                  30px 110px 0 0 black,
+                  30px 120px 0 0 black,
+                  30px 130px 0 0 black,
+                  30px 140px 0 0 black,
+                  30px 150px 0 0 black,
+                  30px 160px 0 0 black;
+    }
+    .brickhouse-max .wall-two-max{
+      position: absolute;
+      display: block;
+      background-color: #b76538;
+      width: 170px;
+      height: 50px;
+      transform: skewY(45deg);
+      top: -75px;
+      left: -105px;
+    }
+    .brickhouse-max .wall-two-max div{
+      position: absolute;
+      display: block;
+      background-color: black;
+      opacity: 0.35;
+      width: 7px;
+      height: 5px;
+      top: 8px;
+      left: 3px;
+      
+      box-shadow: 10px 0 0 0 black,
+                  20px 0 0 0 black,
+                  30px 0 0 0 black,
+                  40px 0 0 0 black,
+                  50px 0 0 0 black,
+                  60px 0 0 0 black,
+                  70px 0 0 0 black,
+                  80px 0 0 0 black,
+                  90px 0 0 0 black,
+                  100px 0 0 0 black,
+                  110px 0 0 0 black,
+                  120px 0 0 0 black,
+                  130px 0 0 0 black,
+                  140px 0 0 0 black,
+                  150px 0 0 0 black,
+                  160px 0 0 0 black,
+                  0px 10px 0 0 black,
+                  10px 10px 0 0 black,
+                  20px 10px 0 0 black,
+                  30px 10px 0 0 black,
+                  40px 10px 0 0 black,
+                  50px 10px 0 0 black,
+                  60px 10px 0 0 black,
+                  70px 10px 0 0 black,
+                  80px 10px 0 0 black,
+                  90px 10px 0 0 black,
+                  100px 10px 0 0 black,
+                  110px 10px 0 0 black,
+                  120px 10px 0 0 black,
+                  130px 10px 0 0 black,
+                  140px 10px 0 0 black,
+                  150px 10px 0 0 black,
+                  160px 10px 0 0 black,
+                  0px 20px 0 0 black,
+                  10px 20px 0 0 black,
+                  20px 20px 0 0 black,
+                  30px 20px 0 0 black,
+                  40px 20px 0 0 black,
+                  50px 20px 0 0 black,
+                  60px 20px 0 0 black,
+                  70px 20px 0 0 black,
+                  80px 20px 0 0 black,
+                  90px 20px 0 0 black,
+                  100px 20px 0 0 black,
+                  110px 20px 0 0 black,
+                  120px 20px 0 0 black,
+                  130px 20px 0 0 black,
+                  140px 20px 0 0 black,
+                  150px 20px 0 0 black,
+                  160px 20px 0 0 black,
+                  0px 30px 0 0 black,
+                  10px 30px 0 0 black,
+                  20px 30px 0 0 black,
+                  30px 30px 0 0 black,
+                  40px 30px 0 0 black,
+                  50px 30px 0 0 black,
+                  60px 30px 0 0 black,
+                  70px 30px 0 0 black,
+                  80px 30px 0 0 black,
+                  90px 30px 0 0 black,
+                  100px 30px 0 0 black,
+                  110px 30px 0 0 black,
+                  120px 30px 0 0 black,
+                  130px 30px 0 0 black,
+                  140px 30px 0 0 black,
+                  150px 30px 0 0 black,
+                  160px 30px 0 0 black;
+    }
+    .brickhouse-max .roof-max{
+      position: absolute;
+      display: block;
+      background-color: #444;
+      width: 50px;
+      height: 50px;
+      top: -160px;
+      left: -155px;
       
       box-shadow: inset 0 0 0 3px #313131;
     }
